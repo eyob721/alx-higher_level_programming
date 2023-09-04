@@ -30,3 +30,7 @@
 
 - A shell script that runs a python code.
 - The python code  must be saved in an environment variable PYCODE
+
+[2-print.py](./2-print.py)
+
+- A python script that prints a string.
