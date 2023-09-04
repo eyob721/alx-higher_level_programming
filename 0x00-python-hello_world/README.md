@@ -71,4 +71,12 @@
 
 [10-check_cycle.c](./10-check_cycle.c), [lists.h](./lists.h) |
 
-- A c function that check if singly linked list has a cycle or not.
+- A c function that check if a singly linked list has a cycle or not.
+
+[100-write.py](./100-write.py)
+
+- A python script that prints a string to stderr and exits with code 1, without
+  using the print function.
+
+[101-compile](./101-compile)
+[102-magic_calculation.py](./102-magic_calculation.py)
