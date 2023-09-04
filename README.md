@@ -1,1 +1,5 @@
-# Alx - Higher level programming
+# Alx - Higher Level Programming
+
+## Projects
+
+- 0x00. Python - Hello, World
