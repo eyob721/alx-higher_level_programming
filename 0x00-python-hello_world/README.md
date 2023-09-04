@@ -39,3 +39,7 @@
 
 - A python script that uses f-stings to print an integer stored in a variable
   followed by a string "Batter street".
+
+[4-print_float.py](./4-print_float.py)
+
+- A python script that uses f-stings to print a float stored in a variable.
