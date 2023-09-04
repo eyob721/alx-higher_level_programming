@@ -47,7 +47,7 @@
 [5-print_string.py](./5-print_string.py)
 
 - A python script that prints the string stored in a variable three times,
-  followed by a new line, and the print the first 9 characters of the variabel.
+  followed by a new line, and the print the first 9 characters of the variable.
 - No loops allowed.
 
 [6-concat.py](./6-concat.py)
@@ -56,4 +56,9 @@
 
 [7-edges.py](./7-edges.py)
 
-- A python script that prints slices of sting variabel
+- A python script that prints slices of sting variable
+
+[8-concat_edges.py](./8-concat_edges.py)
+
+- A python script that prints "object-oriented programming with python" by
+  slicing a given string variable, without using loops.
