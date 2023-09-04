@@ -34,3 +34,8 @@
 [2-print.py](./2-print.py)
 
 - A python script that prints a string.
+
+[3-print_number.py](./3-print_number.py)
+
+- A python script that uses f-stings to print an integer stored in a variable
+  followed by a string "Batter street".
