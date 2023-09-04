@@ -79,4 +79,7 @@
   using the print function.
 
 [101-compile](./101-compile)
+
+- A shell script that compiles python source files and outputs the bytecode.
+
 [102-magic_calculation.py](./102-magic_calculation.py)
