@@ -49,3 +49,7 @@
 - A python script that prints the string stored in a variable three times,
   followed by a new line, and the print the first 9 characters of the variabel.
 - No loops allowed.
+
+[6-concat.py](./6-concat.py)
+
+- A python script that concatenates two string variables and prints them.
