@@ -22,5 +22,11 @@
 ## Description
 
 [0-run](./0-run)
+
 - A shell script that runs a python script.
-- The path to the python script is stored in an environment variable $PYFILE
+- The path to the python script must be saved in an environment variable PYFILE
+
+[1-run_inline](./1-run_inline)
+
+- A shell script that runs a python code.
+- The python code  must be saved in an environment variable PYCODE
