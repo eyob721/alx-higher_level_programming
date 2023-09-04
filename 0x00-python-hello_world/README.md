@@ -83,3 +83,14 @@
 - A shell script that compiles python source files and outputs the bytecode.
 
 [102-magic_calculation.py](./102-magic_calculation.py)
+
+- A python function that does exactly the same as the following python bytecode.
+
+```bytecode
+  3           0 LOAD_CONST               1 (98)
+              3 LOAD_FAST                0 (a)
+              6 LOAD_FAST                1 (b)
+              9 BINARY_POWER
+             10 BINARY_ADD
+             11 RETURN_VALUE
+```
