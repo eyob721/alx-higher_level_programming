@@ -43,3 +43,9 @@
 [4-print_float.py](./4-print_float.py)
 
 - A python script that uses f-stings to print a float stored in a variable.
+
+[5-print_string.py](./5-print_string.py)
+
+- A python script that prints the string stored in a variable three times,
+  followed by a new line, and the print the first 9 characters of the variabel.
+- No loops allowed.
