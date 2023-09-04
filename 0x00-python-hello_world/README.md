@@ -62,3 +62,9 @@
 
 - A python script that prints "object-oriented programming with python" by
   slicing a given string variable, without using loops.
+
+[9-easter_egg.py](./9-easter_egg.py)
+
+- A python script that prints "The Zen of Python", by Tim Peters, followed by a
+  new line.
+- The script must have a maximum of 98 characters.
