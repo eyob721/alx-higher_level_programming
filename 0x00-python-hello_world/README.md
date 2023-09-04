@@ -53,3 +53,7 @@
 [6-concat.py](./6-concat.py)
 
 - A python script that concatenates two string variables and prints them.
+
+[7-edges.py](./7-edges.py)
+
+- A python script that prints slices of sting variabel
