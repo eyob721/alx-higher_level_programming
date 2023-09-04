@@ -18,3 +18,9 @@
 | 11. Hello, write | [100-write.py](./100-write.py) |
 | 12. Compile | [101-compile](./101-compile) |
 | 13. ByteCode -> Python #1 | [102-magic_calculation.py](./102-magic_calculation.py) |
+
+## Description
+
+[0-run](./0-run)
+- A shell script that runs a python script.
+- The path to the python script is stored in an environment variable $PYFILE
