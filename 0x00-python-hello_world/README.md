@@ -68,3 +68,7 @@
 - A python script that prints "The Zen of Python", by Tim Peters, followed by a
   new line.
 - The script must have a maximum of 98 characters.
+
+[10-check_cycle.c](./10-check_cycle.c), [lists.h](./lists.h) |
+
+- A c function that check if singly linked list has a cycle or not.
