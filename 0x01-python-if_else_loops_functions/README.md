@@ -38,3 +38,10 @@
 
 - A python script that prints the lowercase alphabets, not followed by a new
   line.
+- The script must only use the 'str.format' string formatter and one loop.
+
+[3-print_alphabt.py](./3-print_alphabt.py)
+
+- A python script that prints the lowercase alphabets, except the characters
+  'q' and 'a', not followed by a new line.
+- The script must only use the 'str.format' string formatter and one loop.
