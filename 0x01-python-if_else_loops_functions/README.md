@@ -26,5 +26,10 @@
 
 [0-positive_or_negative.py](./0-positive_or_negative.py)
 
-- a python script that generates a random number and prints whether the number
+- A python script that generates a random number and prints whether the number
   is positive, negative, or zero.
+
+[1-last_digit.py](./1-last_digit.py)
+
+- A python script that generates a random number and prints whether the last
+  digit of that number is greater than 5, is less than 6 and not 0, or is 0.
