@@ -62,3 +62,8 @@
 - A python script that prints all possible different combinations of two digits.
 - The numbers are separated by a comma and a space, except for the last number
   which is followed by a new line.
+
+[7-islower.py](./7-islower.py)
+
+- A python function that returns True if a character is lowercase, or False if
+  it is not.
