@@ -52,6 +52,13 @@
 - The script must only use the 'str.format' string formatter and one loop.
 
 [5-print_comb2.py](./5-print_comb2.py)
+
 - A python script that prints numbers from 0 to 99.
 - Numbers are separated by a comma and a space, except the last number which is
   followed by a new line.
+
+[6-print_comb2.py](./6-print_comb3.py)
+
+- A python script that prints all possible different combinations of two digits.
+- The numbers are separated by a comma and a space, except for the last number
+  which is followed by a new line.
