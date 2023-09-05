@@ -33,3 +33,8 @@
 
 - A python script that generates a random number and prints whether the last
   digit of that number is greater than 5, is less than 6 and not 0, or is 0.
+
+[2-print_alphabet.py](./2-print_alphabet.py)
+
+- A python script that prints the lowercase alphabets, not followed by a new
+  line.
