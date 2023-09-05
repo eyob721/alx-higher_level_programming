@@ -21,3 +21,10 @@
 | 14. Smile in the mirror | [100-print_tebahpla.py](./100-print_tebahpla.py) |
 | 15. Remove at position | [101-remove_char_at.py](./101-remove_char_at.py) |
 | 16. ByteCode -> Python #2 | [102-magic_calculation.py](./102-magic_calculation.py) |
+
+## Details
+
+[0-positive_or_negative.py](./0-positive_or_negative.py)
+
+- a python script that generates a random number and prints whether the number
+  is positive, negative, or zero.
