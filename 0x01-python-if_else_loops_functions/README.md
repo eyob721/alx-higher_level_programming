@@ -45,3 +45,8 @@
 - A python script that prints the lowercase alphabets, except the characters
   'q' and 'a', not followed by a new line.
 - The script must only use the 'str.format' string formatter and one loop.
+
+[4-print_hexa.py](./4-print_hexa.py)
+
+- A python script that prints numbers and hexadecimals from 0 to 98.
+- The script must only use the 'str.format' string formatter and one loop.
