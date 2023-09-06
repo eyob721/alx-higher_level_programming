@@ -91,3 +91,7 @@
 - A pyhton function that prints numbers from 1 to 100, but for numbers which are
   multiples of 3 print 'Fizz', and numbers which are multiples of 5 print
   'Buzz', and for numbers which are multiples of both 3 and 5 print 'FizzBuzz'.
+
+[13-insert_number.c](./13-insert_number.c), [lists.h](./lists.h)
+
+- A function in C that inserts a number into a sorted singly linked list.
