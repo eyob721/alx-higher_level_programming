@@ -67,3 +67,8 @@
 
 - A python function that returns True if a character is lowercase, or False if
   it is not.
+
+[8-uppercase.py](./8-uppercase.py)
+
+- A python function that converts and prints all lowercase letters in a string
+  to uppercase.
