@@ -76,3 +76,18 @@
 [9-print_last_digit.py](./9-print_last_digit.py)
 
 - A python script that prints and returns the last digit of a number.
+
+[10-add.py](./10-add.py)
+
+- A pyhton function that returns the sum of two numbers.
+
+[11-pow.py](./11-pow.py)
+
+- A python function that two numbers 'a' and 'b', and returns 'a' to the power
+  of 'b'.
+
+[12-fizzbuzz.py](./12-fizzbuzz.py)
+
+- A pyhton function that prints numbers from 1 to 100, but for numbers which are
+  multiples of 3 print 'Fizz', and numbers which are multiples of 5 print
+  'Buzz', and for numbers which are multiples of both 3 and 5 print 'FizzBuzz'.
