@@ -72,3 +72,7 @@
 
 - A python function that converts and prints all lowercase letters in a string
   to uppercase.
+
+[9-print_last_digit.py](./9-print_last_digit.py)
+
+- A python script that prints and returns the last digit of a number.
