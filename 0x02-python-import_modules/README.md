@@ -36,3 +36,9 @@
 
 - A python script that imports all functions from the file calculator_1.py and
   handles basic operations.
+
+[101-easy_print.py](./101-easy_print.py)
+
+- A python script that prints '#pythoniscool', followed by a new line, to the
+  standard output.
+- Using `print` or `eval` or `open` or `import sys` is not allowed
