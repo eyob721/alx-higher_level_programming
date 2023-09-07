@@ -19,3 +19,8 @@
 [3-infinite_add.py](./3-infinite_add.py)
 
 - A python script that sum of all of its arguments
+
+[4-hidden_discovery.py](./4-hidden_discovery.py)
+
+- A python script that prints all the names defined by the compiled module
+  hidden_4.pyc
