@@ -13,7 +13,7 @@ if (__name__ == "__main__"):
     opr = argv[2]
     opr_table = {'+': add, '-': sub, '*': mul, '/': div}
     if opr not in opr_table:
-        print("Unknown operator: Availabel operators: +, -, * and /")
+        print("Unknown operator: Available operators: +, -, * and /")
         exit(1)
 
     # Get the operator function, for the given operator
