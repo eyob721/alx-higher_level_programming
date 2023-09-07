@@ -15,3 +15,7 @@
 [2-args.py](./2-args.py)
 
 - A a python script that prints the number and the list of its arguments.
+
+[3-infinite_add.py](./3-infinite_add.py)
+
+- A python script that sum of all of its arguments
