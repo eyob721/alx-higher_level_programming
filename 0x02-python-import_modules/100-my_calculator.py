@@ -6,14 +6,14 @@ if (__name__ == "__main__"):
     # Check for the correct number of arguments
     script_argc = len(argv) - 1
     if (script_argc != 3):
-        print("Usage: {} <a> <operator> <b>".format(argv[0]))
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
     # Next check for supported operators
     opr = argv[2]
     opr_table = {'+': add, '-': sub, '*': mul, '/': div}
     if opr not in opr_table:
-        print("Unknown operator: Available operators: +, -, * and /")
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
     # Get the operator function, for the given operator
