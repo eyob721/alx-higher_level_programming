@@ -29,3 +29,10 @@
 
 - A python script that imports the variable `a` from the file variable_load_5.py
   and prints its value.
+
+## Advanced
+
+[100-my_calculator.py](./100-my_calculator.py)
+
+- A python script that imports all functions from the file calculator_1.py and
+  handles basic operations.
