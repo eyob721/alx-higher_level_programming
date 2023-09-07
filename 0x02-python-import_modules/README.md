@@ -11,3 +11,7 @@
 
 - A python script that imports functions from the file calculator_1.py, does
   some Maths, and prints the result.
+
+[2-args.py](./2-args.py)
+
+- A a python script that prints the number and the list of its arguments.
