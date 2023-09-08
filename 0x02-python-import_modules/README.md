@@ -42,3 +42,10 @@
 - A python script that prints '#pythoniscool', followed by a new line, to the
   standard output.
 - Using `print` or `eval` or `open` or `import sys` is not allowed
+
+[103-fast_alphabet.py](./103-fast_alphabet.py)
+
+- A python script that prints the alphabet in uppercase, followed by a new line.
+- The script must be maximum 3 lines long
+- Using any loops, any conditional statements, `str.join()`, any string literal,
+  or any system calls is not allowed.
