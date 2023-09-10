@@ -20,3 +20,8 @@
 
 - A function that prints all integers of a list, in reverse order.
 - NOTE: It is assumed that the list contains only integers.
+
+[4-new_in_list.py](./4-new_in_list.py)
+
+- A function that replaces an element of a list without modifying the original
+  list.
