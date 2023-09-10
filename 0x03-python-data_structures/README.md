@@ -15,3 +15,8 @@
 
 - A function that replaces an element of a list at a specific
   position (like in C).
+
+[3-print_reversed_list_integer.py](./3-print_reversed_list_integer.py)
+
+- A function that prints all integers of a list, in reverse order.
+- NOTE: It is assumed that the list contains only integers.
