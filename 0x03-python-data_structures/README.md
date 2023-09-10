@@ -25,3 +25,7 @@
 
 - A function that replaces an element of a list without modifying the original
   list.
+
+[5-no_c.py](./5-no_c.py)
+
+- A function that removes all characters 'c' and 'C' from a string.
