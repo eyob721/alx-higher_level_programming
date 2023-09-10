@@ -29,3 +29,9 @@
 [5-no_c.py](./5-no_c.py)
 
 - A function that removes all characters 'c' and 'C' from a string.
+
+[6-print_matrix_integer.py](./6-print_matrix_integer.py)
+
+- A function that prints a matrix of integers.
+- The integers must not be casted into strings.
+- It is assumed that the matrix contains integers only.
