@@ -10,3 +10,8 @@
 [1-element_at.py](./1-element_at.py)
 
 - A function that retrieves an element from a list like in C.
+
+[2-replace_in_list.py](./2-replace_in_list.py)
+
+- A function that replaces an element of a list at a specific
+  position (like in C).
