@@ -45,3 +45,9 @@
 
 - A function that returns a tuple with the length of a string and
   its first character.
+
+[9-max_integer.py](./9-max_integer.py)
+
+- A function that finds the maximum integer in a list.
+- The list is assumed to contain only integers and using built in
+  `max()` in not allowed.
