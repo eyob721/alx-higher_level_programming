@@ -68,6 +68,6 @@
 - A simple script that switches the value of two integers.
 - Only line 4 must be edited, and the script must be 5 line long.
 
-[13-is_palindrome.py](./13-is_palindrome.c) [lists.h](./lists.h)
+[lists.h](./lists.h) / [13-is_palindrome.py](./13-is_palindrome.c)
 
 - A C function that checks if a singly linked list is a palindrome or not.

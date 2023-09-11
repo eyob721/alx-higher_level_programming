@@ -25,7 +25,7 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- * get_data_at_index - a function that fetchs the data of a node at a given
+ * get_data_at_index - a function that fetches the data of a node at a given
  *                     index in the list
  * @head: pointer to the head of the list
  * @idx: index of the node to fetch data from
