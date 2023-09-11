@@ -9,15 +9,18 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int data_front, data_back, list_size, i, j;
+	int data_front, data_back, list_size, i, j, mid_idx;
+	listint_t *mid_node;
 
 	if (head == NULL)
 		return (0);
 	list_size = get_list_size(*head);
+	mid_idx = ((list_size - 1) / 2) + ((list_size - 1) % 2);
+	mid_node = get_node_at_index(*head, mid_idx);
 	for (i = 0, j = list_size - 1; i <= j; ++i, --j)
 	{
-		data_front = get_data_at_index(*head, i);
-		data_back = get_data_at_index(*head, j);
+		data_front = get_node_at_index(*head, i)->n;
+		data_back = get_node_at_index(mid_node, j - mid_idx)->n;
 		if (data_front != data_back)
 			return (0);
 	}
@@ -25,20 +28,20 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- * get_data_at_index - a function that fetches the data of a node at a given
+ * get_node_at_index - a function that fetches the data of a node at a given
  *                     index in the list
  * @head: pointer to the head of the list
  * @idx: index of the node to fetch data from
  *
  * Return: data of the node at a given index
  */
-int get_data_at_index(listint_t *head, int idx)
+listint_t *get_node_at_index(listint_t *head, int idx)
 {
 	int i = 0;
 
 	while (i++ < idx && head != NULL)
 		head = head->next;
-	return (head->n);
+	return (head);
 }
 
 /**
