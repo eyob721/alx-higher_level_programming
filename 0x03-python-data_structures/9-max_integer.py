@@ -11,5 +11,4 @@ def max_integer(my_list=[]):
 
     """
     if my_list:
-        max_int = sorted(my_list, reverse=True)[0]
-        return max_int
+        return sorted(my_list, reverse=True)[0]
