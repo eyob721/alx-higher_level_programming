@@ -33,12 +33,12 @@
 [6-print_matrix_integer.py](./6-print_matrix_integer.py)
 
 - A function that prints a matrix of integers.
-- The integers must not be casted into strings.
+- The integers must not be converted into strings.
 - It is assumed that the matrix contains integers only.
 
 [7-add_tuple.py](./7-add_tuple.py)
 
-- A function that adds two tuples of integers and returns thier sum in tuple
+- A function that adds two tuples of integers and returns their sum in tuple
   form.
 
 [8-multiple_returns.py](./8-multiple_returns.py)
