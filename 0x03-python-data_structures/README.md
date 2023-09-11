@@ -71,3 +71,7 @@
 [lists.h](./lists.h) / [13-is_palindrome.py](./13-is_palindrome.c)
 
 - A C function that checks if a singly linked list is a palindrome or not.
+
+[100-print_python_list_info.py](./100-print_python_list_info.c)
+
+- A C function that prints some basic info about Python lists.
