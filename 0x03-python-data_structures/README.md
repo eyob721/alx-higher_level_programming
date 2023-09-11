@@ -40,3 +40,8 @@
 
 - A function that adds two tuples of integers and returns thier sum in tuple
   form.
+
+[8-multiple_returns.py](./8-multiple_returns.py)
+
+- A function that returns a tuple with the length of a string and
+  its first character.
