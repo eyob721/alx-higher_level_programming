@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Python.h"
 
 /**
  * struct listint_s - singly linked list
@@ -26,5 +27,7 @@ int is_palindrome(listint_t **head);
 
 int get_list_size(listint_t *head);
 listint_t *get_node_at_index(listint_t *head, int idx);
+
+void print_python_list_info(PyObject *p);
 
 #endif /* LISTS_H */
