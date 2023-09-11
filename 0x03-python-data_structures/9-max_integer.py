@@ -7,10 +7,10 @@ def max_integer(my_list=[]):
 
     Returns:
         - The maximum integer in 'my_list'
-        - If `my_list` is None, then it will return None
+        - If `my_list` is empty or None, then it will return None
 
     """
-    if my_list is not None:
+    if my_list:
         max_int = 0
         for i in my_list:
             if i > max_int:
