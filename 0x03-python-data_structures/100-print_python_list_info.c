@@ -15,14 +15,13 @@ void print_python_list_info(PyObject *p)
 	ssize_t list_size, list_allocated;
 	char *list_item_type;
 
-	list_size = list_obj->ob_base.ob_size;
+	list_size = PyList_Size(p);
 	list_allocated = list_obj->allocated;
 	printf("[*] Size of the Python List = %ld\n", list_size);
 	printf("[*] Allocated = %ld\n", list_allocated);
 	for (i = 0; i < list_size; ++i)
 	{
-		list_item_type = (char *)list_obj->ob_item[i]->ob_type->tp_name;
+		list_item_type = (char *)Py_TYPE(list_obj->ob_item[i])->tp_name;
 		printf("Element %d: %s\n", i, list_item_type);
 	}
 }
-
