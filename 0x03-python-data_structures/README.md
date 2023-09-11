@@ -54,7 +54,11 @@
 
 [10-divisible_by_2.py](./10-divisible_by_2.py)
 
-- A function that finds all multiples of 2 in a list
+- A function that finds all multiples of 2 in a list.
 - The function returns a new list with `True` or `False`, depending on
   whether the integer at the same position in the original list is a
   multiple of 2.
+
+[11-divisible_by_2.py](./11-delete_at.py)
+
+- A function that deletes the item at a specific position in a list.
