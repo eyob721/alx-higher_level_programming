@@ -35,3 +35,8 @@
 - A function that prints a matrix of integers.
 - The integers must not be casted into strings.
 - It is assumed that the matrix contains integers only.
+
+[7-add_tuple.py](./7-add_tuple.py)
+
+- A function that adds two tuples of integers and returns thier sum in tuple
+  form.
