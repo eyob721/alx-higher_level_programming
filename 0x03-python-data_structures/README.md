@@ -51,3 +51,10 @@
 - A function that finds the maximum integer in a list.
 - The list is assumed to contain only integers and using built in
   `max()` in not allowed.
+
+[10-divisible_by_2.py](./10-divisible_by_2.py)
+
+- A function that finds all multiples of 2 in a list
+- The function returns a new list with `True` or `False`, depending on
+  whether the integer at the same position in the original list is a
+  multiple of 2.
