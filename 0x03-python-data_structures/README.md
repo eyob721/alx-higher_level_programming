@@ -62,3 +62,8 @@
 [11-divisible_by_2.py](./11-delete_at.py)
 
 - A function that deletes the item at a specific position in a list.
+
+[12-switch.py](./12-switch.py)
+
+- A simple script that switches the value of two integers.
+- Only line 4 must be edited, and the script must be 5 line long.
