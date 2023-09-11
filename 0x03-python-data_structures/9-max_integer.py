@@ -11,8 +11,5 @@ def max_integer(my_list=[]):
 
     """
     if my_list:
-        max_int = 0
-        for i in my_list:
-            if i > max_int:
-                max_int = i
+        max_int = sorted(my_list, reverse=True)[0]
         return max_int
