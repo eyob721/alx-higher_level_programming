@@ -72,6 +72,14 @@
 
 - A C function that checks if a singly linked list is a palindrome or not.
 
+## Advanced
+
 [100-print_python_list_info.py](./100-print_python_list_info.c)
 
 - A C function that prints some basic info about Python lists.
+- NOTE: The function must be compiled with following command:
+  `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o
+  libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c`
+- You can replace the `/usr/include/python3.4` part of the command with what
+  ever version of python you are using, for example if you have python3.8 use
+  `/usr/include/python3.8`.
