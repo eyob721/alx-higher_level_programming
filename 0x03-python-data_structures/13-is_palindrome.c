@@ -39,37 +39,3 @@ int check_palindrome(listint_t **left, listint_t *right)
 	}
 	return (is_palindrome);
 }
-/**
- * get_node_at_index - a function that fetches the data of a node at a given
- *                     index in the list
- * @head: pointer to the head of the list
- * @idx: index of the node to fetch data from
- *
- * Return: data of the node at a given index
- */
-listint_t *get_node_at_index(listint_t *head, int idx)
-{
-	int i = 0;
-
-	while (i++ < idx && head != NULL)
-		head = head->next;
-	return (head);
-}
-
-/**
- * get_list_size - a function that computes the size of the list
- * @head: pointer to the head of the list
- *
- * Return: size of the list
- */
-int get_list_size(listint_t *head)
-{
-	int list_size = 0;
-
-	while (head != NULL)
-	{
-		head = head->next;
-		++list_size;
-	}
-	return (list_size);
-}
