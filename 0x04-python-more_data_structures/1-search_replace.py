@@ -12,8 +12,8 @@ def search_replace(my_list, search, replace):
     Returns:
         - a new list with the `search` element replaced by the `replace`
           element.
-        - if `my_list` is None or empty, it returns None
+        - if `my_list` is None, it returns None
 
     """
-    if my_list:
+    if my_list is not None:
         return list(map(lambda x: replace if x == search else x, my_list))
