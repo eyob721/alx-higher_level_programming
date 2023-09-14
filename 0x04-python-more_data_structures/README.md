@@ -14,3 +14,7 @@
 [2-uniq_add.py](./2-uniq_add.py)
 
 - A function that adds all unique integers in a list.
+
+[3-common_elements.py](./3-common_elements.py)
+
+- A function that returns a set of common elements in two elements.
