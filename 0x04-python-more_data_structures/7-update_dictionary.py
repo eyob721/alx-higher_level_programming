@@ -10,9 +10,10 @@ def update_dictionary(a_dictionary, key, value):
 
     Returns:
         - a copy of the update dictionary
-        - if either `a_dictionary` or `key` is None, it returns None
+        - if `a_dictionary` is None, it returns None
+        - if `key` is None or empty, it returns None
 
     """
-    if a_dictionary and key:
+    if a_dictionary is not None and key:
         a_dictionary[key] = value
         return a_dictionary.copy()
