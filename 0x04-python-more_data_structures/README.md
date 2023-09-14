@@ -10,3 +10,7 @@
 
 - A function that replaces all occurrences of an element in a list by another
   element.
+
+[2-uniq_add.py](./2-uniq_add.py)
+
+- A function that adds all unique integers in a list.
