@@ -31,3 +31,7 @@
 [6-print_sorted_dictionary.py](./6-print_sorted_dictionary.py)
 
 - A function that prints a dictionary by ordered keys.
+
+[7-update_dictionary.py](./7-update_dictionary.py)
+
+- A function that replaces or adds key/value in a dictionary.
