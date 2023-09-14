@@ -23,3 +23,7 @@
 
 - A function that returns a set of all elements that are present in only one
   set and not both.
+
+[5-number_keys.py](./5-number_keys.py)
+
+- A function that returns the number of keys in a dictionary.
