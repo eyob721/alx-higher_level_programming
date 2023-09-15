@@ -63,3 +63,11 @@
 [100-weight_average.py](./100-weight_average.py)
 
 - A function that returns the weighted average of all integers tuple.
+
+[101-square_matrix_map.py](./101-square_matrix_map.py)
+
+- A function that computes the square value of all integers of a matrix using
+  the map function.
+- Using `for` or `while` loops is not allowed.
+- The file must be 3 lines long.
+- Importing modules is not allowed.
