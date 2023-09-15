@@ -52,4 +52,8 @@
 
 - A function that returns a list with all the values multiplied be a given
   number without the using any loops.
-- The file has to be maximum 3 lines long
+- The file has to be maximum 3 lines long.
+
+[12-roman_to_int.py](./12-roman_to_int.py)
+
+- A function that converts a Roman numeral to an integer.
