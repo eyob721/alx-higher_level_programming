@@ -39,3 +39,7 @@
 [8-simple_delete.py](./8-simple_delete.py)
 
 - A function that deletes a key in a dictionary.
+
+[9-multiply_by_2.py](./9-multiply_by_2.py)
+
+- A function that returns a new dictionary with all the values multiplied by 2
