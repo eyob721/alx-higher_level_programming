@@ -47,3 +47,9 @@
 [10-best_score.py](./10-best_score.py)
 
 - A function that returns a key with the biggest integer value.
+
+[11-multiply_list_map.py](./11-multiply_list_map.py)
+
+- A function that returns a list with all the values multiplied be a given
+  number without the using any loops.
+- The file has to be maximum 3 lines long
