@@ -71,3 +71,8 @@
 - Using `for` or `while` loops is not allowed.
 - The file must be 3 lines long.
 - Importing modules is not allowed.
+
+[102-complex_delete.py](./102-complex_delete.py)
+
+- A function that deletes all keys in a dictionary that match
+  with a given value.
