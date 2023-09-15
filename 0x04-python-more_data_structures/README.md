@@ -43,3 +43,7 @@
 [9-multiply_by_2.py](./9-multiply_by_2.py)
 
 - A function that returns a new dictionary with all the values multiplied by 2
+
+[10-best_score.py](./10-best_score.py)
+
+- A function that returns a key with the biggest integer value.
