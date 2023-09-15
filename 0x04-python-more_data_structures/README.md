@@ -57,3 +57,9 @@
 [12-roman_to_int.py](./12-roman_to_int.py)
 
 - A function that converts a Roman numeral to an integer.
+
+## Advanced
+
+[100-weight_average.py](./100-weight_average.py)
+
+- A function that returns the weighted average of all integers tuple.
