@@ -78,11 +78,10 @@ void print_python_bytes(PyObject *p)
 	{
 		ascii_hex(str_value[i], hex_buf);
 		printf("%s", hex_buf);
-		if (i % bytes_hex != 0)
+		if (i < bytes_hex - 1)
 			printf(" ");
-		else
-			printf("\n");
 	}
+	printf("\n");
 }
 
 /**
