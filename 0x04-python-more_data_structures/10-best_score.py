@@ -13,6 +13,6 @@ def best_score(a_dictionary):
     """
     if a_dictionary:
         max_score = sorted(a_dictionary.values())[-1]
-        for key in a_dictionary.keys():
-            if a_dictionary[key] == max_score:
-                return key
+        max_score_idx = \
+            list(a_dictionary.values()).index(max_score)
+        return list(a_dictionary.keys())[max_score_idx]
