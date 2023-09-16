@@ -1,7 +1,6 @@
 #include "Python.h"
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 
 #define MAX_ASCII_HEX_SIZE 2
 void ascii_hex(unsigned char ascii_char, char *buf);
@@ -25,7 +24,7 @@ void print_python_list(PyObject *p)
 	obj_type = (char *)p->ob_type->tp_name;
 	if (strcmp(obj_type, "list") != 0)
 	{
-		dprintf(STDERR_FILENO, "  [ERROR] Invalid List Object\n");
+		printf("  [ERROR] Invalid List Object\n");
 		return;
 	}
 
@@ -61,7 +60,7 @@ void print_python_bytes(PyObject *p)
 	obj_type = (char *)p->ob_type->tp_name;
 	if (strcmp(obj_type, "bytes") != 0)
 	{
-		dprintf(STDERR_FILENO, "  [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
