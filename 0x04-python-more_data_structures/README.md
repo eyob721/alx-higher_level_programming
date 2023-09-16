@@ -1,4 +1,4 @@
-# 0x03. Python - More Data Structures: Set, Dictionary
+# 0x04. Python - More Data Structures: Set, Dictionary
 
 ## Mandatory
 
@@ -79,11 +79,11 @@
 
 [103-python.c](./103-python.c)
 
-- Contains two C functions that print some basic info about Python lists and
+- Contains two C functions that print some basic info about Python list and
   Python bytes objects.
-- NOTE: The file must be compiled with following command:
-     `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared \
-     -Wl,-soname,libPython.so -o libPython.so -fPIC \
+- NOTE: The file must be compiled with the following command:
+     `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared
+     -Wl,-soname,libPython.so -o libPython.so -fPIC
      -I/usr/include/python3.4 103-python.c`
 - You can replace the `/usr/include/python3.4` part of the command with what
   ever version of python you are using, for example if you have python3.8 use
