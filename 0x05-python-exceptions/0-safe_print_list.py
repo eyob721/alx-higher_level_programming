@@ -16,7 +16,7 @@ def safe_print_list(my_list=[], x=0):
         while i < x:
             print("{}".format(my_list[i]), end="")
             printed = i = i + 1
-        print()
     except Exception:
         pass
+    print()
     return printed
