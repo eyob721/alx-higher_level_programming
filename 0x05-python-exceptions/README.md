@@ -14,3 +14,11 @@
 - A function that takes an object and prints it, if it is an integer.
 - The function must use `{:d}.format()` to print the integer.
 - `try: / except:` clauses must be used.
+
+[2-safe_print_list_integers.py](./2-safe_print_list_integers.py)
+
+- A function that prints the first `x` elements from a list if they are
+  integers.
+- The list can contain items of any type.
+- The function must use `{:d}.format()` to print the integer.
+- `try: / except:` clauses must be used.
