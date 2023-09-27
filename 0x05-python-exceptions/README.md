@@ -8,3 +8,9 @@
 - The list can contain items of any type.
 - `x` can be bigger than the length of the list.
 - `try: / except:` clauses must be used.
+
+[1-safe_print_integer.py](./1-safe_print_integer.py)
+
+- A function that takes an object and prints it, if it is an integer.
+- The function must use `{:d}.format()` to print the integer.
+- `try: / except:` clauses must be used.
