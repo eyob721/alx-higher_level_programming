@@ -56,3 +56,8 @@
 - The function must use `{:d}.format()` to print the integer.
 - `try: / except:` clauses must be used.
 - If an exception is raised it must print the appropriate message to stderr.
+
+[101-safe_function.py](./101-safe_function.py)
+
+- A function that executes a function safely.
+- If an exception is raised it must print the appropriate message to stderr.
