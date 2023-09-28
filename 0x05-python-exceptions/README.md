@@ -36,7 +36,7 @@
 - The lists can contain items of any type.
 - And the lists can also be of any length.
 - It returns a list containing the result of the division.
-- If an exception is raised a value of 0 is used in the returnsed result list.
+- If an exception is raised a value of 0 is used in the returned result list.
 - `try: / except: / finally:` clauses must be used.
 
 [5-raise_exception.py](./5-raise_exception.py)
@@ -46,3 +46,13 @@
 [6-raise_exception_msg.py](./6-raise_exception_msg.py)
 
 - A function that raises a name exception with a message.
+
+## Advanced
+
+[100-safe_print_integer_err.py](./100-safe_print_integer_err.py)
+
+- A function that prints an integer.
+- The function can take as an arguments an object of any type.
+- The function must use `{:d}.format()` to print the integer.
+- `try: / except:` clauses must be used.
+- If an exception is raised it must print the appropriate message to stderr.
