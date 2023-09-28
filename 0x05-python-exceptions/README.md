@@ -29,3 +29,12 @@
 - It is assumed that the arguments are integers.
 - The result of the division must be printed in the `finally:` clause.
 - `try: / except: / finally:` clauses must be used.
+
+[4-list_division.py](./4-list_division.py)
+
+- A function that divides two lists element by element.
+- The lists can contain items of any type.
+- And the lists can also be of any length.
+- It returns a list containing the result of the division.
+- If an exception is raised a value of 0 is used in the returnsed result list.
+- `try: / except: / finally:` clauses must be used.
