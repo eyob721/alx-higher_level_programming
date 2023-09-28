@@ -22,3 +22,10 @@
 - The list can contain items of any type.
 - The function must use `{:d}.format()` to print the integer.
 - `try: / except:` clauses must be used.
+
+[3-safe_print_division.py](./3-safe_print_division.py)
+
+- A function that divides 2 integers and prints the result.
+- It is assumed that the arguments are integers.
+- The result of the division must be printed in the `finally:` clause.
+- `try: / except: / finally:` clauses must be used.
