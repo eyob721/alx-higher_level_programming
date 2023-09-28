@@ -38,3 +38,7 @@
 - It returns a list containing the result of the division.
 - If an exception is raised a value of 0 is used in the returnsed result list.
 - `try: / except: / finally:` clauses must be used.
+
+[5-raise_exception.py](./5-raise_exception.py)
+
+- A function that raises a type exception.
