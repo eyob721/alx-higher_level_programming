@@ -1,12 +1,6 @@
 #!/usr/bin/python3
 """A module for Task 2.
 
-Description:
-    - Building on the previous module (1-square.py), in this module we validate
-      the size attribute, so that only an object of type int and a value
-      of >= 0 is accepted as a valid size.
-    - Otherwise it will raise TypeError and ValueError respectively.
-
 """
 
 

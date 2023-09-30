@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 """A module for Task 1.
 
-Description:
-    In this module we add the private instance attribute `size` to the Square
-    class from Task 0.
-
 """
 
 
