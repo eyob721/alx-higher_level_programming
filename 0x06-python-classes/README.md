@@ -30,5 +30,10 @@
 
 [5-square.py](./5-square.py)
 
-- Building on the previous module (4-square.py), we add public instance method
-  the prints the square with the `#` character.
+- Building on the previous module (4-square.py), we add a public instance
+  method that prints the square with the `#` character.
+
+[6-square.py](./6-square.py)
+
+- Building on the previous module (5-square.py), we add a `position` attribute
+  that contains the current poition in the square.
