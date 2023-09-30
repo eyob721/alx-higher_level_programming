@@ -9,7 +9,7 @@
 [1-square.py](./1-square.py)
 
 - Building on the previous module (0-square.py), we add a private instance
-  attribute, called size, to the Square class.
+  attribute, called `size`, to the Square class.
 
 [2-square.py](./2-square.py)
 
@@ -21,4 +21,9 @@
 [3-square.py](./3-square.py)
 
 - Building on the previous module (2-square.py), we add the public instance
-  method `area` that returns the current square objects area.
+  method, called `area` that returns the current square objects area.
+
+[4-square.py](./4-square.py)
+
+- Building on the previous module (3-square.py), we add getter and setter
+  methods by way of property decorator.
