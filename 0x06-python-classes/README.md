@@ -8,5 +8,12 @@
 
 [1-square.py](./1-square.py)
 
-- Building on the previous module, in this module a private instance attribute
-  is added to the Square class.
+- Building on the previous module (0-square.py), in this module we add a
+  private instance attribute, size, to the Square class.
+
+[2-square.py](./2-square.py)
+
+- Building on the previous module (1-square.py), in this module we validate the
+  size attribute, so that only an object of type int and a value of >= 0 is
+  accepted as a valid size.
+- Otherwise it will raise TypeError and ValueError respectively.
