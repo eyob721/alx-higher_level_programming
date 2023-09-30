@@ -27,3 +27,8 @@
 
 - Building on the previous module (3-square.py), we add getter and setter
   methods by way of property decorator.
+
+[5-square.py](./5-square.py)
+
+- Building on the previous module (4-square.py), we add public instance method
+  the prints the square with the `#` character.
