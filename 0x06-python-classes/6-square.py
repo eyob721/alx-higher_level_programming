@@ -80,7 +80,7 @@ class Square:
             position_is_not_valid = True
         else:
             for i in value:
-                if type(i) is not int:
+                if type(i) is not int or i < 0:
                     position_is_not_valid = True
                     break
         if position_is_not_valid:
