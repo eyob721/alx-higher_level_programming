@@ -37,3 +37,10 @@
 
 - Building on the previous module (5-square.py), we add a `position` attribute
   that contains the current poition in the square.
+
+## Advanced
+
+[100-main.py](./100-main.py)
+
+- A module that contains a `Node` class and a `SinglyLinkedList` class to
+  implement singly linked lists.
