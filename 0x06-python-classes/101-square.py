@@ -71,15 +71,15 @@ class Square:
             character, adjusting for vertical and horizontal position.
 
         """
-        if self.__size == 0:
-            return '\n'
-
-        # Add the vertical position to the square list
-        sqr_list = ['\n' for y in range(self.__position[1])]
-        for i in range(self.__size):
-            # Add the horizontal position to the square list
-            sqr_list += [' ' for x in range(self.__position[0])]
-            # Write the `#` characters, and the new line at the end
-            sqr_list += ['#' for c in range(self.__size)] + ['\n']
-
+        sqr_list = []
+        if self.__size != 0:
+            # Adjust for the vertical position
+            sqr_list = ['\n'] * self.__position[1]
+            for i in range(self.__size):
+                # Adjust for the horizontal position
+                sqr_list += [' '] * self.__position[0]
+                # Write the `#` characters followed by a new line
+                sqr_list += ['#'] * self.__size + ['\n']
+            # The last new line is removed
+            sqr_list.pop()
         return "".join(sqr_list)
