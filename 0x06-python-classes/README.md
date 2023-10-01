@@ -36,7 +36,7 @@
 [6-square.py](./6-square.py)
 
 - Building on the previous module (5-square.py), we add a `position` attribute
-  that contains the current poition in the square.
+  that contains the current position in the square.
 - The method that is used to print the square is adjusted to include the new
   `position` attribute as well.
 
@@ -52,3 +52,8 @@
 - Building on the previous module (6-square.py), we add the `__str__()` method
   to print the square when referenced, just as it would when we call the method
   that is used to print the square.
+
+[102-square.py](./102-square.py)
+
+- Building on the previous module (4-square.py), we add comparison capability
+  of two `Square` objects by overriding the comparison methods.
