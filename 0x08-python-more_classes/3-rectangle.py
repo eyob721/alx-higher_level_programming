@@ -72,7 +72,15 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Returns the informal string representation of the Rectangle."""
+        """Returns the informal string representation of the Rectangle.
+
+        Note:
+            The Rectangle object is written using the `#` character, and if
+            either of the width or height is 0, then it is an empty string.
+
+        """
+        if self.width == 0 or self.height == 0:
+            return ""
         rec_list = (['#'] * self.width + ['\n']) * self.height
         rec_list.pop()  # Remove the last new line
         return "".join(rec_list)
