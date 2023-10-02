@@ -40,3 +40,9 @@
 
 - Building on the previous module (5-rectangle), we add a public class attribute
   that keeps track of the current number of instances of the Rectangle class.
+
+[7-rectangle.py](./7-rectangle.py)
+
+- Building on the previous module (6-rectangle), we add a public class attribute
+  that holds the value of an object used to print the informal representation of
+  the Rectangle.
