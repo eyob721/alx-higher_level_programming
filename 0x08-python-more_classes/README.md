@@ -25,9 +25,9 @@
 
 [4-rectangle](./4-rectangle.py)
 
-- Building on the previous module (3-rectangle), we define the offical string
+- Building on the previous module (3-rectangle), we define the official string
   representation of the Rectangle object.
-- Offical string representation is accessed when calling `repr()`.
+- Official string representation is accessed when calling `repr()`.
 - Using this representation we can recreate a new instance of the current object
   using `eval()`.
 
@@ -35,3 +35,8 @@
 
 - Building on the previous module (4-rectangle), we define a deleter method for
   the Rectangle object.
+
+[6-rectangle.py](./6-rectangle.py)
+
+- Building on the previous module (5-rectangle), we add a public class attribute
+  that keeps track of the current number of instances of the Rectangle class.
