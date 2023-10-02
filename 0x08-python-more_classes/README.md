@@ -21,5 +21,12 @@
 
 - Building on the previous module (2-rectangle), we define the informal string
   representation of the Rectangle object.
-- Informal string representation meaning calling the `print()` and `str()`
-  functions.
+- Informal string representation is accessed when calling `print()` or `str()`.
+
+[4-rectangle](./4-rectangle.py)
+
+- Building on the previous module (3-rectangle), we define the offical string
+  representation of the Rectangle object.
+- Offical string representation is accessed when calling `repr()`.
+- Using this representation we can recreate a new instance of the current object
+  using `eval()`.
