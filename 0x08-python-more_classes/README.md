@@ -46,3 +46,8 @@
 - Building on the previous module (6-rectangle), we add a public class attribute
   that holds the value of an object used to print the informal representation of
   the Rectangle.
+
+[8-rectangle.py](./8-rectangle.py)
+
+- Building on the previous module (7-rectangle), we add a static method that
+  compares two rectangle objects and returns the one with the biggest area.
