@@ -30,3 +30,8 @@
 - Offical string representation is accessed when calling `repr()`.
 - Using this representation we can recreate a new instance of the current object
   using `eval()`.
+
+[5-rectangle.py](./5-rectangle.py)
+
+- Building on the previous module (4-rectangle), we define a deleter method for
+  the Rectangle object.
