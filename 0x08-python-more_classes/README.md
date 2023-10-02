@@ -16,3 +16,10 @@
 - Building on the previous module (1-rectangle), we add the `area` and
   `perimeter` public instance methods that return the area and perimeter of the
   Rectangle object respectively.
+
+[3-rectangle](./3-rectangle.py)
+
+- Building on the previous module (2-rectangle), we define the informal string
+  representation of the Rectangle object.
+- Informal string representation meaning calling the `print()` and `str()`
+  functions.
