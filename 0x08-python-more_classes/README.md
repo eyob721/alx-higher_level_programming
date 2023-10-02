@@ -9,4 +9,10 @@
 [1-rectangle](./1-rectangle.py)
 
 - Building on the previous module (0-rectangle), we add two private instance
-  attributes, width and height.
+  attributes, `width` and `height`.
+
+[2-rectangle](./2-rectangle.py)
+
+- Building on the previous module (1-rectangle), we add the `area` and
+  `perimeter` public instance methods that return the area and perimeter of the
+  Rectangle object respectively.
