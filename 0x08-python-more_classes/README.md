@@ -51,3 +51,9 @@
 
 - Building on the previous module (7-rectangle), we add a static method that
   compares two rectangle objects and returns the one with the biggest area.
+
+[9-rectangle.py](./9-rectangle.py)
+
+- Building on the previous module (8-rectangle), we add a class method that
+  returns a new Rectangle object with the width and height set to a given size.
+  (i.e. a square)
