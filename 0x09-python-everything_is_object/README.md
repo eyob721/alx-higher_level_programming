@@ -254,3 +254,13 @@ a = (1, 2)
 b = (1, 2)
 a is b
 ```
+
+[26-answer.txt](./26-answer.txt)
+
+- What does this script print?
+
+```python
+a = ()
+b = ()
+a is b
+```
