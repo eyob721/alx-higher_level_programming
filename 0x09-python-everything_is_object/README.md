@@ -234,3 +234,13 @@ a = (1)
 ```python
 a = (1, )
 ```
+
+[24-answer.txt](./24-answer.txt)
+
+- What does this script print?
+
+```python
+a = (1)
+b = (1)
+a is b
+```
