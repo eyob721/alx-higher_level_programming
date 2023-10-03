@@ -27,9 +27,9 @@ def print_board():
     for row in range(N):
         for col in range(N):
             if [row, col] == queen[row]:
-                print("Q", end="")
+                print("[Q]", end="")
             else:
-                print("_", end="")
+                print("[-]", end="")
         print()
     print()
 
@@ -70,14 +70,6 @@ def queen_is_diagonal_safe(q):
             break
         if queen[row][1] == col:
             return False
-    # # Check lower left
-    # row, col = q
-    # while True:
-    #     row, col = row + 1, col - 1
-    #     if not (0 <= row < N and 0 <= col < N):
-    #         break
-    #     if queen[row][1] == col:
-    #         return False
     # Check upper right
     row, col = q
     while True:
@@ -86,14 +78,6 @@ def queen_is_diagonal_safe(q):
             break
         if queen[row][1] == col:
             return False
-    # # Check lower right
-    # row, col = q
-    # while True:
-    #     row, col = row + 1, col + 1
-    #     if not (0 <= row < N and 0 <= col < N):
-    #         break
-    #     if queen[row][1] == col:
-    #         return False
     return True
 
 
@@ -110,7 +94,7 @@ def solve_nqueens():
         queen[0][1] = col
         all_safe = solve_next_queen(1)
         if all_safe:
-            result.append([tuple(q) for q in queen])
+            print(queen)
     return result
 
 
@@ -128,12 +112,4 @@ def solve_next_queen(row):
 
 
 if __name__ == "__main__":
-    queen[0][1] = 0
-    queen[1][1] = 1
-    queen[2][1] = 2
-    queen[3][1] = 1
-    print_board()
-    print(queen_is_diagonal_safe(queen[0]))
-    print(queen_is_diagonal_safe(queen[1]))
-    print(queen_is_diagonal_safe(queen[2]))
-    print(queen_is_diagonal_safe(queen[3]))
+    result = solve_nqueens()
