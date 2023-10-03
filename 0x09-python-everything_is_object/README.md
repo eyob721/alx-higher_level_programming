@@ -55,3 +55,13 @@ The Answers for each question is found in a one line text file. (`*.txt`)
 >>> a = 100
 >>> b = a + 1
 ```
+
+[6-answer.txt](./6-answer.txt)
+
+- What do these 3 lines print?
+
+```python
+>>> s1 = "Best School"
+>>> s2 = s1
+>>> print(s1 == s2)
+```
