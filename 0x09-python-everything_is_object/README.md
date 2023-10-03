@@ -115,3 +115,13 @@ The Answers for each question is found in a one line text file. (`*.txt`)
 >>> l2 = [1, 2, 3] 
 >>> print(l1 is l2)
 ```
+
+[12-answer.txt](./12-answer.txt)
+
+- What do these 3 lines print?
+
+```python
+>>> l1 = [1, 2, 3]
+>>> l2 = l1
+>>> print(l1 == l2)
+```
