@@ -69,27 +69,15 @@ def queen_is_safe(q):
     return queen_is_column_safe(q) and queen_is_diagonal_safe(q)
 
 
-def solve_nqueens():
+def solve_nqueens(row=0):
     """Function to solve the nqueens problem."""
-    all_safe = False
-    for col in range(N):
-        queen[0][1] = col
-        all_safe = solve_next_queen(1)
-        if all_safe:
-            print(queen)
-
-
-def solve_next_queen(row):
-    """Recursive function that solves the next queen placement."""
     if row == N:
+        print(queen)
         return True
-    next_is_safe = False
     for col in range(N):
         queen[row][1] = col
         if queen_is_safe(queen[row]):
-            next_is_safe = solve_next_queen(row + 1)
-            if next_is_safe:
-                return True
+            solve_nqueens(row + 1)
     return False
 
 
