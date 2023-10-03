@@ -25,3 +25,13 @@ The Answers for each question is found in a one line text file. (`*.txt`)
 >>> a = 89
 >>> b = 100
 ```
+
+[3-answer.txt](./3-answer.txt)
+
+- In the following code, do a and b point to the same object?
+  Answer with Yes or No.
+
+```python
+>>> a = 100
+>>> b = 100
+```
