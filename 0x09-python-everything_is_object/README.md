@@ -278,3 +278,17 @@ a is b
 >>> a = a + [5]
 >>> id(a)
 ```
+
+[28-answer.txt](./28-answer.txt)
+
+- Will the last line of this script print `139926795932424`?
+  Answer with Yes or No.
+
+```python
+>>> id(a)
+139926795932424
+>>> a
+[1, 2, 3, 4]
+>>> a += [4]
+>>> id(a)
+```
