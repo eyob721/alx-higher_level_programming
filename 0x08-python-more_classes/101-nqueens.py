@@ -35,15 +35,7 @@ def print_board():
 
 
 def queen_is_column_safe(q):
-    """Check if a queen is safe column wise from the upper queens.
-
-    Args:
-        q (list): The queen.
-
-    Returns
-        bool: True if she is safe, False if not.
-
-    """
+    """Check if a queen is safe column wise from the upper queens."""
     # Check columns of queens above the current queen
     for row in range(q[0]):
         if q[1] == queen[row][1]:
@@ -52,15 +44,7 @@ def queen_is_column_safe(q):
 
 
 def queen_is_diagonal_safe(q):
-    """Check if a queen is safe diagonally from the upper queens.
-
-    Args:
-        q (list): The queen.
-
-    Returns
-        bool: True if queen is safe, False if not.
-
-    """
+    """Check if a queen is safe diagonally from the upper queens."""
     # Check upper left
     row, col = q
     while True:
