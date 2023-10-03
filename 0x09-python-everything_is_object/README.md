@@ -43,5 +43,15 @@ The Answers for each question is found in a one line text file. (`*.txt`)
 
 ```python
 >>> a = 100
->>> b = 100
+>>> b = a
+```
+
+[5-answer.txt](./5-answer.txt)
+
+- In the following code, do a and b point to the same object?
+  Answer with Yes or No.
+
+```python
+>>> a = 100
+>>> b = a + 1
 ```
