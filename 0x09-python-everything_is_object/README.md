@@ -202,3 +202,12 @@ print(l1)
 
 - A function that returns a copy of list.
 - The file must be 3 lines long.
+
+[20-answer.txt](./20-answer.txt)
+
+- Is `a` a tuple? Answer with Yes or No.
+
+```python
+a = ()
+```
+
