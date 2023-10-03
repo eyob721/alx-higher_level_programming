@@ -178,8 +178,22 @@ print(a)
 ```python
 def increment(n):
     n.append(4)
-
+You should check for both 3 and 5 first
 l = [1, 2, 3]
 increment(l)
 print(l)
+```
+
+[18-answer.txt](./18-answer.txt)
+
+- What does this script print?
+
+```python
+def assign_value(n, v):
+    n = v
+
+l1 = [1, 2, 3]
+l2 = [4, 5, 6]
+assign_value(l1, l2)
+print(l1)
 ```
