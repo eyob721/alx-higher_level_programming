@@ -226,3 +226,11 @@ a = (1, 2)
 ```python
 a = (1)
 ```
+
+[23-answer.txt](./23-answer.txt)
+
+- Is `a` a tuple? Answer with Yes or No.
+
+```python
+a = (1, )
+```
