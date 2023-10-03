@@ -10,3 +10,8 @@ The Answers for each question is found in a one line text file. (`*.txt`)
 [0-answer.txt](./0-answer.txt)
 
 - What function would you use to get the type of an object?
+
+[1-answer.txt](./1-answer.txt)
+
+- How do you get the variable identifier (which is the memory address in
+  the CPython implementation)?
