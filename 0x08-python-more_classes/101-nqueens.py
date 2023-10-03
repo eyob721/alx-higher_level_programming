@@ -29,23 +29,22 @@ def print_board():
             if [row, col] == queen[row]:
                 print("[Q]", end="")
             else:
-                print("[-]", end="")
+                print("[ ]", end="")
         print()
     print()
 
 
 def queen_is_column_safe(q):
-    """Utility function to check if a queen is on a safe column.
+    """Check if a queen is safe column wise from the upper queens.
 
     Args:
         q (list): The queen.
-        row (int): The row that the queen is on
 
     Returns
         bool: True if she is safe, False if not.
 
     """
-    # Column safety check
+    # Check columns of queens above the current queen
     for row in range(q[0]):
         if q[1] == queen[row][1]:
             return False
@@ -53,13 +52,13 @@ def queen_is_column_safe(q):
 
 
 def queen_is_diagonal_safe(q):
-    """Utility function to check if a queen is on a safe diagonally.
+    """Check if a queen is safe diagonally from the upper queens.
 
     Args:
         q (list): The queen.
 
     Returns
-        bool: True if she is safe, False if not.
+        bool: True if queen is safe, False if not.
 
     """
     # Check upper left
@@ -89,16 +88,15 @@ def queen_is_safe(q):
 def solve_nqueens():
     """Function to solve the nqueens problem."""
     all_safe = False
-    result = []
     for col in range(N):
         queen[0][1] = col
         all_safe = solve_next_queen(1)
         if all_safe:
             print(queen)
-    return result
 
 
 def solve_next_queen(row):
+    """Recursive function that solves the next queen placement."""
     if row == N:
         return True
     next_is_safe = False
@@ -112,4 +110,4 @@ def solve_next_queen(row):
 
 
 if __name__ == "__main__":
-    result = solve_nqueens()
+    solve_nqueens()
