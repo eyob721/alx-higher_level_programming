@@ -211,3 +211,10 @@ print(l1)
 a = ()
 ```
 
+[21-answer.txt](./21-answer.txt)
+
+- Is `a` a tuple? Answer with Yes or No.
+
+```python
+a = (1, 2)
+```
