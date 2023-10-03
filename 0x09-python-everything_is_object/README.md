@@ -146,3 +146,14 @@ l2 = l1
 l1.append(4)
 print(l2)
 ```
+
+[15-answer.txt](./15-answer.txt)
+
+- What does this script print?
+
+```python
+l1 = [1, 2, 3]
+l2 = l1
+l1 += [4]
+print(l2)
+```
