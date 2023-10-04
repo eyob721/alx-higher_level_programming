@@ -292,3 +292,11 @@ a is b
 >>> a += [4]
 >>> id(a)
 ```
+
+## Advanced
+
+[100-magic_string.py](./100-magic_string.py)
+
+- A function that returns a string "BestSchool" n times the number of the
+  iteration.
+- The file must be 4 lines long.
