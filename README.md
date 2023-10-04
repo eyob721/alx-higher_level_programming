@@ -1,6 +1,6 @@
 # Alx - Higher Level Programming
 
-This are the higher level programming projects I did in the Alx program.
+These are the higher level programming projects I did in the Alx program.
 
 ## Python
 
@@ -12,3 +12,4 @@ This are the higher level programming projects I did in the Alx program.
 - [0x05. Python - Exceptions](./0x05-python-exceptions)
 - [0x06. Python - Classes and Objects](./0x06-python-classes)
 - [0x08. Python - More Classes and Objects](./0x08-python-more_classes)
+- [0x09. Python - Everything is object](./0x09-python-everything_is_object)
