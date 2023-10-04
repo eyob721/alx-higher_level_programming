@@ -21,3 +21,7 @@ directory. The functions in each task are executed with this command:
 
 - A module containing a function that prints first and last name.
 
+[4-print_square.py](./4-print_square.py)
+`testfile:` [tests/4-print_square.txt](./tests/4-print_square.txt)
+
+- A module containing a function that prints a square using `#`.

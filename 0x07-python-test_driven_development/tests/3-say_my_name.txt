@@ -1,5 +1,5 @@
 ===========================
-Task 1: 3-say_my_name.py
+Task 2: 3-say_my_name.py
 ===========================
 
 This is a test file for the function `say_my_name()` that is found in the
