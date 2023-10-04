@@ -10,3 +10,8 @@ directory. The functions in each task are executed with this command:
 `testfile:` [tests/0-add_integer.txt](./tests/0-add_integer.txt)
 
 - A module containing a function that adds 2 integers.
+
+[2-matrix_divided.py](./2-matrix_divided.py)<br>
+`testfile:` [tests/2-matrix_divided.txtt](./tests/2-matrix_divided.txt)
+
+- A module containing a function that divides a matrix by a number.
