@@ -15,3 +15,9 @@ directory. The functions in each task are executed with this command:
 `testfile:` [tests/2-matrix_divided.txtt](./tests/2-matrix_divided.txt)
 
 - A module containing a function that divides a matrix by a number.
+
+[3-say_my_name.py](./3-say_my_name.py)<br>
+`testfile:` [tests/3-say_my_name.txt](./tests/3-say_my_name.txt)
+
+- A module containing a function that prints first and last name.
+
