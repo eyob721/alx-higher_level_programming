@@ -23,7 +23,8 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    new_text = text.replace('.', '.\n\n').replace(':', ':\n\n').replace('?', '?\n\n')
-    lines = new_text.splitlines(keepends=True)
+    text = text.replace('.',
+                        '.\n\n').replace(':', ':\n\n').replace('?', '?\n\n')
+    lines = text.splitlines(keepends=True)
     for line in lines:
         print(line.strip(" \t"), end="")
