@@ -8,10 +8,19 @@ Import Module
 =============
 First import the `add_integer()` from module `0-add_integer`
 
->>> add_integer = __import__('0-add_integer').add_integer
+>>> module = __import__('0-add_integer')
+>>> add_integer = module.add_integer
 
-Integers and Floats
+Check Documentation
 ===================
+>>> len(module.__doc__) > 10
+True
+
+>> len(add_integer.__doc__) > 10
+True
+
+Check Integers and Floats
+=========================
 
 >>> add_integer(2, 3)
 5
@@ -19,8 +28,11 @@ Integers and Floats
 >> add_integer(29.9, 2.12)
 31
 
-Other Types
-===========
+>>> add_integer(2)
+100
+
+Check for Other Types
+=====================
 >>> add_integer(2, "school")
 Traceback (most recent call last):
   ...
@@ -35,3 +47,10 @@ TypeError: a must be an integer
 Traceback (most recent call last):
   ...
 TypeError: a must be an integer
+
+Check Edge cases
+================
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'

@@ -1,4 +1,9 @@
-"""A module for Task 0."""
+#!/usr/bin/python3
+"""A module for Task 0.
+
+This module contains only the function `add_integer`.
+
+"""
 
 
 def add_integer(a, b=98):
