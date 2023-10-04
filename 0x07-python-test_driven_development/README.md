@@ -9,4 +9,4 @@ directory. The functions in each task are executed with this command:
 [0-add_integer.py](./0-add_integer.py)<br>
 `testfile:` [tests/0-add_integer.txt](./tests/0-add_integer.txt)
 
-- A function that adds 2 integers.
+- A module containing a function that adds 2 integers.
