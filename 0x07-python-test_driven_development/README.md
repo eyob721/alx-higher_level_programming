@@ -25,3 +25,9 @@ directory. The functions in each task are executed with this command:
 `testfile:` [tests/4-print_square.txt](./tests/4-print_square.txt)
 
 - A module containing a function that prints a square using `#`.
+
+[5-text_indentation](./5-text_indentation.py)
+`testfile:` [tests/5-text_indentation.txt](./tests/5-text_indentation.txt)
+
+- A module containing a function that prints a text with 2 new lines after
+  each of the characters `.`, `?` and `:`
