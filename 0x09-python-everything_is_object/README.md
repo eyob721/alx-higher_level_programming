@@ -300,3 +300,9 @@ a is b
 - A function that returns a string "BestSchool" n times the number of the
   iteration.
 - The file must be 4 lines long.
+
+[101-locked_class.py](./101-locked_class.py)
+
+- Module containing a class with no class or object attribute, that prevents
+  the user from dynamically creating new instance attributes, except if the
+  new instance attribute is called `first_name`.
