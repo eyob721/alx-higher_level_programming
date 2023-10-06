@@ -26,7 +26,7 @@ def lazy_matrix_mul(m_a, m_b):
     validate_matrix(m_b, "m_b")
     check_mul_compatibility(m_a, m_b)
     result = np.dot(m_a, m_b)
-    return result.tolist()
+    return result
 
 
 def validate_matrix(matrix, name):
