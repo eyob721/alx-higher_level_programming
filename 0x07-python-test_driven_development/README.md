@@ -40,7 +40,14 @@ directory. The functions in each task are executed with this command:
   is passable by the given function.
 
 ## Advanced
+
 [100-matrix_mul.py](./100-matrix_mul.py)<br>
 `testfile:` [tests/100-matrix_mul.txt](./tests/100-matrix_mul.txt)
 
-- A module containing a function that multiplies tow matrices.
+- A module containing a function that multiplies tw0 matrices.
+
+[101-lazy_matrix_mul.py](./101-lazy_matrix_mul.py)<br>
+`testfile:` [tests/101-lazy_matrix_mul.txt](./tests/101-lazy_matrix_mul.txt)
+
+- A module containing a function that multiplies two matrices, using the
+ `NumPy` module.
