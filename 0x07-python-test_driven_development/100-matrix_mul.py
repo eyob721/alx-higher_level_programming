@@ -24,6 +24,22 @@ def matrix_mul(m_a, m_b):
     validate_matrix(m_a, "m_a")
     validate_matrix(m_b, "m_b")
     check_mul_compatibility(m_a, m_b)
+    row_b = len(m_b)
+    col_b = len(m_b[0])
+    result = []
+    for row in m_a:
+        col = 0
+        result_row = []
+        while col < col_b:
+            i = j = prdt_sum = 0
+            while j < row_b:
+                prdt_sum += row[i] * m_b[j][col]
+                i += 1
+                j += 1
+            result_row.append(prdt_sum)
+            col += 1
+        result.append(result_row)
+    return result
 
 
 def validate_matrix(matrix, name):
@@ -72,8 +88,8 @@ def validate_matrix(matrix, name):
 
 
 def check_mul_compatibility(m_a, m_b):
-    """Checks it 2 matrices are compatible for multiplication"""
-    col_a = len(m_a)
-    row_b = len(m_a[0])
+    """Checks it 2 matrices are compatible for multiplication."""
+    col_a = len(m_a[0])
+    row_b = len(m_b)
     if col_a != row_b:
         raise ValueError("m_a and m_b can't be multiplied")

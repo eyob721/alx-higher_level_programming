@@ -38,3 +38,9 @@ directory. The functions in each task are executed with this command:
 - A module containing a function that finds the maximum integer in a list.
 - This function is a given function, we are supposed to write a unit test that
   is passable by the given function.
+
+## Advanced
+[100-matrix_mul.py](./100-matrix_mul.py)<br>
+`testfile:` [tests/100-matrix_mul.txt](./tests/100-matrix_mul.txt)
+
+- A module containing a function that multiplies tow matrices.
