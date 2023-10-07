@@ -2,17 +2,14 @@
 """A module for task 7.
 
 This module contains the functions:
-    `lazy_matrix_mul`: multiplies 2 matrices
-    `validate_matrix`: validates a matrix
-    `check_mul_compatibility`: checks if two matrices are compatible
-                               for multiplication
+    `lazy_matrix_mul`: multiplies 2 matrices using the numpy module
 
 """
 import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """Multiplies 2 matrices.
+    """Multiplies 2 matrices using the numpy module.
 
     Args:
         m_a: matrix a
@@ -22,60 +19,44 @@ def lazy_matrix_mul(m_a, m_b):
         Product of the two matrices.
 
     """
-    validate_matrix(m_a, "m_a")
-    validate_matrix(m_b, "m_b")
-    check_mul_compatibility(m_a, m_b)
-    return np.matmul(m_a, m_b)
+    # 1: Check for type of matrices
+    if type(m_a) is not list or type(m_b) is not list:
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
 
+    # 2: Check for empty matrices and empty rows
+    h_a = len(m_a)
+    w_a = 0 if h_a == 0 else len(m_a[0])
+    h_b = len(m_b)
+    w_b = 0 if h_b == 0 else len(m_b[0])
+    err_msg1 = f"shapes ({w_b:d}, {h_a:d}) and ({w_b:d}, {w_b:d}) not "
+    err_msg2 = f"aligned: {h_a:d} (dim {h_b:d}) != {w_b:d} (dim {h_a:d})"
+    if h_a == 0 or w_a == 0 or h_b == 0 or w_b == 0:
+        raise ValueError(err_msg1 + err_msg2)
 
-def validate_matrix(matrix, name):
-    """A function used to validate a matrix
-    The matrix must be validated in the defined order.
+    # 3: Check for size of rows and types of elements in the rows
+    for r_a in m_a:
+        if type(r_a) is not list:
+            raise ValueError("Scalar " +
+                             "operands are not allowed, use '*' instead")
+        if len(r_a) != len(m_a[0]):
+            raise ValueError("setting an array element with a sequence.")
+        for c_a in r_a:
+            if type(c_a) not in [int, float]:
+                raise TypeError("invalid data type for einsum")
 
-    Args:
-        matrix: the matrix
-        name: name of the matrix
+    for r_b in m_b:
+        if type(r_b) is not list:
+            raise ValueError("Scalar " +
+                             "operands are not allowed, use '*' instead")
+        if len(r_b) != len(m_b[0]):
+            raise ValueError("setting an array element with a sequence.")
+        for c_b in r_b:
+            if type(c_b) not in [int, float]:
+                raise TypeError("invalid data type for einsum")
 
-    Raises:
-        TypeError:
-            If either of the matrices are not lists, or are not list of lists.
-            If the matrices contain types other than int or float.
-            If the matrices contain rows of different sizes.
-        ValueError:
-            If the matrices contain empty lists.
-    """
-    # 1: Check for type of matrix
-    if type(matrix) is not list:
-        raise TypeError(f"{name} must be a list")
-    # 2: Check for type of rows
-    for row in matrix:
-        if type(row) is not list:
-            raise TypeError(f"{name} must be a list of lists")
-    # 3: Check for empty matrices and empty rows
-    if len(matrix) == 0:
-        raise ValueError(f"{name} can't be empty")
-    for row in matrix:
-        if len(row) == 0:
-            raise ValueError(f"{name} can't be empty")
-    # 4: Check for types of elements in the row
-    err_msg = f"{name} should contain only integers or floats"
-    for row in matrix:
-        for x in row:
-            if type(x) not in [int, float]:
-                raise TypeError(err_msg)
-    # 5: Check for size of rows
-    err_msg = f"each row of {name} must be of the same size"
-    total_row_size = 0
-    for row in matrix:
-        row_size = len(row)
-        total_row_size += row_size
-        if row_size != 0 and total_row_size % row_size != 0:
-            raise TypeError(err_msg)
+    # 5: Check for multiplication compatibility
+    if w_a != h_b:
+        raise ValueError(err_msg1 + err_msg2)
 
-
-def check_mul_compatibility(m_a, m_b):
-    """Checks it 2 matrices are compatible for multiplication."""
-    col_a = len(m_a[0])
-    row_b = len(m_b)
-    if col_a != row_b:
-        raise ValueError("m_a and m_b can't be multiplied")
+    # 6: Return dot product
+    return np.dot(m_a, m_b)
