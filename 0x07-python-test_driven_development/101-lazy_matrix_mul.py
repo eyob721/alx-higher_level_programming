@@ -28,8 +28,8 @@ def lazy_matrix_mul(m_a, m_b):
     w_a = 0 if h_a == 0 else len(m_a[0])
     h_b = len(m_b)
     w_b = 0 if h_b == 0 else len(m_b[0])
-    err_msg1 = f"shapes ({w_b:d}, {h_a:d}) and ({w_b:d}, {w_b:d}) not "
-    err_msg2 = f"aligned: {h_a:d} (dim {h_b:d}) != {w_b:d} (dim {h_a:d})"
+    err_msg1 = f"shapes ({h_a:d},{w_a:d}) and ({h_b:d},{w_b:d}) not "
+    err_msg2 = f"aligned: {w_a:d} (dim 1) != {h_b:d} (dim 0)"
     if h_a == 0 or w_a == 0 or h_b == 0 or w_b == 0:
         raise ValueError(err_msg1 + err_msg2)
 
@@ -60,3 +60,15 @@ def lazy_matrix_mul(m_a, m_b):
 
     # 6: Return dot product
     return np.dot(m_a, m_b)
+
+
+if __name__ == "__main__":
+    try:
+        lazy_matrix_mul([[]], [[5, 6]])
+    except Exception as e:
+        print(e)
+    try:
+        print(np.dot([[]], [[5, 6]]))
+    except Exception as e:
+        print(e)
+        print(type(e))

@@ -65,10 +65,10 @@ ValueError: Scalar operands are not allowed, use '*' instead
 
 Case of either of the matrices being empty
 ------------------------------------------
->>> lazy_matrix_mul([], [[5, 6]])
+>>> lazy_matrix_mul([[]], [[5, 6]])
 Traceback (most recent call last):
 ...
-ValueError: shapes (2, 0) and (2, 2) not aligned: 0 (dim 1) != 2 (dim 0)
+ValueError: shapes (1,0) and (1,2) not aligned: 0 (dim 1) != 1 (dim 0)
 
 >>> lazy_matrix_mul([[1, 2], []], [[5, 6]])
 Traceback (most recent call last):
@@ -78,7 +78,7 @@ ValueError: setting an array element with a sequence.
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
 Traceback (most recent call last):
 ...
-ValueError: shapes (0, 2) and (0, 0) not aligned: 2 (dim 0) != 0 (dim 2)
+ValueError: shapes (2,2) and (0,0) not aligned: 2 (dim 1) != 0 (dim 0)
 
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], []])
 Traceback (most recent call last):
@@ -114,4 +114,4 @@ Case incompatible matrices for multiplication
 >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 7]], [[5, 6], [10, 12]])
 Traceback (most recent call last):
 ...
-ValueError: shapes (2, 2) and (2, 2) not aligned: 2 (dim 2) != 2 (dim 2)
+ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
