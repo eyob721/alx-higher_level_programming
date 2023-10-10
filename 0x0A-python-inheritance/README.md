@@ -64,3 +64,10 @@
 
 - A module based on `10-square`.
 - It adds a string representation (`__str__`) of the `Square` class.
+
+## Advanced
+
+[100-my_int.py](./100-my_int.py)
+
+- A module containing a class `MyInt` that inherits for `int` built in class and
+  invertes the operaions of `==` and `!=`.
