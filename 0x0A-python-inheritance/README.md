@@ -54,3 +54,8 @@
 - A module based on `8-rectangle`.
 - It adds an `area` implementation and defines the string representation
   (`__str__`) of the `Rectangle` class.
+
+[10-square.py](./10-square.py)
+
+- A module containing a class `Square` that inherits from `Rectangle` class
+  defined in the `9-rectangle` module.
