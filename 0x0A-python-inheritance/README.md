@@ -43,3 +43,8 @@
 - A module based on `6-base_geometry`.
 - It adds a public instance method `integer_validator` that validates the value
   of an integer.
+
+[8-rectangle.py](./8-rectangle.py)
+
+- A module containing a class `Rectangle` that inherits from `BaseGeometry`
+  class defined in the `7-base_geometry` module.
