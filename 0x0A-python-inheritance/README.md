@@ -6,8 +6,14 @@
 
 - A function that returns list of attributes and methods of an object.
 
-[1-my_list.py](./1-my_list.py)
+[1-my_list.py](./1-my_list.py)<br>
+`testfile:` [tests/1-my_list.txt](./tests/1-my_list.txt)
 
 - A module containing a class that inherits from the built in class `list` and
   has its own public instance method that prints the list in sorted ascending
   order.
+
+[2-is_same_class.py](./2-is_same_class.py)
+
+- A module containing a function that returns True if an object is exactly
+  an instance of a class.
