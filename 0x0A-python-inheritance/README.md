@@ -17,3 +17,8 @@
 
 - A module containing a function that returns True if an object is exactly
   an instance of a class.
+
+[3-is_kind_of_class.py](./3-is_kind_of_class.py)
+
+- A module containing a function that returns True if an object is a
+  subclass of a class.
