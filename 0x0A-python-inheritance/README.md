@@ -59,3 +59,8 @@
 
 - A module containing a class `Square` that inherits from `Rectangle` class
   defined in the `9-rectangle` module.
+
+[11-square.py](./11-square.py)
+
+- A module based on `10-square`.
+- It adds a string representation (`__str__`) of the `Square` class.
