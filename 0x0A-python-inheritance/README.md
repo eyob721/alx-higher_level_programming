@@ -48,3 +48,9 @@
 
 - A module containing a class `Rectangle` that inherits from `BaseGeometry`
   class defined in the `7-base_geometry` module.
+
+[9-rectangle.py](./9-rectangle.py)
+
+- A module based on `8-rectangle`.
+- It adds an `area` implementation and defines the string representation
+  (`__str__`) of the `Rectangle` class.
