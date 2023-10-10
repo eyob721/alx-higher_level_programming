@@ -71,3 +71,8 @@
 
 - A module containing a class `MyInt` that inherits for `int` built in class and
   invertes the operaions of `==` and `!=`.
+
+[101-add_attribute.py](./101-add_attribute.py)
+
+- A module containing a function that adds an attribute to an object, it it's
+  possible.
