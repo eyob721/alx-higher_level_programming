@@ -27,3 +27,7 @@
 
 - A module containing a function that returns True if an object is an instance
   of a class that directly or indirectly inherited from a specified class.
+
+[5-base_geometry.py](./5-base_geometry.py)
+
+- A module containing an empty class of `BaseGeometry`.
