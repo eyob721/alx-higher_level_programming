@@ -36,3 +36,10 @@
 
 - A module based on `5-base_geometry`.
 - It adds a public instance method `area`.
+
+[7-base_geometry.py](./7-base_geometry.py)<br>
+`testfile:` [tests/7-base_geometry.txt](./tests/7-base_geometry.txt)
+
+- A module based on `6-base_geometry`.
+- It adds a public instance method `integer_validator` that validates the value
+  of an integer.
