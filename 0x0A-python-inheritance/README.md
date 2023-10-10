@@ -31,3 +31,8 @@
 [5-base_geometry.py](./5-base_geometry.py)
 
 - A module containing an empty class of `BaseGeometry`.
+
+[6-base_geometry.py](./6-base_geometry.py)
+
+- A module based on `5-base_geometry`.
+- It adds a public instance method `area`.
