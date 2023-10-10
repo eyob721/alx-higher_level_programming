@@ -22,3 +22,8 @@
 
 - A module containing a function that returns True if an object is a
   subclass of a class.
+
+[4-inherits_from.py](./4-inherits_from.py)
+
+- A module containing a function that returns True if an object is an instance
+  of a class that directly or indirectly inherited from a specified class.
