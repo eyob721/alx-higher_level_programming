@@ -51,4 +51,10 @@
 
 [10-student.py](./10-student.py)
 
-- A module based on `10-student` that adds a filter to the `to_json` method.
+- A module based on `9-student` that adds a filter to the `to_json` method.
+
+[11-student.py](./11-student.py)
+
+- A module based on `10-student` that adds a method `reload_from_json` which
+  replaces all attributes of the Student instance, given a dictionary of
+  attributes.
