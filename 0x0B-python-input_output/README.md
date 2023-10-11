@@ -15,3 +15,7 @@
 
 - A function that appends a text to a file in `utf-8` encoding.
 - The function creates the file, if the file doesn't exist.
+
+[3-to_json_string.py](./3-to_json_string.py)
+
+- A function that returns the JSON representation of an object, in string.
