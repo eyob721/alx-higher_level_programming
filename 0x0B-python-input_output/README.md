@@ -18,8 +18,12 @@
 
 [3-to_json_string.py](./3-to_json_string.py)
 
-- A function that returns the JSON representation of an object, in string.
+- A function that returns the JSON string representation of an object.
 
 [4-from_json_string.py](./4-from_json_string.py)
 
-- A function that returns an object from a JSON string.
+- A function that returns an object from a JSON string representation.
+
+[5-save_to_json_file.py](./5-save_to_json_file.py)
+
+- A function that writes the JSON string representation of an object to a file.
