@@ -31,3 +31,10 @@
 [6-load_from_json_file.py](./6-load_from_json_file.py)
 
 - A function that returns a Python object from a JSON string stored in a file.
+
+[7-add_item.py](./7-add_item.py)
+
+- A script that adds all its arguments to a Python list and saves them to a json
+  file.
+- The script must use `save_to_json_file` and `load_from_json_file` functions
+  from files `5-save_to_json_file.py` and `6-load_from_json_file.py`.
