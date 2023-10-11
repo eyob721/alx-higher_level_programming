@@ -48,3 +48,7 @@
 - A class definition of `Student` that contains `first_name`, `last_name`, and
   `age` public instance attributes as well as a `to_json` publci instance method
   that returns the dictionary description of it self.
+
+[10-student.py](./10-student.py)
+
+- A module based on `10-student` that adds a filter to the `to_json` method.
