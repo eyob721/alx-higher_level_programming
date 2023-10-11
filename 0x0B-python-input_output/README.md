@@ -19,3 +19,7 @@
 [3-to_json_string.py](./3-to_json_string.py)
 
 - A function that returns the JSON representation of an object, in string.
+
+[4-from_json_string.py](./4-from_json_string.py)
+
+- A function that returns an object from a JSON string.
