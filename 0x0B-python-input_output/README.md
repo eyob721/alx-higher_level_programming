@@ -42,3 +42,9 @@
 [8-class_to_json.py](./8-class_to_json.py)
 
 - A function that returns the dictionary description of an object.
+
+[9-student.py](./9-student.py)
+
+- A class definition of `Student` that contains `first_name`, `last_name`, and
+  `age` public instance attributes as well as a `to_json` publci instance method
+  that returns the dictionary description of it self.
