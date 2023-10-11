@@ -38,3 +38,7 @@
   file.
 - The script must use `save_to_json_file` and `load_from_json_file` functions
   from files `5-save_to_json_file.py` and `6-load_from_json_file.py`.
+
+[8-class_to_json.py](./8-class_to_json.py)
+
+- A function that returns the dictionary description of an object.
