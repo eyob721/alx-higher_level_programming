@@ -27,3 +27,7 @@
 [5-save_to_json_file.py](./5-save_to_json_file.py)
 
 - A function that writes the JSON string representation of an object to a file.
+
+[6-load_from_json_file.py](./6-load_from_json_file.py)
+
+- A function that returns a Python object from a JSON string stored in a file.
