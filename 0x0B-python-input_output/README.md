@@ -63,3 +63,11 @@
 
 - A function that returns list of lists of integers representing the Pascal's
   triangle.
+
+
+## Advanced
+
+[100-append_after.py](./100-append_after.py)
+
+- A functoin that inserts a line of text to a file after each line containing
+  a specific string.
