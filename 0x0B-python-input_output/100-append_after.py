@@ -8,8 +8,13 @@ def append_after(filename="", search_string="", new_string=""):
     """
     with open(filename, "r+", encoding="utf-8") as file:
         lines_list = file.readlines()
+        if new_string[-1] != '\n':
+            new_string += '\n'
         for i, line in enumerate(lines_list):
             if line.find(search_string) != -1:
+                if line[-1] != '\n':
+                    line += '\n'
                 lines_list[i] = line + new_string
         file.truncate(0)
+        file.seek(0)
         file.writelines(lines_list)
