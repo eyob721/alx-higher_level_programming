@@ -27,20 +27,36 @@ def print_status():
             print(f"{code}: {code_counts[code]:d}")
 
 
-def is_correct_format(line):
-    """Checks the format of a line."""
-
-
-try:
-    for line in sys.stdin:
-        line_count += 1
+def get_file_size(line):
+    """Checks the file size from the line."""
+    try:
         file_size = int(line.rsplit(' ', 1)[-1].rstrip(('\n')))
+    except Exception:
+        return 0
+    return file_size
+
+
+def get_status_code(line):
+    try:
         code = line.rsplit(' ', 2)[-2]
-        total_size += file_size
-        code_counts[code] += 1
-        if line_count % 10 == 0:
+    except Exception:
+        return None
+    if code not in code_counts:
+        return None
+    return code
+
+
+if __name__ == "__main__":
+    try:
+        for line in sys.stdin:
+            line_count += 1
+            file_size = get_file_size(line)
+            total_size += file_size
+            code = get_status_code(line)
+            if code is not None:
+                code_counts[code] += 1
+            if line_count % 10 == 0:
+                print_status()
+    finally:
+        if line_count == 0 or line_count % 10 != 0:
             print_status()
-            line_count = 0
-finally:
-    if line_count == 0 or line_count % 10 != 0:
-        print_status()
