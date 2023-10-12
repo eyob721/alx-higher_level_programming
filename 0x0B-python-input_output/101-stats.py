@@ -29,10 +29,20 @@ def initialize_counts():
 def print_status():
     print(f"File size: {total_size:d}")
     for code in code_counts:
-        print(f"{code:d}: {code_counts[code]:d}")
+        if code_counts[code] != 0:
+            print(f"{code}: {code_counts[code]:d}")
 
 
-for line in sys.stdin:
-    file_size = line.rsplit(' ', 1)[-1].rstrip(('\n'))
-    code = line.rsplit(' ', 2)[-2]
-    print("code: {} size: {}".format(code, file_size))
+try:
+    for line in sys.stdin:
+        line_count += 1
+        file_size = int(line.rsplit(' ', 1)[-1].rstrip(('\n')))
+        code = line.rsplit(' ', 2)[-2]
+        total_size += file_size
+        code_counts[code] += 1
+        if line_count == 10:
+            print_status()
+            initialize_counts()
+            line_count = 0
+except KeyboardInterrupt:
+    print_status()
