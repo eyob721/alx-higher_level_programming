@@ -20,17 +20,15 @@ line_count = 0
 total_size = 0
 
 
-def initialize_counts():
-    """Intializes the status code counts to 0"""
-    for code in code_counts:
-        code_counts[code] = 0
-
-
 def print_status():
     print(f"File size: {total_size:d}")
     for code in code_counts:
         if code_counts[code] != 0:
             print(f"{code}: {code_counts[code]:d}")
+
+
+def is_correct_format(line):
+    """Checks the format of a line."""
 
 
 try:
@@ -40,10 +38,9 @@ try:
         code = line.rsplit(' ', 2)[-2]
         total_size += file_size
         code_counts[code] += 1
-        if line_count == 10:
+        if line_count % 10 == 0:
             print_status()
-            initialize_counts()
             line_count = 0
 finally:
-    if (line_count != 0):
+    if line_count == 0 or line_count % 10 != 0:
         print_status()
