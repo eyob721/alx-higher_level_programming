@@ -58,3 +58,8 @@
 - A module based on `10-student` that adds a method `reload_from_json` which
   replaces all attributes of the Student instance, given a dictionary of
   attributes.
+
+[12-pascal_triangle.py](./12-pascal_triangle.py)
+
+- A function that returns list of lists of integers representing the Pascal's
+  triangle.
