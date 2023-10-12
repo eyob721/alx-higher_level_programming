@@ -44,5 +44,6 @@ try:
             print_status()
             initialize_counts()
             line_count = 0
-except KeyboardInterrupt:
-    print_status()
+finally:
+    if (line_count != 0):
+        print_status()
