@@ -74,3 +74,5 @@
 [101-stats](./101-stats.py)
 
 - A script that reads `stdin` line by line and computes metrics.
+- Every 10 lines or a Keyboard interupt signal (`CTRL + C`) is sent it prints
+  the current log status.
