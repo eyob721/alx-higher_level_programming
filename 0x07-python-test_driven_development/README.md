@@ -51,3 +51,14 @@ directory. The functions in each task are executed with this command:
 
 - A module containing a function that multiplies two matrices, using the
  `NumPy` module.
+
+[102-python.c](./102-python.c)
+
+- Contains a C function that prints some basic info about a Python string object.
+- NOTE: The file must be compiled with the following command:
+     `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared
+     -Wl,-soname,libPython.so -o libPython.so -fPIC
+     -I/usr/include/python3.4 102-python.c`
+- You can replace the `/usr/include/python3.4` part of the command with what
+  ever version of python you are using, for example if you have python3.8 use
+  `/usr/include/python3.8`.
