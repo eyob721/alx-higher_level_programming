@@ -123,3 +123,15 @@
  13     >>  103 LOAD_FAST                2 (result)
     106 RETURN_VALUE
 ```
+
+[103-python.c](./103-python.c)
+
+- Contains three C functions that print some basic info about a Python list
+  object, a Python bytes object and a Python float object.
+- NOTE: The file must be compiled with the following command:
+     `gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared
+     -Wl,-soname,libPython.so -o libPython.so -fPIC
+     -I/usr/include/python3.4 103-python.c`
+- You can replace the `/usr/include/python3.4` part of the command with what
+  ever version of python you are using, for example if you have python3.8 use
+  `/usr/include/python3.8`.
