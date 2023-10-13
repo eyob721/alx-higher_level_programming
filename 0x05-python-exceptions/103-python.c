@@ -1,6 +1,7 @@
 #include "Python.h"
 #include <stdio.h>
 #include <string.h>
+#include <float.h>
 
 #define MAX_ASCII_HEX_SIZE 2
 void ascii_hex(unsigned char ascii_char, char *buf);
@@ -97,8 +98,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	PyFloatObject *f = (PyFloatObject *)p;
-	char val_buf[100] = {0};
-	char *obj_type, *null_ptr;
+	char *obj_type, *val_str;
 
 	printf("[.] float object info\n");
 	/* Check if the objects is a bytes object */
@@ -109,20 +109,10 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	/**
-	 * Use a character buffer to easily check for decimal places.
-	 * Write float value to buffer.
-	 */
-	sprintf(val_buf, "%.16g", f->ob_fval);
-
-	/* Check for decimal, if there is none add one */
-	if (strchr(val_buf, '.') == NULL)
-	{
-		null_ptr = strchr(val_buf, '\0');
-		strcpy(null_ptr, ".0");
-	}
-	printf("  value: %s\n", val_buf);
+	val_str = PyOS_double_to_string(f->ob_fval, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+	printf("  value: %s\n", val_str);
 	fflush(stdout);
+	PyMem_Free(val_str);
 }
 
 /* ------------------------------------------------------------------------- */
