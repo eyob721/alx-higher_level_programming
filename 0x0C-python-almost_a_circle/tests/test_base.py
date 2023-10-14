@@ -8,7 +8,7 @@ class TestBaseClass(unittest.TestCase):
     """Tests for Base class."""
 
     def test_id(self):
-        """Test value of `id` attribute"""
+        """Test value of id of Base Class"""
         b1 = Base()
         b2 = Base()
         b3 = Base()

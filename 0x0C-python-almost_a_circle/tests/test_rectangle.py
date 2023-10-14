@@ -6,16 +6,102 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """Tests for Rectangle class."""
+    def setUp(self):
+        # Create Rectangle objects for normal test cases
+        self.r1 = Rectangle(10, 2)
+        self.r2 = Rectangle(2, 10, 3, 3, 7)
 
-    def test_id(self):
-        """Test for id of Rectangles
-        Note:
-            Previous Base class test has set the value of `__nb_objects` to 4.
-            So new objects of Rectangle class will have ids starting from 5,
-            if id is None.
-        """
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 5)
+    def test_width_normal(self):
+        """Test width of rectangle for normal cases"""
+        self.assertEqual(self.r1.width, 10)
+        self.assertEqual(self.r2.width, 2)
 
-        r2 = Rectangle(2, 10, 1, 1, 7)
-        self.assertEqual(r2.id, 7)
+    def test_width_edges(self):
+        """Test width of rectangle for edge cases"""
+
+        # Check for type errors
+        self.assertRaisesRegex(TypeError, "width must be an integer",
+                               Rectangle, "10", 3)
+        self.assertRaisesRegex(TypeError, "width must be an integer",
+                               Rectangle, 10.5, 3)
+
+        # Check for value errors
+        self.assertRaisesRegex(ValueError, "width must be > 0",
+                               Rectangle, -1, 3)
+        self.assertRaisesRegex(ValueError, "width must be > 0",
+                               Rectangle, 0, 3)
+
+        # Check that width attribute's error is raised first before `height`,
+        # `x` or `y`
+        self.assertRaisesRegex(TypeError, "width must be an integer",
+                               Rectangle, True, '10', '10', '10')
+        self.assertRaisesRegex(ValueError, "width must be > 0",
+                               Rectangle, -1, 0, -1, -1)
+
+    def test_height_normal(self):
+        """Test height of rectangle for normal cases"""
+        self.assertEqual(self.r1.height, 2)
+        self.assertEqual(self.r2.height, 10)
+
+    def test_height_edges(self):
+        """Test height of rectangle for edge cases"""
+
+        # Check for type errors
+        self.assertRaisesRegex(TypeError, "height must be an integer",
+                               Rectangle, 3, "10")
+        self.assertRaisesRegex(TypeError, "height must be an integer",
+                               Rectangle, 3, 10.5)
+
+        # Check for value errors
+        self.assertRaisesRegex(ValueError, "height must be > 0",
+                               Rectangle, 3, -1)
+        self.assertRaisesRegex(ValueError, "height must be > 0",
+                               Rectangle, 3, 0)
+
+        # Check that height attribute's error is raised first before `x` or `y`
+        self.assertRaisesRegex(TypeError, "height must be an integer",
+                               Rectangle, 3, True, '10', '10')
+        self.assertRaisesRegex(ValueError, "height must be > 0",
+                               Rectangle, 3, 0, -1, -1)
+
+    def test_x_normal(self):
+        """Test x position of rectangle for normal cases"""
+        self.assertEqual(self.r1.x, 0)
+        self.assertEqual(self.r2.x, 3)
+
+    def test_x_edges(self):
+        """Test x position of rectangle for edge cases"""
+
+        # Check for type errors
+        self.assertRaisesRegex(TypeError, "x must be an integer",
+                               Rectangle, 5, 7, "10", 3)
+        self.assertRaisesRegex(TypeError, "x must be an integer",
+                               Rectangle, 5, 7, 10.5, 3)
+
+        # Check for value errors
+        self.assertRaisesRegex(ValueError, "x must be >= 0",
+                               Rectangle, 5, 7, -1, 3)
+
+        # Check that x attribute's error is raised first before `y`
+        self.assertRaisesRegex(TypeError, "x must be an integer",
+                               Rectangle, 5, 7, '10', '10')
+        self.assertRaisesRegex(ValueError, "x must be >= 0",
+                               Rectangle, 5, 7, -1, -1)
+
+    def test_y_normal(self):
+        """Test y position of rectangle for normal cases"""
+        self.assertEqual(self.r1.y, 0)
+        self.assertEqual(self.r2.y, 3)
+
+    def test_y_edges(self):
+        """Test y position of rectangle for edge cases"""
+
+        # Check for type errors
+        self.assertRaisesRegex(TypeError, "y must be an integer",
+                               Rectangle, 5, 7, 3, "10")
+        self.assertRaisesRegex(TypeError, "y must be an integer",
+                               Rectangle, 5, 7, 3, 10.5)
+
+        # Check for value errors
+        self.assertRaisesRegex(ValueError, "y must be >= 0",
+                               Rectangle, 5, 7, 3, -1)

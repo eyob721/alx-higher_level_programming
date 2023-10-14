@@ -50,3 +50,10 @@ In this project we review everything we have learned on Python. Things like:
 - Rectangle contains the private instance attributes `width`, `height`, `x` and
   `y`.
 
+### Task 3
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- Add validation for all setters of the private instance attributes `width`,
+  `height`, `x` and `y`.
