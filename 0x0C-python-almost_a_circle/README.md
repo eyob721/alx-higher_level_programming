@@ -1,7 +1,8 @@
 # 0x0C. Python - Almost a circle
 
 In this project we review everything we have learned on Python. Things like:
-- Import
+
+- import
 - Exceptions
 - Class
 - Private attribute
@@ -10,7 +11,7 @@ In this project we review everything we have learned on Python. Things like:
 - Static method
 - Inheritance
 - Unittest
-- Read/Write file
+- File read/write
 - args and kwargs
 - Serialization/Deserialization
 - JSON
@@ -18,12 +19,14 @@ In this project we review everything we have learned on Python. Things like:
 ## Mandatory
 
 ### Task 0
+
 [tests/](./tests)
 
 - Prepare a `tests` directory for test files.
 - Add `__init__.py` to make it a Python package and importable.
 
 ### Task 1
+
 [models/__init__.py](./models/__init__.py)<br>
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
@@ -36,3 +39,14 @@ In this project we review everything we have learned on Python. Things like:
 - This class will be the base of all other classes in this project.
 - The goal is to manage the `id` attribute in all future classes and avoid code
   duplication.
+
+### Task 2
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- `models/rectangle.py` is a module that contains a class `Rectangle` which
+  inherits from `Base`.
+- Rectangle contains the private instance attributes `width`, `height`, `x` and
+  `y`.
+
