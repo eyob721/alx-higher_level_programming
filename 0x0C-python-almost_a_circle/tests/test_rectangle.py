@@ -119,8 +119,8 @@ class TestRectangle(unittest.TestCase):
         self.assertMultiLineEqual(Rectangle(10, 20).__str__(),
                                   "[Rectangle] (12) 0/0 - 10/20")
 
-    def test_rectangle_update(self):
-        """Test the update method of the Rectangle"""
+    def test_rectangle_update_args(self):
+        """Test the update method of the Rectangle, with *args"""
         r = Rectangle(10, 10, 10, 10, 10)
         r.update(89)
         self.assertMultiLineEqual(r.__str__(),
@@ -137,7 +137,30 @@ class TestRectangle(unittest.TestCase):
         r.update(89, 2, 3, 4, 5)
         self.assertMultiLineEqual(r.__str__(),
                                   "[Rectangle] (89) 4/5 - 2/3")
-        # Check for longer length of arguments
+        # Check for large number of arguments
         r.update(16, 5, 7, 10, 3, 21, 44, 71, 0)
         self.assertMultiLineEqual(r.__str__(),
                                   "[Rectangle] (16) 10/3 - 5/7")
+
+    def test_rectangle_update_kwargs(self):
+        """Test the update method of the Rectangle, with **kwargs"""
+        r = Rectangle(10, 10, 10, 10, 10)
+        r.update(height=1)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (10) 10/10 - 10/1")
+        r.update(width=5, y=3, x=2)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (10) 2/3 - 5/1")
+        r.update(x=7, id=18)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (18) 7/3 - 5/1")
+
+    def test_rectangle_update_args_and_kwargs(self):
+        """Test the update method of the Rectangle, with *args and **kwargs"""
+        r = Rectangle(10, 10, 10, 10, 10)
+        r.update(20, height=1, width=7, x=3, y=9)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (20) 10/10 - 10/10")
+        r.update(20, 5, 3, y=1, x=1)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (20) 10/10 - 5/3")

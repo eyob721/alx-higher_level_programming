@@ -95,3 +95,11 @@ In this project we review everything we have learned on Python. Things like:
 
 - Add a public instance method `update()` that updates the value of the
   attributes of the Rectangle object.
+
+### Task 9
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- Update the `update()` method to hold keyword variable arguments as well, in
+  addition to the positional variable arguments.

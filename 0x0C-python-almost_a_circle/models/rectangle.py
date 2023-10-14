@@ -70,6 +70,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        """Displays the Rectangle on stdout using `#` characters."""
         rectangle = '\n' * self.y
         rectangle += ((' ' * self.x + '#' * self.width + '\n') * self.height)
         print(rectangle.rstrip('\n'))
@@ -80,8 +81,10 @@ class Rectangle(Base):
             f" - {self.width:d}/{self.height:d}"
         return r
 
-    def update(self, *args):
-        """Updates the Rectangle's attributes"""
+    def update(self, *args, **kwargs):
+        """Updates the Rectangle's attributes.
+        If `*args` is given, `**kwargs` is skipped
+        """
         attr = ['id', 'width', 'height', 'x', 'y']
         no_of_args = 0
         for arg in args:
@@ -89,3 +92,6 @@ class Rectangle(Base):
             no_of_args += 1
             if no_of_args == 5:
                 break
+        if not args:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
