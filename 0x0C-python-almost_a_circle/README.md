@@ -81,3 +81,9 @@ In this project we review everything we have learned on Python. Things like:
 - Add a public instance method `__str__()` to override the string representation
   of the rectangle object.
 
+### Task 7
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- Update the `display()` method to adjust for `x` and `y` position when printing.
