@@ -65,3 +65,12 @@ In this project we review everything we have learned on Python. Things like:
 
 - For the `Rectangle` class, add a public instance method `area` that returns
   the area of the rectangle.
+
+### Task 5
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- For the `Rectangle` class, add a public instance method `display` that prints
+  the rectangle to stdout using the `#` character.
+
