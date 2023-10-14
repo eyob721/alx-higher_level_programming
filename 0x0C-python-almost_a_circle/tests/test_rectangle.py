@@ -111,3 +111,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(3, 5).area(), 15)
         self.assertEqual(Rectangle(41, 10).area(), 410)
         self.assertEqual(Rectangle(40210, 350).area(), 14_073_500)
+
+    def test_rectangle_str(self):
+        """Test the string representation of the rectangle (i.e. __str__())"""
+        self.assertMultiLineEqual(Rectangle(4, 6, 2, 1, 44).__str__(),
+                                  "[Rectangle] (44) 2/1 - 4/6")
+        self.assertMultiLineEqual(Rectangle(10, 20).__str__(),
+                                  "[Rectangle] (12) 0/0 - 10/20")

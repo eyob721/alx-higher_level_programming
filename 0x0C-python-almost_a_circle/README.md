@@ -55,22 +55,29 @@ In this project we review everything we have learned on Python. Things like:
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- For the `Rectangle` class, add validation for all setters of the private
-  instance attributes `width`, `height`, `x` and `y`.
+- Add validation for all setters of the private instance attributes `width`, 
+  `height`, `x` and `y`.
 
 ### Task 4
 
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- For the `Rectangle` class, add a public instance method `area` that returns
-  the area of the rectangle.
+- Add a public instance method `area()` that returns the area of the rectangle.
 
 ### Task 5
 
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- For the `Rectangle` class, add a public instance method `display` that prints
-  the rectangle to stdout using the `#` character.
+- Add a public instance method `display()` that prints the rectangle to stdout
+  using the `#` character.
+
+### Task 6
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- Add a public instance method `__str__()` to override the string representation
+  of the rectangle object.
 
