@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+"""This module contains the Base class."""
+
+
+class Base:
+    """Base class definition.
+    This class will be the base of all other classes in the project.
+
+    Attributes:
+        id (int): Id the object.
+    """
+
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """Constructor of the Base class
+
+        Note:
+            Type of id is not checked, it is assumed to be an integer.
+
+        """
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
