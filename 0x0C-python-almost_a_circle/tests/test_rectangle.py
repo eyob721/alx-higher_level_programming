@@ -118,3 +118,26 @@ class TestRectangle(unittest.TestCase):
                                   "[Rectangle] (44) 2/1 - 4/6")
         self.assertMultiLineEqual(Rectangle(10, 20).__str__(),
                                   "[Rectangle] (12) 0/0 - 10/20")
+
+    def test_rectangle_update(self):
+        """Test the update method of the Rectangle"""
+        r = Rectangle(10, 10, 10, 10, 10)
+        r.update(89)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (89) 10/10 - 10/10")
+        r.update(89, 2)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (89) 10/10 - 2/10")
+        r.update(89, 2, 3)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (89) 10/10 - 2/3")
+        r.update(89, 2, 3, 4)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (89) 4/10 - 2/3")
+        r.update(89, 2, 3, 4, 5)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (89) 4/5 - 2/3")
+        # Check for longer length of arguments
+        r.update(16, 5, 7, 10, 3, 21, 44, 71, 0)
+        self.assertMultiLineEqual(r.__str__(),
+                                  "[Rectangle] (16) 10/3 - 5/7")

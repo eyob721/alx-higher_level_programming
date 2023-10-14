@@ -87,3 +87,11 @@ In this project we review everything we have learned on Python. Things like:
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
 - Update the `display()` method to adjust for `x` and `y` position when printing.
+
+### Task 8
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- Add a public instance method `update()` that updates the value of the
+  attributes of the Rectangle object.
