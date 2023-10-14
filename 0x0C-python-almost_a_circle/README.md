@@ -55,5 +55,13 @@ In this project we review everything we have learned on Python. Things like:
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Add validation for all setters of the private instance attributes `width`,
-  `height`, `x` and `y`.
+- For the `Rectangle` class, add validation for all setters of the private
+  instance attributes `width`, `height`, `x` and `y`.
+
+### Task 4
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- For the `Rectangle` class, add a public instance method `area` that returns
+  the area of the rectangle.
