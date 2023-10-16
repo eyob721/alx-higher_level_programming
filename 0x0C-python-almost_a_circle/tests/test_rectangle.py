@@ -166,7 +166,7 @@ class TestRectangle(unittest.TestCase):
                                   "[Rectangle] (20) 10/10 - 5/3")
 
     def test_rectangle_dictionary(self):
-        """Test the dictionary method of the Rectangle class"""
+        """Test the dictionary representation of the Rectangle object"""
         r = Rectangle(3, 5, id=4)
         self.assertEqual(r.to_dictionary(),
                          {'width': 3, 'height': 5, 'x': 0, 'y': 0, 'id': 4})
