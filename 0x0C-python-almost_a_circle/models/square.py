@@ -4,7 +4,12 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Class definition of a Square"""
+    """Class definition of a Square
+
+    Attributes:
+        size: Size of the Square
+
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         self.size = size
@@ -12,6 +17,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """Size of the Square"""
         return self.width
 
     @size.setter
@@ -43,6 +49,7 @@ class Square(Rectangle):
                     setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
+        """Returns the dictionary representation of the Square"""
         sqr_attr = ['id', 'size', 'x', 'y']
         sqr_dict = {key: getattr(self, key) for key in sqr_attr}
         return sqr_dict

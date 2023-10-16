@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Test module for Square class."""
 import unittest
+from io import StringIO
+from unittest.mock import patch
 from models.square import Square
 
 
@@ -90,6 +92,22 @@ class TestSquare(unittest.TestCase):
         """Test the string representation of the square (i.e. __str__())"""
         self.assertMultiLineEqual(Square(4, 2, 1, 44).__str__(),
                                   "[Square] (44) 2/1 - 4")
+
+    def test_square_display(self):
+        """Test the square display method"""
+        rec = Square(3)
+        with patch('sys.stdout', new=StringIO()) as output:
+            expected = """###\n###\n###\n"""
+            rec.display()
+            got = output.getvalue()
+            self.assertEqual(got, expected)
+
+        rec = Square(5, 1, 1)
+        with patch('sys.stdout', new=StringIO()) as output:
+            expected = "\n #####\n #####\n #####\n #####\n #####\n"
+            rec.display()
+            got = output.getvalue()
+            self.assertEqual(got, expected)
 
     def test_square_update_args(self):
         """Test the update method of the Square, with *args"""
