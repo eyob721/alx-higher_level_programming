@@ -3,7 +3,7 @@
 
 
 class Base:
-    """Base class definition.
+    """Class definition of the Base.
     This class will be the base of all other classes in the project.
 
     Attributes:

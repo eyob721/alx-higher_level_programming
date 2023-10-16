@@ -103,3 +103,10 @@ In this project we review everything we have learned on Python. Things like:
 
 - Update the `update()` method to hold keyword variable arguments as well, in
   addition to the positional variable arguments.
+
+### Task 10
+
+[models/square.py](./models/square.py)<br>
+`test file:` [tests/test_square.py](./tests/test_square.py)
+
+- Write a class `Square` that inherits from `Rectangle`.
