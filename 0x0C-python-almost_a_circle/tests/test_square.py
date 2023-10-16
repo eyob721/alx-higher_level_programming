@@ -134,3 +134,12 @@ class TestSquare(unittest.TestCase):
         r.update(20, 5, 3, y=1, x=1)
         self.assertMultiLineEqual(r.__str__(),
                                   "[Square] (20) 3/10 - 5")
+
+    def test_square_dictionary(self):
+        """Test the dictionary representation of the Square object"""
+        r = Square(3, id=4)
+        self.assertEqual(r.to_dictionary(),
+                         {'size': 3, 'x': 0, 'y': 0, 'id': 4})
+        r.update(x=7, y=3)
+        self.assertEqual(r.to_dictionary(),
+                         {'size': 3, 'x': 7, 'y': 3, 'id': 4})

@@ -134,3 +134,11 @@ In this project we review everything we have learned on Python. Things like:
 - Add a public instance method `to_dictionary()` that returns the dictionary
   representation of the `Rectangle` object.
 
+### Task 13
+
+[models/square.py](./models/square.py)<br>
+`test file:` [tests/test_square.py](./tests/test_square.py)
+
+- Add a public instance method `to_dictionary()` that returns the dictionary
+  representation of the `Square` object.
+
