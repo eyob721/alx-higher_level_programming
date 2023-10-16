@@ -61,7 +61,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of a list of objects to a file
+        """Save the JSON string representation of a list of objects to a file
 
         Args:
             list_objs (list): List of objects that inherit from Base.
@@ -75,6 +75,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Load instances from a JSON file"""
         file_name = cls.__name__ + ".json"
         try:
             with open(file_name, "r", encoding="utf-8") as file:
@@ -92,7 +93,14 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        file_name = cls.__name__ + ".json"
+        """Save the JSON string representation of a list of objects to a file.
+           In CSV format.
+
+        Args:
+            list_objs (list): List of objects that inherit from Base.
+
+        """
+        file_name = cls.__name__ + ".csv"
         list_dictionaries = [obj.to_dictionary() for obj in list_objs]
         with open(file_name, "w", encoding="utf-8") as file:
             for d in list_dictionaries:
@@ -110,7 +118,8 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        file_name = cls.__name__ + ".json"
+        """Load instances from a CSV file"""
+        file_name = cls.__name__ + ".csv"
         try:
             with open(file_name, "r", encoding="utf-8") as file:
                 file_lines = file.readlines()

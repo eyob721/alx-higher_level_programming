@@ -219,3 +219,9 @@ class TestRectangle(unittest.TestCase):
             got = Rectangle.from_json_string(file.read().rstrip('\n'))
             exp = [rec1.to_dictionary(), rec2.to_dictionary()]
             self.assertEqual(got, exp)
+
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            got = Rectangle.from_json_string(file.read().rstrip('\n'))
+            exp = []
+            self.assertEqual(got, exp)
