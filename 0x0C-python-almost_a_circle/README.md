@@ -200,3 +200,11 @@ In this project we review everything we have learned on Python. Things like:
   that serializes and deserializes in CSV.
 - The methods have the same behaviors as the JSON serialization/deserialization
 
+### Task 21 
+
+[models/base.py](./models/base.py)<br>
+`test file:` [tests/test_base.py](./tests/test_base.py)
+
+- Add a static method `draw(list_rectangles, list_squares)` that opens a window
+  using the turtle graphics module and draws all the Rectangles and Squares in
+  the lists.
