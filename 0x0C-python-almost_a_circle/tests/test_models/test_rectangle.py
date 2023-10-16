@@ -240,3 +240,33 @@ class TestRectangle(unittest.TestCase):
         rec2_dict = rec2.to_dictionary()
         self.assertIsInstance(rec2, Rectangle)
         self.assertEqual(rec1_dict, rec2_dict)
+
+    def test_rectangle_load_from_file(self):
+        """Test loadings Rectangle instances from a file"""
+        rec1 = Rectangle(3, 5, id=4)
+        rec2 = Rectangle(16, 28, 1, 3, 70)
+        Rectangle.save_to_file([rec1, rec2])
+        list_objs = Rectangle.load_from_file()
+        self.assertEqual(len(list_objs), 2)
+        self.assertEqual(list_objs[0].to_dictionary(), rec1.to_dictionary())
+        self.assertEqual(list_objs[1].to_dictionary(), rec2.to_dictionary())
+
+    def test_rectangle_save_csv_file(self):
+        """Test saving the Rectangle to a CSV file"""
+        rec1 = Rectangle(3, 5, id=4)
+        rec2 = Rectangle(16, 28, 1, 3, 70)
+        Rectangle.save_to_file_csv([rec1, rec2])
+        list_objs = Rectangle.load_from_file_csv()
+        self.assertEqual(len(list_objs), 2)
+        self.assertEqual(list_objs[0].to_dictionary(), rec1.to_dictionary())
+        self.assertEqual(list_objs[1].to_dictionary(), rec2.to_dictionary())
+
+        Rectangle.save_to_file_csv([])
+        got = Rectangle.load_from_file_csv()
+        exp = []
+        self.assertEqual(got, exp)
+
+        Rectangle.save_to_file_csv(None)
+        got = Rectangle.load_from_file_csv()
+        exp = []
+        self.assertEqual(got, exp)

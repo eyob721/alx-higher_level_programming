@@ -201,3 +201,41 @@ class TestSquare(unittest.TestCase):
             got = Square.from_json_string(file.read().rstrip('\n'))
             exp = []
             self.assertEqual(got, exp)
+
+    def test_square_create(self):
+        """Test the create method of Square"""
+        sqr1 = Square(3, 5, id=4)
+        sqr1_dict = sqr1.to_dictionary()
+        sqr2 = sqr1.create(**sqr1_dict)
+        sqr2_dict = sqr2.to_dictionary()
+        self.assertIsInstance(sqr2, Square)
+        self.assertEqual(sqr1_dict, sqr2_dict)
+
+    def test_square_load_from_file(self):
+        """Test loadings Square instances from a file"""
+        sqr1 = Square(3, 5, id=4)
+        sqr2 = Square(16, 1, 3, 70)
+        Square.save_to_file([sqr1, sqr2])
+        list_objs = Square.load_from_file()
+        self.assertEqual(list_objs[0].to_dictionary(), sqr1.to_dictionary())
+        self.assertEqual(list_objs[1].to_dictionary(), sqr2.to_dictionary())
+
+    def test_square_save_csv_file(self):
+        """Test saving the Square to a CSV file"""
+        sqr1 = Square(3, 5, id=4)
+        sqr2 = Square(16, 1, 3, 70)
+        Square.save_to_file_csv([sqr1, sqr2])
+        list_objs = Square.load_from_file_csv()
+        self.assertEqual(len(list_objs), 2)
+        self.assertEqual(list_objs[0].to_dictionary(), sqr1.to_dictionary())
+        self.assertEqual(list_objs[1].to_dictionary(), sqr2.to_dictionary())
+
+        Square.save_to_file_csv([])
+        got = Square.load_from_file_csv()
+        exp = []
+        self.assertEqual(got, exp)
+
+        Square.save_to_file_csv(None)
+        got = Square.load_from_file_csv()
+        exp = []
+        self.assertEqual(got, exp)
