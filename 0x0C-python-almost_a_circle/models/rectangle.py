@@ -71,27 +71,28 @@ class Rectangle(Base):
 
     def display(self):
         """Displays the Rectangle on stdout using `#` character."""
-        rectangle = '\n' * self.y
-        rectangle += ((' ' * self.x + '#' * self.width + '\n') * self.height)
-        print(rectangle.rstrip('\n'))
+        rec_output = '\n' * self.y
+        rec_output += ((' ' * self.x + '#' * self.width + '\n') * self.height)
+        print(rec_output.rstrip('\n'))
 
     def __str__(self):
         """String representation of the Rectangle"""
-        rec = f"[Rectangle] ({self.id:d}) {self.x:d}/{self.y:d}" +\
+        rec_str = f"[Rectangle] ({self.id:d}) {self.x:d}/{self.y:d}" +\
             f" - {self.width:d}/{self.height:d}"
-        return rec
+        return rec_str
 
     def update(self, *args, **kwargs):
         """Updates the Rectangle's attributes.
         If `*args` is given, `**kwargs` is skipped
         """
-        attr = ['id', 'width', 'height', 'x', 'y']
-        no_of_args = 0
+        rec_attr = ['id', 'width', 'height', 'x', 'y']
+        i = 0
         for arg in args:
-            setattr(self, attr[no_of_args], arg)
-            no_of_args += 1
-            if no_of_args == 5:
+            setattr(self, rec_attr[i], arg)
+            i += 1
+            if i == 5:  # 5 == len(rec_attr)
                 break
         if not args:
             for key in kwargs:
-                setattr(self, key, kwargs[key])
+                if key in rec_attr:
+                    setattr(self, key, kwargs[key])
