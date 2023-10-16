@@ -21,7 +21,7 @@ class TestSquare(unittest.TestCase):
 
         # Check for type errors
         self.assertRaisesRegex(TypeError, "width must be an integer",
-                               Square, "10",)
+                               Square, "10")
         self.assertRaisesRegex(TypeError, "width must be an integer",
                                Square, 10.5)
 
