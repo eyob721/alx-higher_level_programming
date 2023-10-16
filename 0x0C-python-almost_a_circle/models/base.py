@@ -88,3 +88,41 @@ class Base:
         obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        file_name = cls.__name__ + ".json"
+        list_dictionaries = [obj.to_dictionary() for obj in list_objs]
+        with open(file_name, "w", encoding="utf-8") as file:
+            for d in list_dictionaries:
+                id = d['id']
+                x = d['x']
+                y = d['y']
+                if cls.__name__ == "Rectangle":
+                    width = d['width']
+                    height = d['height']
+                    csv_fmt = f"{id},{width},{height},{x},{y}\n"
+                else:
+                    size = d['size']
+                    csv_fmt = f"{id},{size},{x},{y}\n"
+                file.write(csv_fmt)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        file_name = cls.__name__ + ".json"
+        try:
+            with open(file_name, "r", encoding="utf-8") as file:
+                file_lines = file.readlines()
+        except FileNotFoundError:
+            file_lines = []
+        list_dictionaries = []
+        for line in file_lines:
+            obj_values = line.split(',')
+            if cls.__name__ == "Rectangle":
+                obj_keys = ['id', 'width', 'height', 'x', 'y']
+            else:
+                obj_keys = ['id', 'size', 'x', 'y']
+            obj_dict = {obj_keys[i]: int(obj_values[i])
+                        for i in range(len(obj_keys))}
+            list_dictionaries.append(obj_dict)
+        return [cls.create(**d) for d in list_dictionaries]

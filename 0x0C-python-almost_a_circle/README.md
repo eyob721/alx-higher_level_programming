@@ -180,7 +180,7 @@ In this project we review everything we have learned on Python. Things like:
   Rectangle or Square class, based on whichever class is calling the method,
   with all the attributes set from a given dictionary.
 
-### Task 18
+### Task 19
 
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
@@ -188,3 +188,15 @@ In this project we review everything we have learned on Python. Things like:
 - Add a class method `load_from_file(cls)` that returns list of instances.
 - The instances are of Rectangle or Square class.
 - The method must use `from_json_string` and `create` methods.
+
+## Advanced
+
+### Task 20 
+
+[models/base.py](./models/base.py)<br>
+`test file:` [tests/test_base.py](./tests/test_base.py)
+
+- Add the class methods `save_from_file_csv(cls)` and `load_from_file_csv(cls)`
+  that serializes and deserializes in CSV.
+- The methods have the same behaviors as the JSON serialization/deserialization
+
