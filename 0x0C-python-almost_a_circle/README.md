@@ -110,3 +110,10 @@ In this project we review everything we have learned on Python. Things like:
 `test file:` [tests/test_square.py](./tests/test_square.py)
 
 - Write a class `Square` that inherits from `Rectangle`.
+
+### Task 11
+
+[models/square.py](./models/square.py)<br>
+`test file:` [tests/test_square.py](./tests/test_square.py)
+
+- Add a public getter and setter for the `size` attribute of the `Square`.
