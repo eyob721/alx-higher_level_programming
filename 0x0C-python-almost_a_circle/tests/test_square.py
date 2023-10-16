@@ -13,8 +13,8 @@ class TestSquare(unittest.TestCase):
 
     def test_size_normal(self):
         """Test size of the square for normal cases"""
-        self.assertEqual(self.sqr1.size, 10)
-        self.assertEqual(self.sqr2.size, 2)
+        self.assertEqual(self.sqr1.size, 5)
+        self.assertEqual(self.sqr2.size, 10)
 
     def test_size_edges(self):
         """Test size of the square for edge cases"""
@@ -99,41 +99,38 @@ class TestSquare(unittest.TestCase):
                                   "[Square] (89) 10/10 - 10")
         sqr.update(89, 2)
         self.assertMultiLineEqual(sqr.__str__(),
-                                  "[Square] (89) 10/10 - 2/10")
+                                  "[Square] (89) 10/10 - 2")
         sqr.update(89, 2, 3)
         self.assertMultiLineEqual(sqr.__str__(),
-                                  "[Square] (89) 10/10 - 2/3")
+                                  "[Square] (89) 3/10 - 2")
         sqr.update(89, 2, 3, 4)
         self.assertMultiLineEqual(sqr.__str__(),
-                                  "[Square] (89) 4/10 - 2/3")
-        sqr.update(89, 2, 3, 4, 5)
-        self.assertMultiLineEqual(sqr.__str__(),
-                                  "[Square] (89) 4/5 - 2/3")
+                                  "[Square] (89) 3/4 - 2")
 
         # Check for large number of arguments
         sqr.update(16, 5, 7, 10, 3, 21, 44, 71, 0)
         self.assertMultiLineEqual(sqr.__str__(),
-                                  "[Square] (16) 10/3 - 5/7")
+                                  "[Square] (16) 7/10 - 5")
 
     def test_square_update_kwargs(self):
         """Test the update method of the Square, with **kwargs"""
         r = Square(10, 10, 10, 10)
-        r.update(height=1)
+        r.update(size=1)
         self.assertMultiLineEqual(r.__str__(),
-                                  "[Square] (10) 10/10 - 10/1")
-        r.update(width=5, y=3, x=2)
+                                  "[Square] (10) 10/10 - 1")
+        r.update(size=5, y=3, x=2)
         self.assertMultiLineEqual(r.__str__(),
-                                  "[Square] (10) 2/3 - 5/1")
+                                  "[Square] (10) 2/3 - 5")
         r.update(x=7, id=18)
         self.assertMultiLineEqual(r.__str__(),
-                                  "[Square] (18) 7/3 - 5/1")
+                                  "[Square] (18) 7/3 - 5")
 
     def test_square_update_args_and_kwargs(self):
         """Test the update method of the Square, with *args and **kwargs"""
         r = Square(10, 10, 10, 10)
-        r.update(20, height=1, width=7, x=3, y=9)
+        r.update(20, size=7, x=3, y=9)
         self.assertMultiLineEqual(r.__str__(),
-                                  "[Square] (20) 10/10 - 10/10")
+                                  "[Square] (20) 10/10 - 10")
         r.update(20, 5, 3, y=1, x=1)
         self.assertMultiLineEqual(r.__str__(),
-                                  "[Square] (20) 10/10 - 5/3")
+                                  "[Square] (20) 3/10 - 5")
