@@ -68,7 +68,10 @@ class Base:
 
         """
         file_name = cls.__name__ + ".json"
-        list_dictionaries = [obj.to_dictionary() for obj in list_objs]
+        if type(list_objs) is list:
+            list_dictionaries = [obj.to_dictionary() for obj in list_objs]
+        else:
+            list_dictionaries = []
         with open(file_name, "w", encoding="utf-8") as file:
             json_string = cls.to_json_string(list_dictionaries)
             file.write(json_string + '\n')
@@ -101,7 +104,10 @@ class Base:
 
         """
         file_name = cls.__name__ + ".csv"
-        list_dictionaries = [obj.to_dictionary() for obj in list_objs]
+        if type(list_objs) is list:
+            list_dictionaries = [obj.to_dictionary() for obj in list_objs]
+        else:
+            list_dictionaries = []
         with open(file_name, "w", encoding="utf-8") as file:
             for d in list_dictionaries:
                 id = d['id']

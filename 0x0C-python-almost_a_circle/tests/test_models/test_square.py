@@ -164,23 +164,40 @@ class TestSquare(unittest.TestCase):
 
     def test_square_json_string(self):
         """Test the json string representation of the Square"""
+        # In this test:
+        # Convert a list of Square dictionary to a JSON string
+        # Then convert that JSON string back to a list of Square dictionary
+        # Compare the original Square dictionary with the converted one
+        # This way you can check what got out, is the same as what got in.
+
         sqr = Square(3, id=4)
         sqr_json_string = sqr.to_json_string([sqr.to_dictionary()])
-        self.assertEqual(sqr_json_string,
-                         '[{"id": 4, "size": 3, "x": 0, "y": 0}]')
+        sqr_dict = sqr.from_json_string(sqr_json_string)
+        self.assertEqual([sqr.to_dictionary()], sqr_dict)
 
         sqr.update(x=7, y=3)
         sqr_json_string = sqr.to_json_string([sqr.to_dictionary()])
-        self.assertEqual(sqr_json_string,
-                         '[{"id": 4, "size": 3, "x": 7, "y": 3}]')
+        sqr_dict = sqr.from_json_string(sqr_json_string)
+        self.assertEqual([sqr.to_dictionary()], sqr_dict)
 
     def test_square_save_json_file(self):
         """Test saving the Square to a JSON file"""
         sqr1 = Square(3, id=4)
-        sqr2 = Square(7, 1, 10, 70)
+        sqr2 = Square(16, 1, 3, 70)
         Square.save_to_file([sqr1, sqr2])
         with open("Square.json", "r", encoding="utf-8") as file:
-            got = file.read().rstrip('\n')
-            exp = '[{"id": 4, "size": 3, "x": 0, "y": 0}, ' +\
-                '{"id": 70, "size": 7, "x": 1, "y": 10}]'
+            got = Square.from_json_string(file.read().rstrip('\n'))
+            exp = [sqr1.to_dictionary(), sqr2.to_dictionary()]
+            self.assertEqual(got, exp)
+
+        Square.save_to_file([])
+        with open("Square.json", "r", encoding="utf-8") as file:
+            got = Square.from_json_string(file.read().rstrip('\n'))
+            exp = []
+            self.assertEqual(got, exp)
+
+        Square.save_to_file(None)
+        with open("Square.json", "r", encoding="utf-8") as file:
+            got = Square.from_json_string(file.read().rstrip('\n'))
+            exp = []
             self.assertEqual(got, exp)
