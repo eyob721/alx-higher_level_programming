@@ -165,3 +165,12 @@ In this project we review everything we have learned on Python. Things like:
 
 - Add a static method `from_json_string()` that returns A Python list of
   dictionaries from a JSON String
+
+### Task 18
+
+[models/base.py](./models/base.py)<br>
+`test file:` [tests/test_base.py](./tests/test_base.py)
+
+- Add a class method `create(cls, **dictionary)` that returns an instance of the
+  Rectangle or Square class, based on whichever class is calling the method,
+  with all the attributes set from a given dictionary.
