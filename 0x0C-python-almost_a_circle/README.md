@@ -125,3 +125,12 @@ In this project we review everything we have learned on Python. Things like:
 `test file:` [tests/test_square.py](./tests/test_square.py)
 
 - Overload the `update()` method of the Rectangle class in the Square class.
+
+### Task 13
+
+[models/rectangle.py](./models/rectangle.py)<br>
+`test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
+
+- Add a public instance method `to_dictionary()` that returns the dictionary
+  representation of the `Rectangle` object.
+

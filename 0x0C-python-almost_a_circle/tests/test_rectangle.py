@@ -116,8 +116,8 @@ class TestRectangle(unittest.TestCase):
         """Test the string representation of the rectangle (i.e. __str__())"""
         self.assertMultiLineEqual(Rectangle(4, 6, 2, 1, 44).__str__(),
                                   "[Rectangle] (44) 2/1 - 4/6")
-        self.assertMultiLineEqual(Rectangle(10, 20).__str__(),
-                                  "[Rectangle] (12) 0/0 - 10/20")
+        self.assertMultiLineEqual(Rectangle(10, 20, id=13).__str__(),
+                                  "[Rectangle] (13) 0/0 - 10/20")
 
     def test_rectangle_update_args(self):
         """Test the update method of the Rectangle, with *args"""
@@ -164,3 +164,12 @@ class TestRectangle(unittest.TestCase):
         r.update(20, 5, 3, y=1, x=1)
         self.assertMultiLineEqual(r.__str__(),
                                   "[Rectangle] (20) 10/10 - 5/3")
+
+    def test_rectangle_dictionary(self):
+        """Test the dictionary method of the Rectangle class"""
+        r = Rectangle(3, 5, id=4)
+        self.assertEqual(r.to_dictionary(),
+                         {'width': 3, 'height': 5, 'x': 0, 'y': 0, 'id': 4})
+        r.update(x=7, y=3)
+        self.assertEqual(r.to_dictionary(),
+                         {'width': 3, 'height': 5, 'x': 7, 'y': 3, 'id': 4})

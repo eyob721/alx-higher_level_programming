@@ -96,3 +96,8 @@ class Rectangle(Base):
             for key in kwargs:
                 if key in rec_attr:
                     setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        rec_dict = {str(key).lstrip("_Rectangle__"):
+                    getattr(self, key) for key in self.__dict__}
+        return rec_dict
