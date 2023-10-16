@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Test module for Rectangle class."""
 import unittest
+from io import StringIO
+from unittest.mock import patch
 from models.rectangle import Rectangle
 
 
@@ -118,6 +120,22 @@ class TestRectangle(unittest.TestCase):
                                   "[Rectangle] (44) 2/1 - 4/6")
         self.assertMultiLineEqual(Rectangle(10, 20, id=13).__str__(),
                                   "[Rectangle] (13) 0/0 - 10/20")
+
+    def test_rectangle_display(self):
+        """Test the rectangle display method"""
+        rec = Rectangle(3, 5)
+        with patch('sys.stdout', new=StringIO()) as output:
+            expected = """###\n###\n###\n###\n###\n"""
+            rec.display()
+            got = output.getvalue()
+            self.assertEqual(got, expected)
+
+        rec = Rectangle(3, 5, 1, 1)
+        with patch('sys.stdout', new=StringIO()) as output:
+            expected = """\n ###\n ###\n ###\n ###\n ###\n"""
+            rec.display()
+            got = output.getvalue()
+            self.assertEqual(got, expected)
 
     def test_rectangle_update_args(self):
         """Test the update method of the Rectangle, with *args"""
