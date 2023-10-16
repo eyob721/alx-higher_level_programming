@@ -231,3 +231,12 @@ class TestRectangle(unittest.TestCase):
             got = Rectangle.from_json_string(file.read().rstrip('\n'))
             exp = []
             self.assertEqual(got, exp)
+
+    def test_rectangle_create(self):
+        """Test the create method of Rectangle"""
+        rec1 = Rectangle(3, 5, id=4)
+        rec1_dict = rec1.to_dictionary()
+        rec2 = rec1.create(**rec1_dict)
+        rec2_dict = rec2.to_dictionary()
+        self.assertIsInstance(rec2, Rectangle)
+        self.assertEqual(rec1_dict, rec2_dict)

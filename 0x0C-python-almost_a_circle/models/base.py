@@ -90,9 +90,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set."""
-        obj = cls(1, 1)
-        obj.update(**dictionary)
-        return obj
+        if type(dictionary) is dict:
+            obj = cls(1, 1)
+            obj.update(**dictionary)
+            return obj
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
