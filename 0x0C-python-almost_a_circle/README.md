@@ -63,14 +63,14 @@ In this project we review everything we have learned on Python. Things like:
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Add a public instance method `area()` that returns the area of the rectangle.
+- Add a public instance method `area(self)` that returns the area of the rectangle.
 
 ### Task 5
 
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Add a public instance method `display()` that prints the rectangle to stdout
+- Add a public instance method `display(self)` that prints the rectangle to stdout
   using the `#` character.
 
 ### Task 6
@@ -78,7 +78,7 @@ In this project we review everything we have learned on Python. Things like:
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Add a public instance method `__str__()` to override the string representation
+- Add a public instance method `__str__(self)` to override the string representation
   of the rectangle object.
 
 ### Task 7
@@ -86,14 +86,15 @@ In this project we review everything we have learned on Python. Things like:
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Update the `display()` method to adjust for `x` and `y` position when printing.
+- Update the `display(self)` method to adjust for `x` and `y` position when
+  printing.
 
 ### Task 8
 
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Add a public instance method `update()` that updates the value of the
+- Add a public instance method `update(self, *args)` that updates the value of the
   attributes of the Rectangle object.
 
 ### Task 9
@@ -101,8 +102,10 @@ In this project we review everything we have learned on Python. Things like:
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Update the `update()` method to hold keyword variable arguments as well, in
+- Update the `update(self, *args)` method to hold keyword variable arguments as well, in
   addition to the positional variable arguments.
+- So the method will be modified to `update(self ,*args, **kwargs)`.
+- If `*args` is given then `**kwargs` is ignored
 
 ### Task 10
 
@@ -110,7 +113,7 @@ In this project we review everything we have learned on Python. Things like:
 `test file:` [tests/test_square.py](./tests/test_square.py)
 
 - Write a class `Square` that inherits from `Rectangle`.
-- Override the `__str__()` method of the Rectangle class in the Square class.
+- Override the `__str__(self)` method of the Rectangle class in the Square class.
 
 ### Task 11
 
@@ -124,14 +127,15 @@ In this project we review everything we have learned on Python. Things like:
 [models/square.py](./models/square.py)<br>
 `test file:` [tests/test_square.py](./tests/test_square.py)
 
-- Overload the `update()` method of the Rectangle class in the Square class.
+- Overload the `update(self, *args, **kwargs)` method of the Rectangle class
+  in the Square class.
 
 ### Task 13
 
 [models/rectangle.py](./models/rectangle.py)<br>
 `test file:` [tests/test_rectangle.py](./tests/test_rectangle.py)
 
-- Add a public instance method `to_dictionary()` that returns the dictionary
+- Add a public instance method `to_dictionary(self)` that returns the dictionary
   representation of the `Rectangle` object.
 
 ### Task 14
@@ -139,7 +143,7 @@ In this project we review everything we have learned on Python. Things like:
 [models/square.py](./models/square.py)<br>
 `test file:` [tests/test_square.py](./tests/test_square.py)
 
-- Add a public instance method `to_dictionary()` that returns the dictionary
+- Add a public instance method `to_dictionary(self)` that returns the dictionary
   representation of the `Square` object.
 
 ### Task 15
@@ -147,23 +151,24 @@ In this project we review everything we have learned on Python. Things like:
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
 
-- Add a static method `to_json_string()` that returns the JSON string
-  representation of Base.
+- Add a static method `to_json_string(list_dictionaries)` that returns the JSON
+  string representation of a list of dictionaries.
 
 ### Task 16
 
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
 
-- Add a public class method `save_to_file()` that writes the JSON string
-  representation of objects that inherit from `Base` to a file.
+- Add a public class method `save_to_file(cls, list_objs)` that writes the JSON
+  string representation of a list of objects to a file.
+- All objects in the list `list_objs` inherit from `Base`
 
 ### Task 17
 
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
 
-- Add a static method `from_json_string()` that returns A Python list of
+- Add a static method `from_json_string(json_string)` that returns A Python list of
   dictionaries from a JSON String
 
 ### Task 18
