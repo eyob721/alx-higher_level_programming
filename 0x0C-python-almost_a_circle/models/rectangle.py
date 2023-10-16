@@ -4,7 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Definition of Rectangle Class"""
+    """Class definition of a Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
@@ -70,16 +70,16 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Displays the Rectangle on stdout using `#` characters."""
+        """Displays the Rectangle on stdout using `#` character."""
         rectangle = '\n' * self.y
         rectangle += ((' ' * self.x + '#' * self.width + '\n') * self.height)
         print(rectangle.rstrip('\n'))
 
     def __str__(self):
         """String representation of the Rectangle"""
-        r = f"[Rectangle] ({self.id:d}) {self.x:d}/{self.y:d}" +\
+        rec = f"[Rectangle] ({self.id:d}) {self.x:d}/{self.y:d}" +\
             f" - {self.width:d}/{self.height:d}"
-        return r
+        return rec
 
     def update(self, *args, **kwargs):
         """Updates the Rectangle's attributes.
