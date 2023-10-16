@@ -1,12 +1,23 @@
 #!/usr/bin/python3
-"""This module contains the Rectangle class."""
+"""This module contains the Rectangle class.
+"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class definition of a Rectangle"""
+    """Class definition of a Rectangle.
+
+    Attributes:
+        width: Width of the Rectangle
+        height: Height of the Rectangle
+        x: x coordinate of the Rectangle
+        y: y coordinate of the Rectangle
+        id: id of the Rectangle
+
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Constructor for the Rectangle class"""
         self.width = width
         self.height = height
         self.x = x
@@ -15,7 +26,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Width of the Rectangle"""
+        """Width getter of the Rectangle"""
         return self.__width
 
     @width.setter
@@ -82,7 +93,8 @@ class Rectangle(Base):
         return rec_str
 
     def update(self, *args, **kwargs):
-        """Updates the Rectangle's attributes.
+        """
+        Updates the Rectangle's attributes.
         If `*args` is given, `**kwargs` is skipped
         """
         rec_attr = ['id', 'width', 'height', 'x', 'y']
@@ -98,6 +110,7 @@ class Rectangle(Base):
                     setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
+        """Returns the dictionary representation of the Rectangle"""
         rec_attr = ['id', 'width', 'height', 'x', 'y']
         rec_dict = {key: getattr(self, key) for key in rec_attr}
         return rec_dict
