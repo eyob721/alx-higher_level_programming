@@ -173,3 +173,17 @@ class TestRectangle(unittest.TestCase):
         r.update(x=7, y=3)
         self.assertEqual(r.to_dictionary(),
                          {'width': 3, 'height': 5, 'x': 7, 'y': 3, 'id': 4})
+
+    def test_rectangle_json_string(self):
+        """Test the json string representation of the Rectangle"""
+        rec = Rectangle(3, 5, id=4)
+        rec_json_string = rec.to_json_string([rec.to_dictionary()])
+        self.assertEqual(rec_json_string,
+                         '[{"id": 4, "width": 3, "height": 5, "x": 0, "y": 0}]'
+                         )
+
+        rec.update(x=7, y=3)
+        rec_json_string = rec.to_json_string([rec.to_dictionary()])
+        self.assertEqual(rec_json_string,
+                         '[{"id": 4, "width": 3, "height": 5, "x": 7, "y": 3}]'
+                         )

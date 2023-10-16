@@ -142,3 +142,10 @@ In this project we review everything we have learned on Python. Things like:
 - Add a public instance method `to_dictionary()` that returns the dictionary
   representation of the `Square` object.
 
+### Task 14
+
+[models/base.py](./models/base.py)<br>
+`test file:` [tests/test_base.py](./tests/test_base.py)
+
+- Add a static method `to_json_string()` that returns the JSON string
+  representation of Base.

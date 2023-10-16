@@ -137,9 +137,21 @@ class TestSquare(unittest.TestCase):
 
     def test_square_dictionary(self):
         """Test the dictionary representation of the Square object"""
-        r = Square(3, id=4)
-        self.assertEqual(r.to_dictionary(),
+        sqr = Square(3, id=4)
+        self.assertEqual(sqr.to_dictionary(),
                          {'size': 3, 'x': 0, 'y': 0, 'id': 4})
-        r.update(x=7, y=3)
-        self.assertEqual(r.to_dictionary(),
+        sqr.update(x=7, y=3)
+        self.assertEqual(sqr.to_dictionary(),
                          {'size': 3, 'x': 7, 'y': 3, 'id': 4})
+
+    def test_square_json_string(self):
+        """Test the json string representation of the Square"""
+        sqr = Square(3, id=4)
+        sqr_json_string = sqr.to_json_string([sqr.to_dictionary()])
+        self.assertEqual(sqr_json_string,
+                         '[{"id": 4, "size": 3, "x": 0, "y": 0}]')
+
+        sqr.update(x=7, y=3)
+        sqr_json_string = sqr.to_json_string([sqr.to_dictionary()])
+        self.assertEqual(sqr_json_string,
+                         '[{"id": 4, "size": 3, "x": 7, "y": 3}]')
