@@ -2,7 +2,6 @@
 """Test module for the Base class."""
 import unittest
 from models.base import Base
-from models.rectangle import Rectangle
 
 
 class TestBaseClass(unittest.TestCase):
@@ -23,7 +22,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(b5.id, 4)
 
     def test_base_json_string(self):
-        """Test for json string representation """
+        """Test for JSON string representation """
         json_string = Base.to_json_string([])
         self.assertEqual('[]', json_string)
 

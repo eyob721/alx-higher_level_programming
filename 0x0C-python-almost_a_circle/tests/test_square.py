@@ -155,3 +155,14 @@ class TestSquare(unittest.TestCase):
         sqr_json_string = sqr.to_json_string([sqr.to_dictionary()])
         self.assertEqual(sqr_json_string,
                          '[{"id": 4, "size": 3, "x": 7, "y": 3}]')
+
+    def test_square_save_json_file(self):
+        """Test saving the Square to a JSON file"""
+        sqr1 = Square(3, id=4)
+        sqr2 = Square(7, 1, 10, 70)
+        Square.save_to_file([sqr1, sqr2])
+        with open("Square.json", "r", encoding="utf-8") as file:
+            got = file.read().rstrip('\n')
+            exp = '[{"id": 4, "size": 3, "x": 0, "y": 0}, ' +\
+                '{"id": 70, "size": 7, "x": 1, "y": 10}]'
+            self.assertEqual(got, exp)
