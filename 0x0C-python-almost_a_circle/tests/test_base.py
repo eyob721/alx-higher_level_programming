@@ -29,3 +29,14 @@ class TestBaseClass(unittest.TestCase):
         b = Base(24)
         json_string = Base.to_json_string([b.__dict__])
         self.assertEqual('[{"id": 24}]', json_string)
+
+    def test_base_list_of_dictionaries(self):
+        """Test for list of dictionaries from a JSON String"""
+        json_string = "[]"
+        self.assertEqual([], Base.from_json_string(json_string))
+
+        b = Base(24)
+        exp = [{'id': 24}]
+        json_string = b.to_json_string(exp)
+        got = b.from_json_string(json_string)
+        self.assertEqual(got, exp)

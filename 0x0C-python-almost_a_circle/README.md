@@ -157,3 +157,11 @@ In this project we review everything we have learned on Python. Things like:
 
 - Add a public class method `save_to_file()` that writes the JSON string
   representation of objects that inherit from `Base` to a file.
+
+### Task 16
+
+[models/base.py](./models/base.py)<br>
+`test file:` [tests/test_base.py](./tests/test_base.py)
+
+- Add a static method `from_json_string()` that returns A Python list of
+  dictionaries from a JSON String
