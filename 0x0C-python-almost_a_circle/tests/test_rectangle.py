@@ -176,17 +176,21 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_json_string(self):
         """Test the json string representation of the Rectangle"""
+        # In this test:
+        # Convert a list of Rectangle dictionary to a JSON string
+        # Then convert that JSON string back to a list of Rectangle dictionary
+        # Compare the original Rectangle dictionary with the converted one
+        # This way you can check what got out, is the same as what got in.
+
         rec = Rectangle(3, 5, id=4)
         rec_json_string = rec.to_json_string([rec.to_dictionary()])
-        self.assertEqual(rec_json_string,
-                         '[{"id": 4, "width": 3, "height": 5, "x": 0, "y": 0}]'
-                         )
+        rec_dict = rec.from_json_string(rec_json_string)
+        self.assertEqual([rec.to_dictionary()], rec_dict)
 
         rec.update(x=7, y=3)
         rec_json_string = rec.to_json_string([rec.to_dictionary()])
-        self.assertEqual(rec_json_string,
-                         '[{"id": 4, "width": 3, "height": 5, "x": 7, "y": 3}]'
-                         )
+        rec_dict = rec.from_json_string(rec_json_string)
+        self.assertEqual([rec.to_dictionary()], rec_dict)
 
     def test_rectangle_save_json_file(self):
         """Test saving the Rectangle to a JSON file"""
@@ -194,7 +198,6 @@ class TestRectangle(unittest.TestCase):
         rec2 = Rectangle(16, 28, 1, 3, 70)
         Rectangle.save_to_file([rec1, rec2])
         with open("Rectangle.json", "r", encoding="utf-8") as file:
-            got = file.read().rstrip('\n')
-            exp = '[{"id": 4, "width": 3, "height": 5, "x": 0, "y": 0}, ' +\
-                '{"id": 70, "width": 16, "height": 28, "x": 1, "y": 3}]'
+            got = Rectangle.from_json_string(file.read().rstrip('\n'))
+            exp = [rec1.to_dictionary(), rec2.to_dictionary()]
             self.assertEqual(got, exp)

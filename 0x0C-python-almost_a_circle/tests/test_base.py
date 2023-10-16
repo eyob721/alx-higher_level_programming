@@ -33,10 +33,12 @@ class TestBaseClass(unittest.TestCase):
     def test_base_list_of_dictionaries(self):
         """Test for list of dictionaries from a JSON String"""
         json_string = "[]"
-        self.assertEqual([], Base.from_json_string(json_string))
+        exp = []
+        got = Base.from_json_string(json_string)
+        self.assertEqual(got, exp)
 
         b = Base(24)
+        json_string = b.to_json_string([b.__dict__])
         exp = [{'id': 24}]
-        json_string = b.to_json_string(exp)
         got = b.from_json_string(json_string)
         self.assertEqual(got, exp)

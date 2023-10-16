@@ -134,7 +134,7 @@ In this project we review everything we have learned on Python. Things like:
 - Add a public instance method `to_dictionary()` that returns the dictionary
   representation of the `Rectangle` object.
 
-### Task 13
+### Task 14
 
 [models/square.py](./models/square.py)<br>
 `test file:` [tests/test_square.py](./tests/test_square.py)
@@ -142,7 +142,7 @@ In this project we review everything we have learned on Python. Things like:
 - Add a public instance method `to_dictionary()` that returns the dictionary
   representation of the `Square` object.
 
-### Task 14
+### Task 15
 
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
@@ -150,7 +150,7 @@ In this project we review everything we have learned on Python. Things like:
 - Add a static method `to_json_string()` that returns the JSON string
   representation of Base.
 
-### Task 15
+### Task 16
 
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
@@ -158,7 +158,7 @@ In this project we review everything we have learned on Python. Things like:
 - Add a public class method `save_to_file()` that writes the JSON string
   representation of objects that inherit from `Base` to a file.
 
-### Task 16
+### Task 17
 
 [models/base.py](./models/base.py)<br>
 `test file:` [tests/test_base.py](./tests/test_base.py)
