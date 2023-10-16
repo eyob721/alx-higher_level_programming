@@ -8,6 +8,7 @@ class Base:
 
     Attributes:
         id (int): Id the object.
+
     """
 
     __nb_objects = 0
