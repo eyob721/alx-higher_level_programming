@@ -4,6 +4,12 @@ import unittest
 from io import StringIO
 from unittest.mock import patch
 from models.rectangle import Rectangle
+import os
+
+
+def remove_file(filepath):
+    if os.path.exists(filepath):
+        os.remove(filepath)
 
 
 class TestRectangle(unittest.TestCase):
@@ -219,18 +225,21 @@ class TestRectangle(unittest.TestCase):
             got = Rectangle.from_json_string(file.read().rstrip('\n'))
             exp = [rec1.to_dictionary(), rec2.to_dictionary()]
             self.assertEqual(got, exp)
+        remove_file("Rectangle.json")
 
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r", encoding="utf-8") as file:
             got = Rectangle.from_json_string(file.read().rstrip('\n'))
             exp = []
             self.assertEqual(got, exp)
+        remove_file("Rectangle.json")
 
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r", encoding="utf-8") as file:
             got = Rectangle.from_json_string(file.read().rstrip('\n'))
             exp = []
             self.assertEqual(got, exp)
+        remove_file("Rectangle.json")
 
     def test_rectangle_create(self):
         """Test the create method of Rectangle"""
@@ -250,6 +259,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(len(list_objs), 2)
         self.assertEqual(list_objs[0].to_dictionary(), rec1.to_dictionary())
         self.assertEqual(list_objs[1].to_dictionary(), rec2.to_dictionary())
+        remove_file("Rectangle.json")
 
     def test_rectangle_save_csv_file(self):
         """Test saving the Rectangle to a CSV file"""
@@ -260,13 +270,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(len(list_objs), 2)
         self.assertEqual(list_objs[0].to_dictionary(), rec1.to_dictionary())
         self.assertEqual(list_objs[1].to_dictionary(), rec2.to_dictionary())
+        remove_file("Rectangle.csv")
 
         Rectangle.save_to_file_csv([])
         got = Rectangle.load_from_file_csv()
         exp = []
         self.assertEqual(got, exp)
+        remove_file("Rectangle.csv")
 
         Rectangle.save_to_file_csv(None)
         got = Rectangle.load_from_file_csv()
         exp = []
         self.assertEqual(got, exp)
+        remove_file("Rectangle.csv")

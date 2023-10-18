@@ -4,6 +4,12 @@ import unittest
 from io import StringIO
 from unittest.mock import patch
 from models.square import Square
+import os
+
+
+def remove_file(filepath):
+    if os.path.exists(filepath):
+        os.remove(filepath)
 
 
 class TestSquare(unittest.TestCase):
@@ -189,18 +195,21 @@ class TestSquare(unittest.TestCase):
             got = Square.from_json_string(file.read().rstrip('\n'))
             exp = [sqr1.to_dictionary(), sqr2.to_dictionary()]
             self.assertEqual(got, exp)
+        remove_file("Square.json")
 
         Square.save_to_file([])
         with open("Square.json", "r", encoding="utf-8") as file:
             got = Square.from_json_string(file.read().rstrip('\n'))
             exp = []
             self.assertEqual(got, exp)
+        remove_file("Square.json")
 
         Square.save_to_file(None)
         with open("Square.json", "r", encoding="utf-8") as file:
             got = Square.from_json_string(file.read().rstrip('\n'))
             exp = []
             self.assertEqual(got, exp)
+        remove_file("Square.json")
 
     def test_square_create(self):
         """Test the create method of Square"""
@@ -219,6 +228,7 @@ class TestSquare(unittest.TestCase):
         list_objs = Square.load_from_file()
         self.assertEqual(list_objs[0].to_dictionary(), sqr1.to_dictionary())
         self.assertEqual(list_objs[1].to_dictionary(), sqr2.to_dictionary())
+        remove_file("Square.json")
 
     def test_square_save_csv_file(self):
         """Test saving the Square to a CSV file"""
@@ -229,13 +239,16 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(len(list_objs), 2)
         self.assertEqual(list_objs[0].to_dictionary(), sqr1.to_dictionary())
         self.assertEqual(list_objs[1].to_dictionary(), sqr2.to_dictionary())
+        remove_file("Square.csv")
 
         Square.save_to_file_csv([])
         got = Square.load_from_file_csv()
         exp = []
         self.assertEqual(got, exp)
+        remove_file("Square.csv")
 
         Square.save_to_file_csv(None)
         got = Square.load_from_file_csv()
         exp = []
         self.assertEqual(got, exp)
+        remove_file("Square.csv")
