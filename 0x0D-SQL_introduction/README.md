@@ -13,3 +13,7 @@
 [2-remove_database.sql](./2-remove_database.sql)
 
 - A script that deletes the database `hbtn_0c_0` from the MySQL server.
+
+[3-list_tables.sql](./3-list_tables.sql)
+
+- A script that lists all the tables of a database in the MySQL server.
