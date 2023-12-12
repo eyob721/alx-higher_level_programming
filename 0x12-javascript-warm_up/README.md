@@ -40,3 +40,8 @@ eyob721@alxsandbox $
 [101-call_me_moby.js](./101-call_me_moby.js)
 
 - A script that exports a function that executes another function `x` times.
+
+[102-add_me_maybe.js](./102-add_me_maybe.js)
+
+- A script that exports a function which increments a number and calls another
+ function, with that number passed as argument.
