@@ -18,3 +18,20 @@
 | [11-second_biggest.js](./11-second_biggest.js) | A script that searches for the second biggest integer in the list of arguments |
 | [12-object.js](./12-object.js) | A challenge script, to change the value of a property of an object |
 | [13-add.js](./13-add.js) | A script that exports a function that returns the addition of 2 integers |
+
+## Advanced
+
+[100-let_me_const.js](./100-let_me_const.js)
+
+- A script that modifies the value of `myVar` to 333.
+
+```Bash
+eyob721@alxsandbox:~/0x12$ cat mains/100-main.js
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
+eyob721@alxsandbox:~/0x12$ ./mains/100-main.js
+333
+eyob721@alxsandbox:~/0x12$
+```
