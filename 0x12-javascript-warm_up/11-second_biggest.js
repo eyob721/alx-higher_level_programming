@@ -3,7 +3,7 @@ const argv = process.argv.slice(2);
 
 function toNumberArray (arr) {
   const numArray = [];
-  for (const i in arr) numArray.push(parseInt(arr[i]));
+  for (const i in arr) numArray.push(Number(arr[i]));
   return numArray;
 }
 
