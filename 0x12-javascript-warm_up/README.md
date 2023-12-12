@@ -45,3 +45,8 @@ eyob721@alxsandbox $
 
 - A script that exports a function which increments a number and calls another
  function, with that number passed as argument.
+
+[103-object_fct.js](./103-object_fct.js)
+
+- A given script, where we add a function `incr` that increments the integer
+`value` of `myObject`.
