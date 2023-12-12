@@ -17,3 +17,4 @@
 | [10-factorial.js](./10-factorial.js) | A script that computes and prints a factorial, using recursion |
 | [11-second_biggest.js](./11-second_biggest.js) | A script that searches for the second biggest integer in the list of arguments |
 | [12-object.js](./12-object.js) | A challenge script, to change the value of a property of an object |
+| [13-add.js](./13-add.js) | A script that exports a function that returns the addition of 2 integers |
