@@ -7,7 +7,7 @@ function toNumberArray (arr) {
   return numArray;
 }
 
-if (argv.length <= 2) console.log(0);
+if (argv.length < 2) console.log(0);
 else {
   console.log(
     toNumberArray(argv).sort(function (a, b) {
