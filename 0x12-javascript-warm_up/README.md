@@ -26,12 +26,17 @@
 - A script that modifies the value of `myVar` to 333.
 
 ```Bash
-eyob721@alxsandbox:~/0x12$ cat mains/100-main.js
+eyob721@alxsandbox $ cat mains/100-main.js
 #!/usr/bin/node
 myVar = 89;
 require('./100-let_me_const')
 console.log(myVar);
-eyob721@alxsandbox:~/0x12$ ./mains/100-main.js
+eyob721@alxsandbox $ ./mains/100-main.js
 333
-eyob721@alxsandbox:~/0x12$
+eyob721@alxsandbox $
+
 ```
+
+[101-call_me_moby.js](./101-call_me_moby.js)
+
+- A script that exports a function that executes another function `x` times.
