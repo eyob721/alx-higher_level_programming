@@ -17,3 +17,8 @@
 [3-list_tables.sql](./3-list_tables.sql)
 
 - A script that lists all the tables of a database in the MySQL server.
+
+[4-first_table.sql](./4-first_table.sql)
+
+- A script that creates a table called `first_table` in the current database.
+- The database name is passed as argument to the mysql command.
