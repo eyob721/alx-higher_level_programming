@@ -107,3 +107,9 @@ mysql command as an argument, as shown above.
 
 - A script that converts the database `hbtn_0c_0`, and the table `first_table`,
  to UTF8(utf8mb4, collate utf8mb4_unicode_ci).
+
+[101-avg_temperatures.sql](./101-avg_temperatures.sql)
+
+- This script imports a table dump `temperatures` to `hbtn_0c_0` database and
+ displays the average temperature (Fahrenheit) by city ordered
+ by temperature (descending).
