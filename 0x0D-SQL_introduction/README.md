@@ -1,5 +1,17 @@
 # 0x0D. SQL - Introduction
 
+In this project we work with SQL queries, using MySQL.
+
+To check the sql files you can do so like this:
+
+- If you are using `auth_socket` as an authentication method
+  - `cat example.sql | sudo mysql hbtn_0c_0`
+- or if you are using a password
+  - `cat example.sql | mysql -u root -p hbtn_0c_0`
+
+The database name we are using is named `hbtn_0c_0`, which can be passed to the
+mysql command as an argument, as shown above.
+
 ## Mandatory
 
 [0-list_databases.sql](./0-list_databases.sql)
