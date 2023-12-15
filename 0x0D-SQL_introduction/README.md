@@ -100,3 +100,10 @@ mysql command as an argument, as shown above.
     - don't list rows with out a name value
     - only the score and the name column should be displayed (in that order)
     - records should be sorted in descending order
+
+## Advanced
+
+[100-move_to_utf8.sql](./100-move_to_utf8.sql)
+
+- A script that converts the database `hbtn_0c_0`, the table `first_table`,
+ and the column `name` to UTF8(utf8mb4, collate utf8mb4_unicode_ci).
