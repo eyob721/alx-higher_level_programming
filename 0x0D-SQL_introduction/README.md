@@ -32,3 +32,8 @@
 
 - A script that prints all the rows from the table `first_table` of `hbtn_0c_0`
  database.
+
+[7-insert_value.sql](./7-insert_value.sql)
+
+- A script that inserts a new row into the table `first_table` of the
+ `hbtn_0c_0` database.
