@@ -42,3 +42,8 @@
 
 - A script that displays the number of records with id = 89 in the table
  `first_table` of `hbtn_0c_0` database.
+
+[9-full_creation.sql](./9-full_creation.sql)
+
+- A script that creates the table `second_table` in the database `hbtn_0c_0`
+ and adds multiple rows.
