@@ -1,5 +1,5 @@
--- Converts the database `hbtn_0c_0`, the table `first_table`, and the column
--- `name` to UTF8(utf8mb4, collate utf8mb4_unicode_ci)
+-- Converts the database `hbtn_0c_0`, and the table `first_table` to
+-- UTF8(utf8mb4, collate utf8mb4_unicode_ci)
 -- Select the database
 USE hbtn_0c_0;
 
