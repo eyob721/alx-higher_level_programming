@@ -75,3 +75,7 @@ mysql command as an argument, as shown above.
 - Requirements:
   - only the score and name columns should be displayed (in that order)
   - records should be ordered by score (top first)
+
+[12-no_cheating.sql](./12-no_cheating.sql)
+
+- A script that updates the score of `Bob` to `10` in the table `second_table`.
