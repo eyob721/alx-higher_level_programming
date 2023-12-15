@@ -37,3 +37,8 @@
 
 - A script that inserts a new row into the table `first_table` of the
  `hbtn_0c_0` database.
+
+[8-count_89.sql](./8-count_89.sql)
+
+- A script that displays the number of records with id = 89 in the table
+ `first_table` of `hbtn_0c_0` database.
