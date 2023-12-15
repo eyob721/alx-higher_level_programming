@@ -1,7 +1,7 @@
 -- Displays the max temperature of each state (ordered by State name)
 SELECT
   state,
-  max(value) AS mas_temp
+  max(value) AS max_temp
 FROM
   temperatures
 GROUP BY
