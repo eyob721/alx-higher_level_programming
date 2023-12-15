@@ -51,7 +51,15 @@
 [10-top_score.sql](./10-top_score.sql)
 
 - A script that lists all the records of the table `second_table` of the
- database `hbtn_0c_0`
+ database `hbtn_0c_0`.
+- Requirements:
+  - only the score and name columns should be displayed (in that order)
+  - records should be ordered by score (top first)
+
+[11-best_score.sql](./11-best_score.sql)
+
+- A script that lists all the records with a score >= 10 in the table
+ `second_table` of the database `hbtn_0c_0`.
 - Requirements:
   - only the score and name columns should be displayed (in that order)
   - records should be ordered by score (top first)
