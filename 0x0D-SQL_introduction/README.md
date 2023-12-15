@@ -27,3 +27,8 @@
 
 - A script that prints the full description of the table `first_table` from the
  `hbtn_0c_0` database.
+
+[6-list_values.sql](./6-list_values.sql)
+
+- A script that prints all the rows from the table `first_table` of `hbtn_0c_0`
+ database.
