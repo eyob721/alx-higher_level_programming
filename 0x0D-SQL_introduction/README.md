@@ -92,3 +92,11 @@ mysql command as an argument, as shown above.
 
 - A script that lists the number of records with the same score in the table
  `second_table`
+
+[16-no_link.sql](./16-no_link.sql)
+
+- Lists all the records of the table `second_table`
+  - Requirements:
+    - don't list rows with out a name value
+    - only the score and the name column should be displayed (in that order)
+    - records should be sorted in descending order
