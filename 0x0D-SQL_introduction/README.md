@@ -110,7 +110,12 @@ mysql command as an argument, as shown above.
 
 [101-avg_temperatures.sql](./101-avg_temperatures.sql)
 
-- For this task a table dump [temperatures.sql](./import/temperatures.sql)
+- For this task and the following tasks a table dump [temperatures.sql](./import/temperatures.sql)
  is imported to `hbtn_0c_0` database.
 - The script displays the average temperature (Fahrenheit) by city ordered
  by temperature (descending).
+
+[102-top_city.sql](./102-top_city.sql)
+
+- A script that displays the top 3 of cities temperatures during July(7) and
+ August(8), ordered by temperature (descending).
