@@ -119,3 +119,7 @@ mysql command as an argument, as shown above.
 
 - A script that displays the top 3 of cities temperatures during July(7) and
  August(8), ordered by temperature (descending).
+
+[103-max_state.sql](./103-max_state.sql)
+
+- A script that displays the max temperature of each state (ordered by State name).
