@@ -22,3 +22,8 @@
 
 - A script that creates a table called `first_table` in the current database.
 - The database name is passed as argument to the mysql command.
+
+[5-full_table.sql](./5-full_table.sql)
+
+- A script that prints the full description of the table `first_table` from the
+ `hbtn_0c_0` database.
