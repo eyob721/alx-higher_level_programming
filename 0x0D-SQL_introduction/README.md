@@ -83,3 +83,7 @@ mysql command as an argument, as shown above.
 [13-change_class.sql](./13-change_class.sql)
 
 - A script that removes all records with a score <= 5  in the table `second_table`.
+
+[14-average.sql](./14-average.sql)
+
+- A script that computes the score average of all records in the table `second_table`.
