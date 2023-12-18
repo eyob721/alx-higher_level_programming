@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-This script takes 3 arguments and lists all the states from the database
+This script takes 3 arguments
 
     Arguments:
         - mysql username
         - mysql password
         - database name
 
-    NOTE:
-        Database name is assumed to be `hbtn_0c_0_usa` and that it has a table
-        named `states`. Arguments are not validated.
+    Description:
+        - It lists all the states in the database
+        - Database name is assumed to be `hbtn_0c_0_usa` and that it has a
+          table named `states`. Arguments are not validated.
 """
 import sys
 

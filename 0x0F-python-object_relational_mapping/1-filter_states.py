@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-This script takes 3 arguments and lists states that start with N
+This script takes 3 arguments
 
     Arguments:
         - mysql username
         - mysql password
         - database name
 
-    NOTE:
-        Database name is assumed to be `hbtn_0c_0_usa` and that it has a table
-        named `states`. Arguments are not validated.
+    Description:
+        - It lists all states that start with the `N` (upper N).
+        - Database name is assumed to be `hbtn_0c_0_usa` and that it has a
+          table named `states`. Arguments are not validated.
 """
 import sys
 
