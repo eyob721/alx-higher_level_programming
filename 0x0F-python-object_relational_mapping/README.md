@@ -26,3 +26,8 @@
   - database name
   - state name
 - It lists all the states with the given state name.
+
+[3-my_safe_filter_states.py](./3-my_safe_filter_states.py)
+
+- This script lists all the states with a given state name, while taking care
+ of SQL Injections.

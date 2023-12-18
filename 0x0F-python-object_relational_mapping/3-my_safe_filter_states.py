@@ -1,0 +1,45 @@
+#!/usr/bin/python3
+"""
+This script takes 4 arguments
+
+    Arguments:
+        - mysql username
+        - mysql password
+        - database name
+        - state name
+
+    Description:
+        - It lists all states with the given state name.
+        - It is SQL Injection safe.
+        - Database name is assumed to be `hbtn_0c_0_usa` and that it has a
+          table named `states`. Arguments are not validated.
+"""
+import sys
+
+import MySQLdb
+
+if __name__ == "__main__":
+    conn = None
+    parameters = {
+        "host": "localhost",
+        "port": 3306,
+        "user": sys.argv[1],
+        "password": sys.argv[2],
+        "database": sys.argv[3],
+    }
+    state_name = sys.argv[4].split(";", 1)[0].strip("'\"")
+    try:
+        conn = MySQLdb.connect(**parameters)
+        cursor = conn.cursor()
+        sql_query = (
+            "SELECT * FROM states "
+            + "WHERE name like binary '{}' ORDER BY id".format(state_name)
+        )
+        cursor.execute(sql_query)
+        result = cursor.fetchall()
+        for row in result:
+            print(row)
+    finally:
+        if conn is not None and conn.open:
+            cursor.close()
+            conn.close()
