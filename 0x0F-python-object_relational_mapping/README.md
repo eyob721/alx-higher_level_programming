@@ -29,5 +29,16 @@
 
 [3-my_safe_filter_states.py](./3-my_safe_filter_states.py)
 
-- This script lists all the states with a given state name, while taking care
- of SQL Injections.
+- Building on the previous script, this one lists all the states with a given
+ state name, while taking care of SQL Injections.
+
+[4-cities_by_state.py](./4-cities_by_state.py)
+
+- This script takes 3 arguments:
+  - mysql username
+  - mysql password
+  - database name
+- Database is taken to be `hbtn_0e_4_usa`, and the corresponding sql file can be
+ found [here](./sql/4-cities_by_state.sql).
+- It lists all the `cities` with their corresponding states from the
+ database `hbtn_0e_4_usa`.
