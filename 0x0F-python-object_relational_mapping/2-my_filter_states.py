@@ -30,10 +30,11 @@ if __name__ == "__main__":
     try:
         conn = MySQLdb.connect(**parameters)
         cursor = conn.cursor()
-        cursor.execute(
+        sql_query = (
             "SELECT * FROM states "
-            + f"WHERE name like binary '{state_name}' ORDER BY id"
+            + "WHERE name like binary '{}' ORDER BY id".format(state_name)
         )
+        cursor.execute(sql_query)
         result = cursor.fetchall()
         for row in result:
             print(row)
