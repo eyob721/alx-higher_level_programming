@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script takes 3 arguments and lists all the states from the database
+This script takes 3 arguments and lists states that start with N
 
     Arguments:
         - mysql username
@@ -19,18 +19,21 @@ if __name__ == "__main__":
     conn = None
     parameters = {
         "host": "localhost",
+        "port": 3306,
         "user": sys.argv[1],
         "password": sys.argv[2],
         "database": sys.argv[3],
-        "port": 3306,
     }
     try:
         conn = MySQLdb.connect(**parameters)
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM states WHERE name like 'N%' ORDER BY id")
+        cursor.execute(
+            "SELECT * FROM states WHERE name like binary 'N%' ORDER BY id"
+        )
         result = cursor.fetchall()
         for row in result:
             print(row)
     finally:
         if conn is not None and conn.open:
+            cursor.close()
             conn.close()
