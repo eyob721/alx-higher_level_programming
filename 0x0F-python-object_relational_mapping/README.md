@@ -42,3 +42,12 @@
  found [here](./sql/4-cities_by_state.sql).
 - It lists all the `cities` with their corresponding states from the
  database `hbtn_0e_4_usa`.
+
+[5-filter_cities.py](./5-filter_cities.py)
+
+- This script takes 4 arguments
+  - mysql username
+  - mysql password
+  - database name
+  - state name
+- It lists all the `cities` that belong in the given state name.
