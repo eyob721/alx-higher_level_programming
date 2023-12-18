@@ -17,3 +17,12 @@
 [1-filter_states.py](./1-filter_states.py)
 
 - This script lists all states with a name that starts with `N`.
+
+[2-my_filter_states.py](./2-my_filter_states.py)
+
+- Unlike the previous scripts, this script takes 4 arguments
+  - mysql username
+  - mysql password
+  - database name
+  - state name
+- It lists all the states with the given state name.
