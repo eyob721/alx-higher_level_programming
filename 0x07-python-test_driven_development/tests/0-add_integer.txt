@@ -1,0 +1,61 @@
+========================
+Task 0: 0-add_integer.py
+========================
+
+This is a test file for the function `add_integer()` that is found in the
+module `0-add_integer`.
+
+Import module
+=============
+First import the `add_integer()` from module `0-add_integer`
+
+>>> module = __import__('0-add_integer')
+>>> add_integer = module.add_integer
+
+Documentation
+===================
+
+>>> module.__doc__ != ""
+True
+
+>> add_integer.__doc__ != ""
+True
+
+Normal cases
+=========================
+
+>>> add_integer(2, 3)
+5
+
+>> add_integer(29.9, 2.12)
+31
+
+>>> add_integer(2)
+100
+
+Edge cases
+=====================
+
+Check for other types
+---------------------
+>>> add_integer(2, "school")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+>>> add_integer("hello", 3)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+>>> add_integer("hello", "holberton")
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Check for empty argument
+------------------------
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
