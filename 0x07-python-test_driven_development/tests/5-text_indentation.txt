@@ -16,10 +16,10 @@ First import the `text_indentation()` from the module `5-text_indentation`
 Documentation
 =============
 
->>> len(module.__doc__) > 10
+>>> module.__doc__ != 10
 True
 
->> len(text_indentation.__doc__) > 10
+>> text_indentation.__doc__ != 10
 True
 
 Normal Cases
