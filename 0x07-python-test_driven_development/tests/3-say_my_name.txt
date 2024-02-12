@@ -1,0 +1,57 @@
+===========================
+Task 2: 3-say_my_name.py
+===========================
+
+This is a test file for the function `say_my_name()` that is found in the
+module `3-say_my_name`.
+
+Import module
+==============
+
+First import the `say_my_name()` from the module `3-say_my_name`
+
+>>> module = __import__('3-say_my_name')
+>>> say_my_name = module.say_my_name
+
+Documentation
+=============
+
+>>> module.__doc__ != ""
+True
+
+>> say_my_name.__doc__ != ""
+True
+
+Normal Cases
+============
+
+>>> say_my_name("Eyob", "Melkamu")
+My name is Eyob Melkamu
+
+>>> say_my_name("Eyob") #doctest: +REPORT_NDIFF
+My name is Eyob 
+
+Edge Cases
+==========
+
+Check empty strings
+-------------------
+>>> say_my_name("", "")
+My name is  
+
+Check invalid type
+------------------
+>>> say_my_name([1], "Melkamu")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Eyob", [1])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name([1], [1])
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
