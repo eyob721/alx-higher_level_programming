@@ -1,0 +1,96 @@
+===========================
+Task 1: 2-matrix_divided.py
+===========================
+
+This is a test file for the function `matrix_divided()` that is found in the
+module `2-matrix_divided`.
+
+Import module
+==============
+
+First import the `matrix_divided()` from the module `2-matrix_divided`
+
+>>> module = __import__('2-matrix_divided')
+>>> matrix_divided = module.matrix_divided
+
+Documentation
+===================
+
+>>> module.__doc__ != ""
+True
+
+>> add_integer.__doc__ != ""
+True
+
+Normal cases
+=========================
+
+>>> matrix_divided([[1, 2, 3], [10, 20, 30]], 2)
+[[0.5, 1.0, 1.5], [5.0, 10.0, 15.0]]
+
+>>> matrix_divided([[10.12, 2.3, 3], [10, 20.10, 30.4]], 2)
+[[5.06, 1.15, 1.5], [5.0, 10.05, 15.2]]
+
+>>> matrix_divided([[10.12, 2.3, 3], [10, 20.10, 30.4]], 2.5)
+[[4.05, 0.92, 1.2], [4.0, 8.04, 12.16]]
+
+
+Edge Cases
+=====================
+
+Check empty matrix
+------------------
+>>> matrix_divided([], 2)
+[]
+
+Check empty rows
+------------------
+>>> matrix_divided([[], []], 2)
+[[], []]
+
+Check type of matrix
+--------------------
+>>> matrix_divided((1, 2, 3), 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Check type of row elements
+--------------------------
+>>> matrix_divided([[1, 2, 3], [10, "Alx", 30]], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Check type of rows
+------------------
+>>> matrix_divided([(1, 2, 3), [10, 20, 30]], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([1, 2, 3], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Check size of rows
+------------------
+>>> matrix_divided([[1, 2, 3, 4, 5], [10, 20, 30]], 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+Check type of div
+-----------------
+>>> matrix_divided([[1, 2, 3], [10, 20, 30]], "Holberton")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+Check zero division
+-------------------
+>>> matrix_divided([[1, 2, 3], [10, 20, 30], [7, 8, 5, 2]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
