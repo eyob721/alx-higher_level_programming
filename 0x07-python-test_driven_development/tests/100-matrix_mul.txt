@@ -1,0 +1,115 @@
+========================
+Task 6: 100-matrix_mul
+=========================
+
+This is a test file for the function `matrix_mul()` that is found in the
+module `100-matrix_mul`.
+
+Import module
+==============
+
+First import the `matrix_mul()` from the module `100-matrix_mul`
+
+>>> module = __import__('100-matrix_mul')
+>>> matrix_mul = module.matrix_mul
+
+Documentation
+=============
+
+>>> module.__doc__ != ""
+True
+
+>> matrix_mul.__doc__ != ""
+True
+
+Normal Cases
+============
+
+>>> matrix_mul([[1, 2, 3], [9, 10, 12]], [[4, 3], [5, 2], [6, 1]])
+[[32, 10], [158, 59]]
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+Edge Cases
+==========
+
+Case of either of the matrices not being a list
+-----------------------------------------------
+>>> matrix_mul(([1, 2], [3, 4]), [[5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+
+>>> matrix_mul([[1, 2], [3, 4]], ([5, 6], [10, 12]))
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+
+Case of either of the matrices not being a list of lists
+--------------------------------------------------------
+>>> matrix_mul([(1, 2), [3, 4]], [[5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+
+>>> matrix_mul([[1, 2], [3, 4]], [(5, 6)])
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+
+Case of either of the matrices being empty
+------------------------------------------
+>>> matrix_mul([], [[5, 6]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[1, 2], []], [[5, 6]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], []])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+Case of the matrices containing types other than int or float
+-------------------------------------------------------------
+>>> matrix_mul([[1, "2"], [3, 4]], [[5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_a should contain only integers or floats
+
+>>> matrix_mul([[1, 2], [3, 4]], [["5", 6]])
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+
+Case of rows being of different sizes
+-------------------------------------
+>>> matrix_mul([[1, 2, 3], [3, 4]], [[5, 6]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [9, 10, 12]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
+
+Case incompatible matrices for multiplication
+---------------------------------------------
+>>> matrix_mul([[1, 2, 3], [3, 4, 7]], [[5, 6], [10, 12]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
