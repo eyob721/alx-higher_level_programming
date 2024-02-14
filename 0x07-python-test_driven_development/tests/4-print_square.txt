@@ -50,6 +50,13 @@ Normal Cases
 Edge Cases
 ==========
 
+Check for missing argument
+--------------------------
+>>> print_square() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: ...
+
 Check invalid types
 -------------------
 >>> print_square([1])

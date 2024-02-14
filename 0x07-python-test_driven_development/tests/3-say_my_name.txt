@@ -19,7 +19,7 @@ Documentation
 >>> module.__doc__ != ""
 True
 
->> say_my_name.__doc__ != ""
+>>> say_my_name.__doc__ != ""
 True
 
 Normal Cases
@@ -33,6 +33,13 @@ My name is Eyob
 
 Edge Cases
 ==========
+
+Check missing arguments
+-----------------------
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
 Check empty strings
 -------------------

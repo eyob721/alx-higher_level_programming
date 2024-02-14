@@ -84,6 +84,15 @@ Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 Edge Cases
 ==========
 
+Check for missing arguments
+---------------------------
+>>> text_indentation() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: ...
+
+Check for invalid type
+----------------------
 >>> text_indentation(["Name:"])
 Traceback (most recent call last):
 ...
