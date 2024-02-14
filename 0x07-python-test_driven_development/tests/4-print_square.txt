@@ -19,7 +19,7 @@ Documentation
 >>> module.__doc__ != ""
 True
 
->> print_square.__doc__ != ""
+>>> print_square.__doc__ != ""
 True
 
 Normal Cases

@@ -19,7 +19,7 @@ Documentation
 >>> module.__doc__ != ""
 True
 
->> add_integer.__doc__ != ""
+>>> add_integer.__doc__ != ""
 True
 
 Normal cases

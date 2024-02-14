@@ -19,7 +19,7 @@ Documentation
 >>> module.__doc__ != ""
 True
 
->> lazy_matrix_mul.__doc__ != ""
+>>> lazy_matrix_mul.__doc__ != ""
 True
 
 Normal Cases

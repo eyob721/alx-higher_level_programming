@@ -19,7 +19,7 @@ Documentation
 >>> module.__doc__ != ""
 True
 
->> matrix_mul.__doc__ != ""
+>>> matrix_mul.__doc__ != ""
 True
 
 Normal Cases

@@ -18,7 +18,7 @@ Documentation
 >>> module.__doc__ != ""
 True
 
->> add_integer.__doc__ != ""
+>>> add_integer.__doc__ != ""
 True
 
 Normal cases
@@ -27,7 +27,7 @@ Normal cases
 >>> add_integer(2, 3)
 5
 
->> add_integer(29.9, 2.12)
+>>> add_integer(29.9, 2.12)
 31
 
 >>> add_integer(2)

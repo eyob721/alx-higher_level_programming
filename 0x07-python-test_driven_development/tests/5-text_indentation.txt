@@ -19,7 +19,7 @@ Documentation
 >>> module.__doc__ != 10
 True
 
->> text_indentation.__doc__ != 10
+>>> text_indentation.__doc__ != 10
 True
 
 Normal Cases
