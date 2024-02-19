@@ -1,0 +1,68 @@
+==========================
+Task 1: print_sorted(self)
+==========================
+
+This is a test file for a method of `MyList` which inherits from the `list`
+class. The method to be tested is the `def print_sorted(self:)` method that
+prints the list, but sorted in ascending order.
+
+Import module
+=======================================
+
+>>> module = __import__("1-my_list")
+
+>>> MyList = module.MyList
+
+Documentation
+=======================================
+
+>>> module.__doc__ != ""
+True
+
+>>> MyList.__doc__ != ""
+True
+
+>>> MyList().print_sorted.__doc__ != ""
+True
+
+Normal Cases
+=======================================
+
+>>> ml = MyList([])
+>>> ml.print_sorted()
+[]
+
+>>> ml = MyList([10, 3])
+>>> ml.print_sorted()
+[3, 10]
+
+>>> ml = MyList([10, 1, 70, 0, 2, 98])
+>>> ml.print_sorted()
+[0, 1, 2, 10, 70, 98]
+
+>>> ml = MyList([-1, -100, -1023, 0, 2, 98])
+>>> ml.print_sorted()
+[-1023, -100, -1, 0, 2, 98]
+
+>>> ml = MyList([-1, -100, -1023, -2014, -2, -98])
+>>> ml.print_sorted()
+[-2014, -1023, -100, -98, -2, -1]
+
+Edge Cases
+=======================================
+
+>>> ml = MyList([])
+>>> type(ml) is MyList
+True
+>>> isinstance(ml, MyList)
+True
+>>> issubclass(type(ml), list)
+True
+
+>>> ml = MyList([1, 4, 2, 3, 5])
+>>> print(ml)
+[1, 4, 2, 3, 5]
+>>> ml.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(ml)
+[1, 4, 2, 3, 5]
