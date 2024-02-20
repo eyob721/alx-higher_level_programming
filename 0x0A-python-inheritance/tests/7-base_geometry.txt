@@ -45,6 +45,18 @@ Normal Cases
 Edge Cases
 =======================================
 
+Check missing parameters
+------------------------
+>>> bg.integer_validator() #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: ...
+
+>>> bg.integer_validator("age") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: ...
+
 Check type
 ----------
 >>> bg = BaseGeometry()
@@ -59,6 +71,26 @@ Traceback (most recent call last):
 TypeError: length must be an integer
 
 >>> bg.integer_validator("length", True)
+Traceback (most recent call last):
+...
+TypeError: length must be an integer
+
+>>> bg.integer_validator("length", None)
+Traceback (most recent call last):
+...
+TypeError: length must be an integer
+
+>>> bg.integer_validator("length", [3])
+Traceback (most recent call last):
+...
+TypeError: length must be an integer
+
+>>> bg.integer_validator("length", (4,))
+Traceback (most recent call last):
+...
+TypeError: length must be an integer
+
+>>> bg.integer_validator("length", {3, 4})
 Traceback (most recent call last):
 ...
 TypeError: length must be an integer
