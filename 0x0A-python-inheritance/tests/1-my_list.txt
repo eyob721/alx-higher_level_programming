@@ -51,6 +51,8 @@ Normal Cases
 Edge Cases
 =======================================
 
+Check type is list
+------------------
 >>> ml = MyList([])
 >>> type(ml) is MyList
 True
@@ -59,6 +61,8 @@ True
 >>> issubclass(type(ml), list)
 True
 
+Check object is not changed
+---------------------------
 >>> ml = MyList([1, 4, 2, 3, 5])
 >>> print(ml)
 [1, 4, 2, 3, 5]
@@ -66,3 +70,11 @@ True
 [1, 2, 3, 4, 5]
 >>> print(ml)
 [1, 4, 2, 3, 5]
+
+Check th append method
+----------------------
+>>> ml.append(10)
+>>> ml
+[1, 4, 2, 3, 5, 10]
+>>> ml.print_sorted()
+[1, 2, 3, 4, 5, 10]
