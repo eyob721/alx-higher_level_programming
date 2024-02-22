@@ -34,3 +34,25 @@ class TestBase(unittest.TestCase):
         b = Base()
         nb_objects_third = Base.__dict__["_Base__nb_objects"]
         self.assertEqual(nb_objects_third, nb_objects_second + 1)
+
+    def test_id_exists(self):
+        """Check that id exists"""
+        b = Base()
+        self.assertTrue("id" in b.__dict__)
+
+    def test_id_type(self):
+        """Check that type of id is an int"""
+        b = Base()
+        self.assertTrue(type(b.id) is int)
+
+    def test_id_value(self):
+        """Check the value of id"""
+
+        # When id value is given, id must be equal with the given value
+        b = Base(12)
+        self.assertEqual(b.id, 12)
+
+        # When no id is given, id must be equal with __nb_objects
+        b = Base()
+        nb_objects = getattr(b, "_Base__nb_objects")
+        self.assertEqual(b.id, nb_objects)
