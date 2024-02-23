@@ -401,3 +401,29 @@ class TestRectangleY(unittest.TestCase):
             x=10,
             y=-2,
         )
+
+
+class TestRectangleArea(unittest.TestCase):
+    """Test cases for the Rectangle - area method"""
+
+    def test_area_exists(self):
+        """Check that the area method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("area" in dir(r))
+
+    def test_area_value(self):
+        """Check area method returns correct value"""
+        r = Rectangle(3, 5)
+        self.assertEqual(r.area(), 15)
+
+        r.width = 29
+        r.height = 44
+        self.assertEqual(r.area(), 29 * 44)
+
+        r = Rectangle(3, 7, 0, 0, 12)
+        self.assertEqual(r.area(), 21)
+
+    def test_area_value_type(self):
+        """Check area method returns an int"""
+        r = Rectangle(3, 5)
+        self.assertIs(type(r.area()), int)
