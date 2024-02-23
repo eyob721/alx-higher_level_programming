@@ -41,3 +41,18 @@ class TestRectangleWidth(unittest.TestCase):
         """Check width is assigned the correct given value"""
         r = Rectangle(3, 5)
         self.assertEqual(r.width, 3)
+
+
+class TestRectangleHeight(unittest.TestCase):
+    """Test cases for the Rectangle - height attribute"""
+
+    def test_height_exists(self):
+        """Check that the Rectangle class has the height attribute"""
+        r = Rectangle(3, 5)
+        self.assertTrue("height" in dir(r))
+        self.assertTrue("_Rectangle__height" in dir(r))
+
+    def test_height_assigned_correct_value(self):
+        """Check height is assigned the correct given value"""
+        r = Rectangle(3, 5)
+        self.assertEqual(r.height, 5)
