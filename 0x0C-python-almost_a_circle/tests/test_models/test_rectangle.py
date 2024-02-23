@@ -28,6 +28,24 @@ class TestRectangle(unittest.TestCase):
             self.assertTrue(base_attr in r.__dict__)
 
 
+class TestRectangleId(unittest.TestCase):
+    """Test cases for the Rectangle - id attribute"""
+
+    def test_id_exists(self):
+        """Check that the Rectangle class has the id attribute"""
+        r = Rectangle(3, 5)
+        self.assertTrue("id" in dir(r))
+
+    def test_id_assigned_correct_value(self):
+        """Check id is assigned the correct given value"""
+
+        r = Rectangle(3, 5)
+        self.assertEqual(r.id, getattr(r, "_Base__nb_objects"))
+
+        r = Rectangle(3, 5, 2, 10, 21)
+        self.assertEqual(r.id, 21)
+
+
 class TestRectangleWidth(unittest.TestCase):
     """Test cases for the Rectangle - width attribute"""
 
