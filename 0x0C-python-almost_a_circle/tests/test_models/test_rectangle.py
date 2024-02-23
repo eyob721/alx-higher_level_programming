@@ -311,12 +311,12 @@ class TestRectangleDisplay(unittest.TestCase):
 
     def test_display_output(self):
         """Check the output of the display method"""
-        values = [(3, 5), (2, 7), (1, 1), (3, 10, 4, 2, 12)]
+        values = [(3, 5), (2, 7, 20, 10), (1, 1, 0, 40), (3, 10, 4, 2, 12)]
         for v in values:
             r = Rectangle(*v)
-            width = v[0]
-            height = v[1]
-            exp_output = ("#" * width + "\n") * height
+            exp_output = ("\n" * r.y) + (
+                (" " * r.x + "#" * r.width + "\n") * r.height
+            )
             with patch("sys.stdout", new=StringIO()) as got_output:
                 r.display()
                 self.assertEqual(got_output.getvalue(), exp_output)
