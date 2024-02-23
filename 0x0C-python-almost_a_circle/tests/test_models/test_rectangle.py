@@ -145,6 +145,76 @@ class TestRectangleHeight(unittest.TestCase):
         r = Rectangle(3, 5)
         self.assertEqual(r.height, 5)
 
+    def test_height_assigned_value_type(self):
+        """Check if the assigned value of height is of type int"""
+        r = Rectangle(3, 5)
+        self.assertTrue(type(r.height) is int)
+
+    def test_TypeError_exception_for_height(self):
+        """Check raised exception and message when given wrong type of value
+
+        Note:
+            type of given value for height must be an integer
+
+        """
+        self.assertRaisesRegex(
+            TypeError,
+            r"^height must be an integer$",
+            Rectangle,
+            width=5,
+            height="3",
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^height must be an integer$",
+            Rectangle,
+            width=5,
+            height=[3],
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^height must be an integer$",
+            Rectangle,
+            width=5,
+            height=(3,),
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^height must be an integer$",
+            Rectangle,
+            width=5,
+            height={1: 3},
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^height must be an integer$",
+            Rectangle,
+            width=5,
+            height=None,
+        )
+
+    def test_ValueError_exception_for_height(self):
+        """Check raised exception and message when given wrong value
+
+        Note:
+            given value for height must be > 0
+
+        """
+        self.assertRaisesRegex(
+            ValueError,
+            r"^height must be > 0$",
+            Rectangle,
+            width=5,
+            height=-7,
+        )
+        self.assertRaisesRegex(
+            ValueError,
+            r"^height must be > 0$",
+            Rectangle,
+            width=5,
+            height=0,
+        )
+
 
 class TestRectangleX(unittest.TestCase):
     """Test cases for the Rectangle - x attribute"""
