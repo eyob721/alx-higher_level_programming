@@ -26,3 +26,18 @@ class TestRectangle(unittest.TestCase):
         b = Base()
         for base_attr in b.__dict__:
             self.assertTrue(base_attr in r.__dict__)
+
+
+class TestRectangleWidth(unittest.TestCase):
+    """Test cases for the Rectangle - width attribute"""
+
+    def test_width_exists(self):
+        """Check that the Rectangle class has the width attribute"""
+        r = Rectangle(3, 5)
+        self.assertTrue("width" in dir(r))
+        self.assertTrue("_Rectangle__width" in dir(r))
+
+    def test_width_assigned_correct_value(self):
+        """Check width is assigned the correct given value"""
+        r = Rectangle(3, 5)
+        self.assertEqual(r.width, 3)
