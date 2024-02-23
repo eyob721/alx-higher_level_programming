@@ -233,6 +233,81 @@ class TestRectangleX(unittest.TestCase):
         r = Rectangle(3, 5, 2, 10)
         self.assertEqual(r.x, 2)
 
+    def test_x_assigned_value_type(self):
+        """Check if the assigned value of x is of type int"""
+        r = Rectangle(3, 5)
+        self.assertTrue(type(r.x) is int)
+
+    def test_TypeError_exception_for_x(self):
+        """Check raised exception and message when given wrong type of value
+
+        Note:
+            type of given value for x must be an integer
+
+        """
+        self.assertRaisesRegex(
+            TypeError,
+            r"^x must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x="2",
+            y=10,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^x must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=[2],
+            y=10,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^x must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=(2,),
+            y=10,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^x must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x={1: 2},
+            y=10,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^x must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=None,
+            y=10,
+        )
+
+    def test_ValueError_exception_for_x(self):
+        """Check raised exception and message when given wrong value
+
+        Note:
+            given value for x must be >= 0
+
+        """
+        self.assertRaisesRegex(
+            ValueError,
+            r"^x must be >= 0$",
+            Rectangle,
+            width=5,
+            height=7,
+            x=-2,
+            y=10,
+        )
+
 
 class TestRectangleY(unittest.TestCase):
     """Test cases for the Rectangle - y attribute"""
