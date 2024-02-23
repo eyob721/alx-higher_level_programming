@@ -72,41 +72,15 @@ class TestRectangleWidth(unittest.TestCase):
             type of given value for width must be an integer
 
         """
-        self.assertRaisesRegex(
-            TypeError,
-            r"^width must be an integer$",
-            Rectangle,
-            width="3",
-            height=5,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^width must be an integer$",
-            Rectangle,
-            width=[3],
-            height=5,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^width must be an integer$",
-            Rectangle,
-            width=(3,),
-            height=5,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^width must be an integer$",
-            Rectangle,
-            width={1: 3},
-            height=5,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^width must be an integer$",
-            Rectangle,
-            width=None,
-            height=5,
-        )
+        invalid_types = [3.1, True, 1 + 2j, "3", [3], (7,), {"value": 3}]
+        for it in invalid_types:
+            self.assertRaisesRegex(
+                TypeError,
+                r"^width must be an integer$",
+                Rectangle,
+                width=it,
+                height=5,
+            )
 
     def test_ValueError_exception_for_width(self):
         """Check raised exception and message when given wrong value
@@ -115,20 +89,15 @@ class TestRectangleWidth(unittest.TestCase):
             given value for width must be > 0
 
         """
-        self.assertRaisesRegex(
-            ValueError,
-            r"^width must be > 0$",
-            Rectangle,
-            width=-7,
-            height=5,
-        )
-        self.assertRaisesRegex(
-            ValueError,
-            r"^width must be > 0$",
-            Rectangle,
-            width=0,
-            height=5,
-        )
+        invalid_values = [-19, -7, 0]
+        for iv in invalid_values:
+            self.assertRaisesRegex(
+                ValueError,
+                r"^width must be > 0$",
+                Rectangle,
+                width=iv,
+                height=5,
+            )
 
 
 class TestRectangleHeight(unittest.TestCase):
@@ -157,41 +126,15 @@ class TestRectangleHeight(unittest.TestCase):
             type of given value for height must be an integer
 
         """
-        self.assertRaisesRegex(
-            TypeError,
-            r"^height must be an integer$",
-            Rectangle,
-            width=5,
-            height="3",
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^height must be an integer$",
-            Rectangle,
-            width=5,
-            height=[3],
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^height must be an integer$",
-            Rectangle,
-            width=5,
-            height=(3,),
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^height must be an integer$",
-            Rectangle,
-            width=5,
-            height={1: 3},
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^height must be an integer$",
-            Rectangle,
-            width=5,
-            height=None,
-        )
+        invalid_types = [3.1, True, 1 + 2j, "3", [3], (7,), {"value": 3}]
+        for it in invalid_types:
+            self.assertRaisesRegex(
+                TypeError,
+                r"^height must be an integer$",
+                Rectangle,
+                width=5,
+                height=it,
+            )
 
     def test_ValueError_exception_for_height(self):
         """Check raised exception and message when given wrong value
@@ -200,20 +143,15 @@ class TestRectangleHeight(unittest.TestCase):
             given value for height must be > 0
 
         """
-        self.assertRaisesRegex(
-            ValueError,
-            r"^height must be > 0$",
-            Rectangle,
-            width=5,
-            height=-7,
-        )
-        self.assertRaisesRegex(
-            ValueError,
-            r"^height must be > 0$",
-            Rectangle,
-            width=5,
-            height=0,
-        )
+        invalid_values = [-19, -7, 0]
+        for iv in invalid_values:
+            self.assertRaisesRegex(
+                ValueError,
+                r"^height must be > 0$",
+                Rectangle,
+                width=5,
+                height=iv,
+            )
 
 
 class TestRectangleX(unittest.TestCase):
@@ -245,51 +183,17 @@ class TestRectangleX(unittest.TestCase):
             type of given value for x must be an integer
 
         """
-        self.assertRaisesRegex(
-            TypeError,
-            r"^x must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x="2",
-            y=10,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^x must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=[2],
-            y=10,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^x must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=(2,),
-            y=10,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^x must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x={1: 2},
-            y=10,
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^x must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=None,
-            y=10,
-        )
+        invalid_types = [3.1, True, 1 + 2j, "3", [3], (7,), {"value": 3}]
+        for it in invalid_types:
+            self.assertRaisesRegex(
+                TypeError,
+                r"^x must be an integer$",
+                Rectangle,
+                width=3,
+                height=5,
+                x=it,
+                y=10,
+            )
 
     def test_ValueError_exception_for_x(self):
         """Check raised exception and message when given wrong value
@@ -339,51 +243,17 @@ class TestRectangleY(unittest.TestCase):
             type of given value for y must be an integer
 
         """
-        self.assertRaisesRegex(
-            TypeError,
-            r"^y must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=10,
-            y="2",
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^y must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=10,
-            y=[2],
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^y must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=10,
-            y=(2,),
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^y must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=10,
-            y={1: 2},
-        )
-        self.assertRaisesRegex(
-            TypeError,
-            r"^y must be an integer$",
-            Rectangle,
-            width=3,
-            height=5,
-            x=10,
-            y=None,
-        )
+        invalid_types = [3.1, True, 1 + 2j, "3", [3], (7,), {"value": 3}]
+        for it in invalid_types:
+            self.assertRaisesRegex(
+                TypeError,
+                r"^y must be an integer$",
+                Rectangle,
+                width=3,
+                height=5,
+                x=7,
+                y=it,
+            )
 
     def test_ValueError_exception_for_y(self):
         """Check raised exception and message when given wrong value
