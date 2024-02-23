@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Tests for the Rectangle class"""
 import unittest
+from io import StringIO
+from unittest.mock import patch
 
 from models.base import Base
 from models.rectangle import Rectangle
@@ -297,3 +299,24 @@ class TestRectangleArea(unittest.TestCase):
         """Check area method returns an int"""
         r = Rectangle(3, 5)
         self.assertIs(type(r.area()), int)
+
+
+class TestRectangleDisplay(unittest.TestCase):
+    """Test cases for the Rectangle - display method"""
+
+    def test_display_exists(self):
+        """Check that the display method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("display" in dir(r))
+
+    def test_display_output(self):
+        """Check the output of the display method"""
+        values = [(3, 5), (2, 7), (1, 1), (3, 10, 4, 2, 12)]
+        for v in values:
+            r = Rectangle(*v)
+            width = v[0]
+            height = v[1]
+            exp_output = ("#" * width + "\n") * height
+            with patch("sys.stdout", new=StringIO()) as got_output:
+                r.display()
+                self.assertEqual(got_output.getvalue(), exp_output)
