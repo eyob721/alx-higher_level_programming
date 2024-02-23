@@ -91,3 +91,9 @@ class Rectangle(Base):
         """Displays the Rectangle in stdout using the `#` character"""
         rectangle = (("#" * self.__width + "\n") * self.__height).rstrip("\n")
         print(rectangle)
+
+    def __str__(self):
+        """Informal string representation of Rectangle"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height
+        )
