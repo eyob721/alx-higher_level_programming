@@ -89,8 +89,10 @@ class Rectangle(Base):
 
     def display(self):
         """Displays the Rectangle in stdout using the `#` character"""
-        rectangle = (("#" * self.__width + "\n") * self.__height).rstrip("\n")
-        print(rectangle)
+        rectangle = ("\n" * self.__y) + (
+            " " * self.__x + "#" * self.__width + "\n"
+        ) * self.__height
+        print(rectangle, end="")
 
     def __str__(self):
         """Informal string representation of Rectangle"""
