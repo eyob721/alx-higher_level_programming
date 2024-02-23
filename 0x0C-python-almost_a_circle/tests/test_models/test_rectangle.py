@@ -325,3 +325,79 @@ class TestRectangleY(unittest.TestCase):
 
         r = Rectangle(3, 5, 2, 10)
         self.assertEqual(r.y, 10)
+
+    #
+    def test_y_assigned_value_type(self):
+        """Check if the assigned value of y is of type int"""
+        r = Rectangle(3, 5)
+        self.assertTrue(type(r.y) is int)
+
+    def test_TypeError_exception_for_y(self):
+        """Check raised exception and message when given wrong type of value
+
+        Note:
+            type of given value for y must be an integer
+
+        """
+        self.assertRaisesRegex(
+            TypeError,
+            r"^y must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=10,
+            y="2",
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^y must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=10,
+            y=[2],
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^y must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=10,
+            y=(2,),
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^y must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=10,
+            y={1: 2},
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^y must be an integer$",
+            Rectangle,
+            width=3,
+            height=5,
+            x=10,
+            y=None,
+        )
+
+    def test_ValueError_exception_for_y(self):
+        """Check raised exception and message when given wrong value
+
+        Note:
+            given value for y must be >= 0
+
+        """
+        self.assertRaisesRegex(
+            ValueError,
+            r"^y must be >= 0$",
+            Rectangle,
+            width=5,
+            height=7,
+            x=10,
+            y=-2,
+        )
