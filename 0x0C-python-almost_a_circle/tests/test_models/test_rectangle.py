@@ -74,3 +74,21 @@ class TestRectangleX(unittest.TestCase):
 
         r = Rectangle(3, 5, 2, 10)
         self.assertEqual(r.x, 2)
+
+
+class TestRectangleY(unittest.TestCase):
+    """Test cases for the Rectangle - y attribute"""
+
+    def test_y_exists(self):
+        """Check that the Rectangle class has the y attribute"""
+        r = Rectangle(3, 5)
+        self.assertTrue("y" in dir(r))
+        self.assertTrue("_Rectangle__y" in dir(r))
+
+    def test_y_assigned_correct_value(self):
+        """Check y is assigned the correct given value"""
+        r = Rectangle(3, 5)
+        self.assertEqual(r.y, 0)
+
+        r = Rectangle(3, 5, 2, 10)
+        self.assertEqual(r.y, 10)
