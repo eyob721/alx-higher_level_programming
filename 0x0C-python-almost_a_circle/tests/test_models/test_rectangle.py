@@ -320,3 +320,23 @@ class TestRectangleDisplay(unittest.TestCase):
             with patch("sys.stdout", new=StringIO()) as got_output:
                 r.display()
                 self.assertEqual(got_output.getvalue(), exp_output)
+
+
+class TestRectangleStr(unittest.TestCase):
+    """Test cases for the Rectangle - __str__ method"""
+
+    def test_str_return_type(self):
+        """Check that __str__ returns a string"""
+        r = Rectangle(3, 5)
+        self.assertTrue(type(r.__str__()) is str)
+
+    def test_str_return_value(self):
+        """Check __str__ returns the correct value"""
+        values = [(3, 5), (2, 7), (1, 1), (3, 10, 4, 2, 12)]
+        for v in values:
+            r = Rectangle(*v)
+            exp_output = "[Rectangle] ({}) {}/{} - {}/{}".format(
+                r.id, r.x, r.y, r.width, r.height
+            )
+            got_output = r.__str__()
+            self.assertEqual(got_output, exp_output)
