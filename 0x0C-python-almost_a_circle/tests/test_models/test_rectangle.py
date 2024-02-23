@@ -60,6 +60,76 @@ class TestRectangleWidth(unittest.TestCase):
         r = Rectangle(3, 5)
         self.assertEqual(r.width, 3)
 
+    def test_width_assigned_value_type(self):
+        """Check if the assigned value of width is of type int"""
+        r = Rectangle(3, 5)
+        self.assertTrue(type(r.width) is int)
+
+    def test_TypeError_exception_for_width(self):
+        """Check raised exception and message when given wrong type of value
+
+        Note:
+            type of given value for width must be an integer
+
+        """
+        self.assertRaisesRegex(
+            TypeError,
+            r"^width must be an integer$",
+            Rectangle,
+            width="3",
+            height=5,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^width must be an integer$",
+            Rectangle,
+            width=[3],
+            height=5,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^width must be an integer$",
+            Rectangle,
+            width=(3,),
+            height=5,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^width must be an integer$",
+            Rectangle,
+            width={1: 3},
+            height=5,
+        )
+        self.assertRaisesRegex(
+            TypeError,
+            r"^width must be an integer$",
+            Rectangle,
+            width=None,
+            height=5,
+        )
+
+    def test_ValueError_exception_for_width(self):
+        """Check raised exception and message when given wrong value
+
+        Note:
+            given value for width must be > 0
+
+        """
+        self.assertRaisesRegex(
+            ValueError,
+            r"^width must be > 0$",
+            Rectangle,
+            width=-7,
+            height=5,
+        )
+        self.assertRaisesRegex(
+            ValueError,
+            r"^width must be > 0$",
+            Rectangle,
+            width=0,
+            height=5,
+        )
+
 
 class TestRectangleHeight(unittest.TestCase):
     """Test cases for the Rectangle - height attribute"""
