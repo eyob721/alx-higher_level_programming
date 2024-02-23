@@ -340,3 +340,44 @@ class TestRectangleStr(unittest.TestCase):
             )
             got_output = r.__str__()
             self.assertEqual(got_output, exp_output)
+
+
+class TestRectangleUpdate(unittest.TestCase):
+    """Test cases for the Rectangle - update method"""
+
+    def test_update_exists(self):
+        """Check that the update method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("update" in dir(r))
+
+    def test_attributes_are_updated_correctly(self):
+        """Check if the attributes are updated correctly"""
+        r = Rectangle(3, 5)
+
+        exp_output = r.__str__()
+        r.update()
+        self.assertEqual(r.__str__(), exp_output)
+
+        r.update(89)
+        exp_output = "[Rectangle] (89) 0/0 - 3/5"
+        self.assertEqual(r.__str__(), exp_output)
+
+        r.update(89, 2)
+        exp_output = "[Rectangle] (89) 0/0 - 2/5"
+        self.assertEqual(r.__str__(), exp_output)
+
+        r.update(89, 2, 3)
+        exp_output = "[Rectangle] (89) 0/0 - 2/3"
+        self.assertEqual(r.__str__(), exp_output)
+
+        r.update(89, 2, 3, 4)
+        exp_output = "[Rectangle] (89) 4/0 - 2/3"
+        self.assertEqual(r.__str__(), exp_output)
+
+        r.update(89, 2, 3, 4, 5)
+        exp_output = "[Rectangle] (89) 4/5 - 2/3"
+        self.assertEqual(r.__str__(), exp_output)
+
+        r.update(89, 2, 3, 4, 5, 6)
+        exp_output = "[Rectangle] (89) 4/5 - 2/3"
+        self.assertEqual(r.__str__(), exp_output)
