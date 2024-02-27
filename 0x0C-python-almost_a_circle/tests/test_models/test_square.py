@@ -310,7 +310,96 @@ class TestSquareStr(unittest.TestCase):
         for v in values:
             s = Square(*v)
             exp_output = "[Square] ({}) {}/{} - {}".format(
-                s.id, s.x, s.y, s.width
+                s.id, s.x, s.y, s.size
             )
             got_output = s.__str__()
             self.assertEqual(got_output, exp_output)
+
+
+class TestSquareSize(unittest.TestCase):
+    """Test cases for the Square - size attribute"""
+
+    def test_size_exists(self):
+        """Check that the Square class has the size attribute"""
+        s = Square(3)
+        self.assertTrue("size" in dir(s))
+
+    def test_size_assigned_correct_value(self):
+        """Check size is assigned the correct given value"""
+        s = Square(3)
+        self.assertEqual(s.size, 3)
+
+        s.size = 7
+        self.assertEqual(s.size, 7)
+
+    def test_width_and_height_are_the_same(self):
+        """Check that width and height have the same value"""
+        s = Square(3)
+        self.assertEqual(s.width, s.height)
+
+        s.size = 10
+        self.assertEqual(s.width, s.height)
+
+    def test_size_assigned_value_type(self):
+        """Check if the assigned value of size is of type int"""
+        s = Square(3)
+        self.assertTrue(type(s.size) is int)
+
+    def test_TypeError_exception_for_size(self):
+        """Check raised exception and message when given wrong type of value
+
+        Note:
+            type of given value for size must be an integer
+
+        """
+        invalid_types = [3.1, True, 1 + 2j, "3", [3], (7,), {"value": 3}]
+
+        for it in invalid_types:
+            self.assertRaisesRegex(
+                TypeError,
+                r"^width must be an integer$",
+                Square,
+                size=it,
+            )
+
+        s = Square(3)
+
+        def set_size(value):
+            s.size = value
+
+        for it in invalid_types:
+            self.assertRaisesRegex(
+                TypeError,
+                r"^width must be an integer$",
+                set_size,
+                it,
+            )
+
+    def test_ValueError_exception_for_size(self):
+        """Check raised exception and message when given wrong value
+
+        Note:
+            given value for size must be > 0
+
+        """
+        invalid_values = [-19, -7, 0]
+        for iv in invalid_values:
+            self.assertRaisesRegex(
+                ValueError,
+                r"^width must be > 0$",
+                Square,
+                size=iv,
+            )
+
+        s = Square(3)
+
+        def set_size(value):
+            s.size = value
+
+        for iv in invalid_values:
+            self.assertRaisesRegex(
+                ValueError,
+                r"^width must be > 0$",
+                set_size,
+                iv,
+            )
