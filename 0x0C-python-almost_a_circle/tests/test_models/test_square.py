@@ -408,3 +408,60 @@ class TestSquareSize(unittest.TestCase):
                 set_size,
                 iv,
             )
+
+
+class TestSquareUpdate(unittest.TestCase):
+    """Test cases for the Square - update method"""
+
+    def test_update_exists(self):
+        """Check that the update method is defined"""
+        s = Square(3)
+        self.assertTrue("update" in dir(s))
+
+    def test_attributes_are_updated_correctly_using_args(self):
+        """Check if the attributes are updated correctly using args"""
+        s = Square(3)
+
+        exp_output = s.__str__()
+        s.update()
+        self.assertEqual(s.__str__(), exp_output)
+
+        s.update(89)
+        exp_output = "[Square] (89) 0/0 - 3"
+        self.assertEqual(s.__str__(), exp_output)
+
+        s.update(89, 2)
+        exp_output = "[Square] (89) 0/0 - 2"
+        self.assertEqual(s.__str__(), exp_output)
+
+        s.update(89, 2, 3)
+        exp_output = "[Square] (89) 3/0 - 2"
+        self.assertEqual(s.__str__(), exp_output)
+
+        s.update(89, 2, 3, 4)
+        exp_output = "[Square] (89) 3/4 - 2"
+        self.assertEqual(s.__str__(), exp_output)
+
+        s.update(89, 2, 3, 4, 5)
+        exp_output = "[Square] (89) 3/4 - 2"
+        self.assertEqual(s.__str__(), exp_output)
+
+    def test_attributes_are_updated_correctly_using_kwargs(self):
+        """Check if the attributes are updated correctly using kwargs"""
+        s = Square(3)
+
+        test_values = {"id": 89, "size": 16, "x": 12, "y": 19}
+
+        for key, value in test_values.items():
+            s.update(**{key: value})
+            self.assertEqual(getattr(s, key), value)
+
+    def test_unknown_attributes_are_not_set_using_kwargs(self):
+        """Check that unknown attributes are not set using kwargs"""
+        s = Square(3)
+
+        unknown_attributes = {"test": 89, "sample": 16, "unknown": 29}
+
+        for key, value in unknown_attributes.items():
+            s.update(**{key: value})
+            self.assertTrue(key not in dir(s))
