@@ -465,3 +465,32 @@ class TestSquareUpdate(unittest.TestCase):
         for key, value in unknown_attributes.items():
             s.update(**{key: value})
             self.assertTrue(key not in dir(s))
+
+
+class TestSquareToDictionary(unittest.TestCase):
+    """Test cases for the Square - to_dictionary method"""
+
+    def test_to_dictionary_exists(self):
+        """Check that the method to_dictionary is defined"""
+        s = Square(3)
+        self.assertTrue("to_dictionary" in dir(s))
+
+    def test_to_dictionary_returned_a_dictionary(self):
+        """Check that a dictionary is returned"""
+        s = Square(3)
+        self.assertTrue(type(s.to_dictionary()) is dict)
+
+    def test_to_dictionary_returned_correct_value(self):
+        s = Square(3, 0, 0, 12)
+        got = s.to_dictionary()
+
+        self.assertEqual(got["id"], 12)
+        self.assertEqual(got["size"], 3)
+        self.assertEqual(got["x"], 0)
+        self.assertEqual(got["y"], 0)
+
+        s.x = 10
+        s.y = 7
+        got = s.to_dictionary()
+        self.assertEqual(got["x"], 10)
+        self.assertEqual(got["y"], 7)
