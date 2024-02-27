@@ -350,8 +350,8 @@ class TestRectangleUpdate(unittest.TestCase):
         r = Rectangle(3, 5)
         self.assertTrue("update" in dir(r))
 
-    def test_attributes_are_updated_correctly(self):
-        """Check if the attributes are updated correctly"""
+    def test_attributes_are_updated_correctly_using_args(self):
+        """Check if the attributes are updated correctly using args"""
         r = Rectangle(3, 5)
 
         exp_output = r.__str__()
@@ -381,3 +381,23 @@ class TestRectangleUpdate(unittest.TestCase):
         r.update(89, 2, 3, 4, 5, 6)
         exp_output = "[Rectangle] (89) 4/5 - 2/3"
         self.assertEqual(r.__str__(), exp_output)
+
+    def test_attributes_are_updated_correctly_using_kwargs(self):
+        """Check if the attributes are updated correctly using kwargs"""
+        r = Rectangle(3, 5)
+
+        test_values = {"id": 89, "width": 16, "height": 29, "x": 12, "y": 19}
+
+        for key, value in test_values.items():
+            r.update(**{key: value})
+            self.assertEqual(getattr(r, key), value)
+
+    def test_unknown_attributes_are_not_set_using_kwargs(self):
+        """Check that unknown attributes are not set using kwargs"""
+        r = Rectangle(3, 5)
+
+        unknown_attributes = {"test": 89, "sample": 16, "unknown": 29}
+
+        for key, value in unknown_attributes.items():
+            r.update(**{key: value})
+            self.assertTrue(key not in dir(r))
