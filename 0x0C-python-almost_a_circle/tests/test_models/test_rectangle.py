@@ -401,3 +401,33 @@ class TestRectangleUpdate(unittest.TestCase):
         for key, value in unknown_attributes.items():
             r.update(**{key: value})
             self.assertTrue(key not in dir(r))
+
+
+class TestRectangleToDictionary(unittest.TestCase):
+    """Test cases for the Rectangle - to_dictionary method"""
+
+    def test_to_dictionary_exists(self):
+        """Check that the method to_dictionary is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("to_dictionary" in dir(r))
+
+    def test_to_dictionary_returned_a_dictionary(self):
+        """Check that a dictionary is returned"""
+        r = Rectangle(3, 5)
+        self.assertTrue(type(r.to_dictionary()) is dict)
+
+    def test_to_dictionary_returned_correct_value(self):
+        r = Rectangle(3, 5, 0, 0, 12)
+        got = r.to_dictionary()
+
+        self.assertEqual(got["id"], 12)
+        self.assertEqual(got["width"], 3)
+        self.assertEqual(got["height"], 5)
+        self.assertEqual(got["x"], 0)
+        self.assertEqual(got["y"], 0)
+
+        r.x = 10
+        r.y = 7
+        got = r.to_dictionary()
+        self.assertEqual(got["x"], 10)
+        self.assertEqual(got["y"], 7)
