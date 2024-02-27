@@ -45,6 +45,11 @@ class TestSquareWidth(unittest.TestCase):
         s = Square(3)
         self.assertEqual(s.width, 3)
 
+    def test_width_is_equal_to_height(self):
+        """Check width and height are equal"""
+        s = Square(3)
+        self.assertEqual(s.width, s.height)
+
     def test_width_assigned_value_type(self):
         """Check if the assigned value of width is of type int"""
         s = Square(3)
