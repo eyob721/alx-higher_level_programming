@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 """Tests for the square class"""
 import json
+import os
 import unittest
 from io import StringIO
 from unittest.mock import patch
 
 from models.rectangle import Rectangle
 from models.square import Square
+
+
+def remove_file(filepath):
+    if os.path.exists(filepath):
+        os.remove(filepath)
 
 
 class TestSquare(unittest.TestCase):
@@ -519,3 +525,43 @@ class TestSquareToJsonString(unittest.TestCase):
         self.assertEqual(
             json.dumps(s.to_dictionary()), s.to_json_string(s.to_dictionary())
         )
+
+
+class TestSquareSaveToFile(unittest.TestCase):
+    """Test cases for the Square - save_to_file method"""
+
+    def test_save_to_file_method_exists(self):
+        """Check save_to_file method is defined"""
+        s = Square(3)
+        self.assertTrue("save_to_file" in dir(s))
+
+    def test_save_to_file_method_file_contents(self):
+        """Check save_to_file method correctly saves the file"""
+        s = Square(3)
+
+        # None
+        s.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Square.json")
+
+        # []
+        s.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Square.json")
+
+        # (1, 2, 3)
+        s.save_to_file((1, 2, 3))
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Square.json")
+
+        # list of Square objects
+        list_objs = [Square(2), Square(1, 3, 5), Square(5, 10, 2, 3)]
+        list_dicts = [obj.to_dictionary() for obj in list_objs]
+        exp_json_string = json.dumps(list_dicts)
+        s.save_to_file(list_objs)
+        with open("Square.json", "r") as file:
+            self.assertEqual(exp_json_string, file.read())
+        remove_file("Square.json")

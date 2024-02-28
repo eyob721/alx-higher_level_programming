@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 """Tests for the Base class"""
 import json
+import os
 import unittest
 
 from models.base import Base
+
+
+def remove_file(filepath):
+    if os.path.exists(filepath):
+        os.remove(filepath)
 
 
 class TestBase(unittest.TestCase):
@@ -103,3 +109,34 @@ class TestBaseToJsonString(unittest.TestCase):
         self.assertEqual(
             json.dumps(sample_list), b.to_json_string(sample_list)
         )
+
+
+class TestBaseSaveToFile(unittest.TestCase):
+    """Test cases for the Base - save_to_file method"""
+
+    def test_save_to_file_method_exists(self):
+        """Check save_to_file method is defined"""
+        b = Base()
+        self.assertTrue("save_to_file" in dir(b))
+
+    def test_save_to_file_method_file_contents(self):
+        """Check save_to_file method correctly saves the file"""
+        b = Base()
+
+        # None
+        b.save_to_file(None)
+        with open("Base.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Base.json")
+
+        # []
+        b.save_to_file([])
+        with open("Base.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Base.json")
+
+        # (1, 2, 3)
+        b.save_to_file((1, 2, 3))
+        with open("Base.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Base.json")

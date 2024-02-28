@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 """Tests for the Rectangle class"""
 import json
+import os
 import unittest
 from io import StringIO
 from unittest.mock import patch
 
 from models.base import Base
 from models.rectangle import Rectangle
+
+
+def remove_file(filepath):
+    if os.path.exists(filepath):
+        os.remove(filepath)
 
 
 class TestRectangle(unittest.TestCase):
@@ -456,3 +462,43 @@ class TestRectangleToJsonString(unittest.TestCase):
         self.assertEqual(
             json.dumps(r.to_dictionary()), r.to_json_string(r.to_dictionary())
         )
+
+
+class TestRectangleSaveToFile(unittest.TestCase):
+    """Test cases for the Rectangle - save_to_file method"""
+
+    def test_save_to_file_method_exists(self):
+        """Check save_to_file method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("save_to_file" in dir(r))
+
+    def test_save_to_file_method_file_contents(self):
+        """Check save_to_file method correctly saves the file"""
+        r = Rectangle(3, 5)
+
+        # None
+        r.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Rectangle.json")
+
+        # []
+        r.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Rectangle.json")
+
+        # (1, 2, 3)
+        r.save_to_file((1, 2, 3))
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual("[]", file.read())
+        remove_file("Rectangle.json")
+
+        # list of Rectangle objects
+        list_objs = [Rectangle(2, 7), Rectangle(1, 10), Rectangle(5, 10, 2, 3)]
+        list_dicts = [obj.to_dictionary() for obj in list_objs]
+        exp_json_string = json.dumps(list_dicts)
+        r.save_to_file(list_objs)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(exp_json_string, file.read())
+        remove_file("Rectangle.json")
