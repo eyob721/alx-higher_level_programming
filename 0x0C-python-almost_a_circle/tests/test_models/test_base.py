@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Tests for the Base class"""
+import json
 import unittest
 
 from models.base import Base
@@ -56,3 +57,49 @@ class TestBase(unittest.TestCase):
         b = Base()
         nb_objects = getattr(b, "_Base__nb_objects")
         self.assertEqual(b.id, nb_objects)
+
+
+class TestBaseToJsonString(unittest.TestCase):
+    """Test cases for the Base - to_json_string method"""
+
+    def test_to_json_string_method_exists(self):
+        """Check that the method is defined"""
+        b = Base()
+        self.assertTrue("to_json_string" in dir(b))
+
+    def test_to_json_string_returned_value(self):
+        """Check returned value is correct"""
+        b = Base()
+
+        # None
+        self.assertEqual("[]", b.to_json_string(None))
+
+        # empty list
+        self.assertEqual("[]", b.to_json_string([]))
+
+        sample_list = [
+            {
+                "colorList": ["Red", "Green", "Blue"],
+                "carTuple": ("BMW", "Audi", "range rover"),
+                "sampleString": "eyob721",
+                "sampleInteger": 318,
+                "sampleFloat": 3.14,
+                "booleantrue": True,
+                "booleanfalse": False,
+                "nonevalue": None,
+                "NanValue": float("NaN"),
+            },
+            {
+                "name": "Eyob",
+                "age": 29,
+            },
+            {
+                "program": "Alx",
+                "field": "Software Engineering",
+            },
+        ]
+
+        # list of dictionaries
+        self.assertEqual(
+            json.dumps(sample_list), b.to_json_string(sample_list)
+        )

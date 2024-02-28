@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Tests for the square class"""
+import json
 import unittest
 from io import StringIO
 from unittest.mock import patch
@@ -494,3 +495,27 @@ class TestSquareToDictionary(unittest.TestCase):
         got = s.to_dictionary()
         self.assertEqual(got["x"], 10)
         self.assertEqual(got["y"], 7)
+
+
+class TestSquareToJsonString(unittest.TestCase):
+    """Test cases for the Square - to_json_string method"""
+
+    def test_to_json_string_method_exists(self):
+        """Check that the method is defined"""
+        s = Square(3)
+        self.assertTrue("to_json_string" in dir(s))
+
+    def test_to_json_string_returned_value(self):
+        """Check returned value is correct"""
+        s = Square(3)
+
+        # None
+        self.assertEqual("[]", s.to_json_string(None))
+
+        # empty list
+        self.assertEqual("[]", s.to_json_string([]))
+
+        # list of dictionaries
+        self.assertEqual(
+            json.dumps(s.to_dictionary()), s.to_json_string(s.to_dictionary())
+        )

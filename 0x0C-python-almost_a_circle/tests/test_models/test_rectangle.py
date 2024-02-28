@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Tests for the Rectangle class"""
+import json
 import unittest
 from io import StringIO
 from unittest.mock import patch
@@ -431,3 +432,27 @@ class TestRectangleToDictionary(unittest.TestCase):
         got = r.to_dictionary()
         self.assertEqual(got["x"], 10)
         self.assertEqual(got["y"], 7)
+
+
+class TestRectangleToJsonString(unittest.TestCase):
+    """Test cases for the Rectangle - to_json_string method"""
+
+    def test_to_json_string_method_exists(self):
+        """Check that the method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("to_json_string" in dir(r))
+
+    def test_to_json_string_returned_value(self):
+        """Check returned value is correct"""
+        r = Rectangle(3, 5)
+
+        # None
+        self.assertEqual("[]", r.to_json_string(None))
+
+        # empty list
+        self.assertEqual("[]", r.to_json_string([]))
+
+        # list of dictionaries
+        self.assertEqual(
+            json.dumps(r.to_dictionary()), r.to_json_string(r.to_dictionary())
+        )
