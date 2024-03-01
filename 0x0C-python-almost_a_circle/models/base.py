@@ -69,3 +69,16 @@ class Base:
         file_name = "{}.json".format(cls.__name__)
         with open(file_name, "w", encoding="utf-8") as file:
             file.write(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set
+
+        Args:
+            dictionary (dict): a dictionary where key is the attribute name and
+                                value is the value of the attribute
+
+        """
+        obj = cls(3, 5) if cls.__name__ == "Rectangle" else cls(3)
+        obj.update(**dictionary)
+        return obj
