@@ -92,6 +92,9 @@ class Base:
                                 value is the value of the attribute
 
         """
-        obj = cls(3, 5) if cls.__name__ == "Rectangle" else cls(3)
-        obj.update(**dictionary)
+        if cls.__name__ == "Rectangle":
+            obj = cls(3, 5)  # type: ignore
+        else:
+            obj = cls(3)
+        obj.update(**dictionary)  # type: ignore
         return obj
