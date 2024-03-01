@@ -28,27 +28,29 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Returns the JSON string represenation of list_dictionaries
+        """Converts a list of dictionaries to JSON string
 
         Args:
             list_dictionaries (list): list of dictionaries
 
+        Returns:
+            str: JSON string representation of a list of dictionaries
+
         """
-        return (
-            json.dumps(list_dictionaries)
-            if list_dictionaries
-            else json.dumps([])
-        )
+        return json.dumps(list_dictionaries) if list_dictionaries else "[]"
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns a Python list from a JSON string
+        """Converts a JSON string representation to a Python list
 
         Args:
             json_string (str): json string representing a list of dictionaries
 
+        Returns:
+            list: list of dictionaries loaded from a JSON string
+
         """
-        return json.loads(json_string) if json_string else json.loads("[]")
+        return json.loads(json_string) if json_string else []
 
     @classmethod
     def save_to_file(cls, list_objs):
