@@ -148,3 +148,63 @@ class Base:
             }
             list_dictionaries.append(obj_dict)
         return [cls.create(**d) for d in list_dictionaries]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draws the Rectangles and Squares on Turtle GUI"""
+        import turtle
+
+        # Set the shape of the turtle
+        papi = turtle.Turtle()
+        papi.shape("turtle")
+
+        # Adjust screen and title
+        screen = turtle.Screen()
+        screen.title("Alx - Rectangles and Squares")
+
+        # Adjust colors
+        turtle.colormode(255)
+        papi.color(161, 52, 52)
+        screen.bgcolor(19, 19, 19)
+
+        # Adjust initial position for Rectangles
+        papi.penup()
+        papi.setposition(-200, 200)
+        papi.pendown()
+
+        # Draw Rectangles
+        papi.write("Rectangles: \n", font=("Arial", 20, "bold"))
+        max_height = 0
+        for rec in list_rectangles:
+            width = getattr(rec, "width")
+            height = getattr(rec, "height")
+            for i in range(2):
+                papi.forward(width)
+                papi.right(90)
+                papi.forward(height)
+                papi.right(90)
+            if height > max_height:
+                max_height = height
+            papi.penup()
+            papi.forward(width + 20)
+            papi.pendown()
+
+        # Adjust initial position for Squares
+        papi.penup()
+        papi.goto(-200, 200 - max_height - 100)
+        papi.setheading(0)
+        papi.pendown()
+
+        # Draw Squares
+        papi.write("Squares: \n", font=("Arial", 20, "bold"))
+
+        for sqr in list_squares:
+            size = getattr(sqr, "size")
+            for i in range(4):
+                papi.forward(size)
+                papi.right(90)
+            papi.penup()
+            papi.forward(size + 20)
+            papi.pendown()
+
+        turtle.done()
