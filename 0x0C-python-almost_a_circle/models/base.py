@@ -71,6 +71,19 @@ class Base:
             file.write(json_string)
 
     @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a JSON file"""
+        file_name = "{}.json".format(cls.__name__)
+        try:
+            with open(file_name, "r", encoding="utf-8") as file:
+                list_dicts = cls.from_json_string(file.read())
+        except Exception:
+            list_objs = []
+        else:
+            list_objs = [cls.create(**d) for d in list_dicts]
+        return list_objs
+
+    @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set
 
