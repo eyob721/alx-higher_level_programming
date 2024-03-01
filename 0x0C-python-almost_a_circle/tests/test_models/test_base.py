@@ -183,3 +183,12 @@ class TestBaseFromJsonString(unittest.TestCase):
 
         # list of dictionaries
         self.assertEqual(sample_list, b.from_json_string(sample_list_json))
+
+
+class TestBaseCreate(unittest.TestCase):
+    """Test cases for the Base - create method"""
+
+    def test_create_method_exists(self):
+        """Check that the create method is defined"""
+        b = Base()
+        self.assertTrue("create" in dir(b))

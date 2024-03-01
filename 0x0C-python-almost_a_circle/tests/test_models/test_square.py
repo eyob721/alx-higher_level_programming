@@ -591,3 +591,23 @@ class TestSquareSaveToFile(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertEqual(exp_json_string, file.read())
         remove_file("Square.json")
+
+
+class TestSquareCreate(unittest.TestCase):
+    """Test cases for the Square - create method"""
+
+    def test_create_method_exists(self):
+        """Check that the create method is defined"""
+        s = Square(3)
+        self.assertTrue("create" in dir(s))
+
+    def test_create_method_returns_correct_value(self):
+        """Check that the create method returns the correct value"""
+        s1 = Square(3)
+        s1_dict = s1.to_dictionary()
+
+        s2 = s1.create(**s1_dict)
+        self.assertTrue(type(s2) is Square)
+
+        s2_dict = s2.to_dictionary()
+        self.assertTrue(s1_dict == s2_dict)

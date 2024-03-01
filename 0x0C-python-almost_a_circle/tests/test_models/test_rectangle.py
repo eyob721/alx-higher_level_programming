@@ -528,3 +528,23 @@ class TestRectangleSaveToFile(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(exp_json_string, file.read())
         remove_file("Rectangle.json")
+
+
+class TestRectangleCreate(unittest.TestCase):
+    """Test cases for the Rectangle - create method"""
+
+    def test_create_method_exists(self):
+        """Check that the create method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("create" in dir(r))
+
+    def test_create_method_returns_correct_value(self):
+        """Check that the create method returns the correct value"""
+        r1 = Rectangle(3, 5)
+        r1_dict = r1.to_dictionary()
+
+        r2 = r1.create(**r1_dict)
+        self.assertTrue(type(r2) is Rectangle)
+
+        r2_dict = r2.to_dictionary()
+        self.assertTrue(r1_dict == r2_dict)
