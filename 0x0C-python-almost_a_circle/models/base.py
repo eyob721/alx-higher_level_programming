@@ -40,6 +40,16 @@ class Base:
             else json.dumps([])
         )
 
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns a Python list from a JSON string
+
+        Args:
+            json_string (str): json string representing a list of dictionaries
+
+        """
+        return json.loads(json_string) if json_string else json.loads("[]")
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file
