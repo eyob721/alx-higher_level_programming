@@ -465,6 +465,31 @@ class TestRectangleToJsonString(unittest.TestCase):
         )
 
 
+class TestRectangleFromJsonString(unittest.TestCase):
+    """Test cases for the Rectangle - from_json_string method"""
+
+    def test_from_json_string_method_exists(self):
+        """Check that the method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("from_json_string" in dir(r))
+
+    def test_from_json_string_returned_value(self):
+        """Check returned value is correct"""
+        r = Rectangle(3, 5)
+
+        # None
+        self.assertEqual([], r.from_json_string(None))
+
+        # empty list
+        self.assertEqual([], r.from_json_string([]))
+
+        # list of dictionaries
+        self.assertEqual(
+            [r.to_dictionary()],
+            r.from_json_string(json.dumps([r.to_dictionary()])),
+        )
+
+
 class TestRectangleSaveToFile(unittest.TestCase):
     """Test cases for the Rectangle - save_to_file method"""
 

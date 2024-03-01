@@ -140,3 +140,46 @@ class TestBaseSaveToFile(unittest.TestCase):
         with open("Base.json", "r") as file:
             self.assertEqual("[]", file.read())
         remove_file("Base.json")
+
+
+class TestBaseFromJsonString(unittest.TestCase):
+    """Test cases for the Base - from_json_string method"""
+
+    def test_from_json_string_method_exists(self):
+        """Check that the method is defined"""
+        b = Base()
+        self.assertTrue("from_json_string" in dir(b))
+
+    def test_from_json_string_returned_value(self):
+        """Check returned value is correct"""
+        b = Base()
+
+        # None
+        self.assertEqual([], b.from_json_string(None))
+
+        # empty list
+        self.assertEqual([], b.from_json_string([]))
+
+        sample_list = [
+            {
+                "colorList": ["Red", "Green", "Blue"],
+                "sampleString": "eyob721",
+                "sampleInteger": 318,
+                "sampleFloat": 3.14,
+                "booleantrue": True,
+                "booleanfalse": False,
+                "nonevalue": None,
+            },
+            {
+                "name": "Eyob",
+                "age": 29,
+            },
+            {
+                "program": "Alx",
+                "field": "Software Engineering",
+            },
+        ]
+        sample_list_json = json.dumps(sample_list)
+
+        # list of dictionaries
+        self.assertEqual(sample_list, b.from_json_string(sample_list_json))

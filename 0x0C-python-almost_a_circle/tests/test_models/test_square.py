@@ -528,6 +528,31 @@ class TestSquareToJsonString(unittest.TestCase):
         )
 
 
+class TestSquareFromJsonString(unittest.TestCase):
+    """Test cases for the Square - from_json_string method"""
+
+    def test_from_json_string_method_exists(self):
+        """Check that the method is defined"""
+        s = Square(3)
+        self.assertTrue("from_json_string" in dir(s))
+
+    def test_from_json_string_returned_value(self):
+        """Check returned value is correct"""
+        s = Square(3)
+
+        # None
+        self.assertEqual([], s.from_json_string(None))
+
+        # empty list
+        self.assertEqual([], s.from_json_string([]))
+
+        # list of dictionaries
+        self.assertEqual(
+            [s.to_dictionary()],
+            s.from_json_string(json.dumps([s.to_dictionary()])),
+        )
+
+
 class TestSquareSaveToFile(unittest.TestCase):
     """Test cases for the Square - save_to_file method"""
 
