@@ -98,3 +98,53 @@ class Base:
             obj = cls(3)
         obj.update(**dictionary)  # type: ignore
         return obj
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a CSV file
+
+        Args:
+            list_objs: list of instances which inherit from Base
+                        example: list of Rectangle or list of Square instances
+
+        """
+        file_name = cls.__name__ + ".csv"
+        if type(list_objs) is list:
+            list_dictionaries = [obj.to_dictionary() for obj in list_objs]
+        else:
+            list_dictionaries = []
+        with open(file_name, "w", encoding="utf-8") as file:
+            for d in list_dictionaries:
+                id = d["id"]
+                x = d["x"]
+                y = d["y"]
+                if cls.__name__ == "Rectangle":
+                    width = d["width"]
+                    height = d["height"]
+                    csv_fmt = f"{id},{width},{height},{x},{y}\n"
+                else:
+                    size = d["size"]
+                    csv_fmt = f"{id},{size},{x},{y}\n"
+                file.write(csv_fmt)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a list of instances from a CSV file"""
+        file_name = cls.__name__ + ".csv"
+        try:
+            with open(file_name, "r", encoding="utf-8") as file:
+                file_lines = file.readlines()
+        except FileNotFoundError:
+            file_lines = []
+        list_dictionaries = []
+        for line in file_lines:
+            obj_values = line.split(",")
+            if cls.__name__ == "Rectangle":
+                obj_keys = ["id", "width", "height", "x", "y"]
+            else:
+                obj_keys = ["id", "size", "x", "y"]
+            obj_dict = {
+                obj_keys[i]: int(obj_values[i]) for i in range(len(obj_keys))
+            }
+            list_dictionaries.append(obj_dict)
+        return [cls.create(**d) for d in list_dictionaries]
