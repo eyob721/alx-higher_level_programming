@@ -142,6 +142,23 @@ class TestBaseSaveToFile(unittest.TestCase):
         remove_file("Base.json")
 
 
+class TestBaseLoadFromFile(unittest.TestCase):
+    """Test cases for the Base - load_from_file method"""
+
+    def test_load_from_file_method_exists(self):
+        """Check load_from_file method is defined"""
+        b = Base()
+        self.assertTrue("load_from_file" in dir(b))
+
+    def test_load_from_file_method_file_contents(self):
+        """Check load_from_file method correctly saves the file"""
+        b = Base()
+
+        # File doesn't exist
+        remove_file("Base.json")
+        self.assertEqual([], b.load_from_file())
+
+
 class TestBaseFromJsonString(unittest.TestCase):
     """Test cases for the Base - from_json_string method"""
 

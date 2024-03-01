@@ -530,6 +530,37 @@ class TestRectangleSaveToFile(unittest.TestCase):
         remove_file("Rectangle.json")
 
 
+class TestRectangleLoadFromFile(unittest.TestCase):
+    """Test cases for the Rectangle - load_from_file method"""
+
+    def test_load_from_file_method_exists(self):
+        """Check load_from_file method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("load_from_file" in dir(r))
+
+    def test_load_from_file_method_file_contents(self):
+        """Check load_from_file method correctly loads the file"""
+        r1 = Rectangle(3, 5)
+        r2 = Rectangle(7, 10)
+        r3 = Rectangle(16, 21)
+
+        # File doesn't exist
+        remove_file("Rectangle.json")
+        self.assertEqual([], Rectangle.load_from_file())
+
+        # File exists (what is saved must equal what is loaded)
+        list_objs = [r1, r2, r3]
+        list_dicts = [r.to_dictionary() for r in list_objs]
+        Rectangle.save_to_file(list_objs)
+
+        list_objs_loaded = Rectangle.load_from_file()
+        for obj in list_objs_loaded:
+            self.assertTrue(type(obj) is Rectangle)
+        list_dicts_loaded = [r.to_dictionary() for r in list_objs_loaded]
+        self.assertEqual(list_dicts, list_dicts_loaded)
+        remove_file("Rectangle.json")
+
+
 class TestRectangleCreate(unittest.TestCase):
     """Test cases for the Rectangle - create method"""
 

@@ -593,6 +593,37 @@ class TestSquareSaveToFile(unittest.TestCase):
         remove_file("Square.json")
 
 
+class TestSquareLoadFromFile(unittest.TestCase):
+    """Test cases for the Square - load_from_file method"""
+
+    def test_load_from_file_method_exists(self):
+        """Check load_from_file method is defined"""
+        s = Square(3)
+        self.assertTrue("load_from_file" in dir(s))
+
+    def test_load_from_file_method_file_contents(self):
+        """Check load_from_file method correctly loads the file"""
+        s1 = Square(3)
+        s2 = Square(7)
+        s3 = Square(10)
+
+        # File doesn't exist
+        remove_file("Square.json")
+        self.assertEqual([], Square.load_from_file())
+
+        # File exists (what is saved must equal what is loaded)
+        list_objs = [s1, s2, s3]
+        list_dicts = [r.to_dictionary() for r in list_objs]
+        Square.save_to_file(list_objs)
+
+        list_objs_loaded = Square.load_from_file()
+        for obj in list_objs_loaded:
+            self.assertTrue(type(obj) is Square)
+        list_dicts_loaded = [r.to_dictionary() for r in list_objs_loaded]
+        self.assertEqual(list_dicts, list_dicts_loaded)
+        remove_file("Square.json")
+
+
 class TestSquareCreate(unittest.TestCase):
     """Test cases for the Square - create method"""
 
