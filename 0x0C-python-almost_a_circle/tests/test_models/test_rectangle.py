@@ -460,7 +460,8 @@ class TestRectangleToJsonString(unittest.TestCase):
 
         # list of dictionaries
         self.assertEqual(
-            json.dumps(r.to_dictionary()), r.to_json_string(r.to_dictionary())
+            json.dumps([r.to_dictionary()]),
+            r.to_json_string([r.to_dictionary()]),
         )
 
 

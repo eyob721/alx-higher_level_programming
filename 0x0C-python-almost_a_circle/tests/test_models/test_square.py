@@ -523,7 +523,8 @@ class TestSquareToJsonString(unittest.TestCase):
 
         # list of dictionaries
         self.assertEqual(
-            json.dumps(s.to_dictionary()), s.to_json_string(s.to_dictionary())
+            json.dumps([s.to_dictionary()]),
+            s.to_json_string([s.to_dictionary()]),
         )
 
 
