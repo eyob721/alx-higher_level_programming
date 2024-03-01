@@ -68,7 +68,7 @@ class Base:
 
         file_name = "{}.json".format(cls.__name__)
         with open(file_name, "w", encoding="utf-8") as file:
-            file.write(json_string)
+            file.write(json_string + "\n")
 
     @classmethod
     def load_from_file(cls):
@@ -76,7 +76,7 @@ class Base:
         file_name = "{}.json".format(cls.__name__)
         try:
             with open(file_name, "r", encoding="utf-8") as file:
-                list_dicts = cls.from_json_string(file.read())
+                list_dicts = cls.from_json_string(file.read().rstrip("\n"))
         except Exception:
             list_objs = []
         else:

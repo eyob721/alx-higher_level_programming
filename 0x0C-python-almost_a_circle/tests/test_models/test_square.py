@@ -568,19 +568,19 @@ class TestSquareSaveToFile(unittest.TestCase):
         # None
         s.save_to_file(None)
         with open("Square.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Square.json")
 
         # []
         s.save_to_file([])
         with open("Square.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Square.json")
 
         # (1, 2, 3)
         s.save_to_file((1, 2, 3))
         with open("Square.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Square.json")
 
         # list of Square objects
@@ -589,7 +589,7 @@ class TestSquareSaveToFile(unittest.TestCase):
         exp_json_string = json.dumps(list_dicts)
         s.save_to_file(list_objs)
         with open("Square.json", "r") as file:
-            self.assertEqual(exp_json_string, file.read())
+            self.assertEqual(exp_json_string, file.read().rstrip("\n"))
         remove_file("Square.json")
 
 

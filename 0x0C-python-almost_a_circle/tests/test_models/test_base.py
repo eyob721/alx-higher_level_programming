@@ -126,19 +126,19 @@ class TestBaseSaveToFile(unittest.TestCase):
         # None
         b.save_to_file(None)
         with open("Base.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Base.json")
 
         # []
         b.save_to_file([])
         with open("Base.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Base.json")
 
         # (1, 2, 3)
         b.save_to_file((1, 2, 3))
         with open("Base.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Base.json")
 
 

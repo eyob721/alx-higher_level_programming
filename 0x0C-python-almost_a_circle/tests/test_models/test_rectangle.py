@@ -505,19 +505,19 @@ class TestRectangleSaveToFile(unittest.TestCase):
         # None
         r.save_to_file(None)
         with open("Rectangle.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Rectangle.json")
 
         # []
         r.save_to_file([])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Rectangle.json")
 
         # (1, 2, 3)
         r.save_to_file((1, 2, 3))
         with open("Rectangle.json", "r") as file:
-            self.assertEqual("[]", file.read())
+            self.assertEqual("[]", file.read().rstrip("\n"))
         remove_file("Rectangle.json")
 
         # list of Rectangle objects
@@ -526,7 +526,7 @@ class TestRectangleSaveToFile(unittest.TestCase):
         exp_json_string = json.dumps(list_dicts)
         r.save_to_file(list_objs)
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(exp_json_string, file.read())
+            self.assertEqual(exp_json_string, file.read().rstrip("\n"))
         remove_file("Rectangle.json")
 
 
