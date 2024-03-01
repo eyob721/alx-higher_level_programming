@@ -209,3 +209,54 @@ class TestBaseCreate(unittest.TestCase):
         """Check that the create method is defined"""
         b = Base()
         self.assertTrue("create" in dir(b))
+
+
+class TestBaseSaveToFileCSV(unittest.TestCase):
+    """Test cases for the Base - save_to_file_csv method"""
+
+    def test_save_to_file_csv_method_exists(self):
+        """Check save_to_file_csv method is defined"""
+        b = Base()
+        self.assertTrue("save_to_file_csv" in dir(b))
+
+    def test_save_to_file_csv_method_file_contents(self):
+        """Check save_to_file_csv method correctly saves the file"""
+        b = Base()
+
+        # Remove any previous csv files
+        remove_file("Base.csv")
+
+        # None
+        b.save_to_file_csv(None)
+        with open("Base.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Base.csv")
+
+        # []
+        b.save_to_file_csv([])
+        with open("Base.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Base.csv")
+
+        # (1, 2, 3)
+        b.save_to_file_csv((1, 2, 3))
+        with open("Base.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Base.csv")
+
+
+class TestBaseLoadFromFileCSV(unittest.TestCase):
+    """Test cases for the Base - load_from_file_csv method"""
+
+    def test_load_from_file_csv_method_exists(self):
+        """Check load_from_file_csv method is defined"""
+        b = Base()
+        self.assertTrue("load_from_file_csv" in dir(b))
+
+    def test_load_from_file_csv_method_file_csv_contents(self):
+        """Check load_from_file_csv method correctly loads the file"""
+        b = Base()
+
+        # file_csv doesn't exist
+        remove_file("Base.csv")
+        self.assertEqual([], b.load_from_file_csv())

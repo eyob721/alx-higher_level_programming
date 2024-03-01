@@ -642,3 +642,59 @@ class TestSquareCreate(unittest.TestCase):
 
         s2_dict = s2.to_dictionary()
         self.assertTrue(s1_dict == s2_dict)
+
+
+class TestSquareFileCSV(unittest.TestCase):
+    """Test cases for the Square - save_to_file_csv and load_from_file_csv"""
+
+    def test_save_to_file_csv_method_exists(self):
+        """Check save_to_file_csv method is defined"""
+        s = Square(3)
+        self.assertTrue("save_to_file_csv" in dir(s))
+
+    def test_load_from_file_csv_method_exists(self):
+        """Check load_from_file_csv method is defined"""
+        s = Square(3)
+        self.assertTrue("load_from_file_csv" in dir(s))
+
+    def test_save_and_load_to_and_from_a_csv_file(self):
+        """Check saving and loading from a csv file"""
+        s = Square(3)
+
+        # None
+        s.save_to_file_csv(None)
+        with open("Square.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Square.csv")
+
+        # []
+        s.save_to_file_csv([])
+        with open("Square.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Square.csv")
+
+        # (1, 2, 3)
+        s.save_to_file_csv((1, 2, 3))
+        with open("Square.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Square.csv")
+
+        # Load a file that doesn't exist
+        remove_file("Square.csv")
+        self.assertEqual([], Square.load_from_file_csv())
+
+        # Load a file that exists (what is saved must equal what is loaded)
+        s1 = Square(3)
+        s2 = Square(7)
+        s3 = Square(10)
+
+        list_objs = [s1, s2, s3]
+        list_dicts = [r.to_dictionary() for r in list_objs]
+        Square.save_to_file_csv(list_objs)
+
+        list_objs_loaded = Square.load_from_file_csv()
+        for obj in list_objs_loaded:
+            self.assertTrue(type(obj) is Square)
+        list_dicts_loaded = [r.to_dictionary() for r in list_objs_loaded]
+        self.assertEqual(list_dicts, list_dicts_loaded)
+        remove_file("Square.csv")

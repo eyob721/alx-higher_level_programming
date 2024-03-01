@@ -579,3 +579,59 @@ class TestRectangleCreate(unittest.TestCase):
 
         r2_dict = r2.to_dictionary()
         self.assertTrue(r1_dict == r2_dict)
+
+
+class TestRectangleFileCSV(unittest.TestCase):
+    """Test cases for Rectangle - save_to_file_csv and load_from_file_csv"""
+
+    def test_save_to_file_csv_method_exists(self):
+        """Check save_to_file_csv method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("save_to_file_csv" in dir(r))
+
+    def test_load_from_file_csv_method_exists(self):
+        """Check load_from_file_csv method is defined"""
+        r = Rectangle(3, 5)
+        self.assertTrue("load_from_file_csv" in dir(r))
+
+    def test_save_and_load_to_and_from_a_csv_file(self):
+        """Check saving and loading from a csv file"""
+        r = Rectangle(3, 5)
+
+        # None
+        r.save_to_file_csv(None)
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Rectangle.csv")
+
+        # []
+        r.save_to_file_csv([])
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Rectangle.csv")
+
+        # (1, 2, 3)
+        r.save_to_file_csv((1, 2, 3))
+        with open("Rectangle.csv", "r") as file:
+            self.assertEqual("", file.read().rstrip("\n"))
+        remove_file("Rectangle.csv")
+
+        # Load a file that doesn't exist
+        remove_file("Rectangle.csv")
+        self.assertEqual([], Rectangle.load_from_file_csv())
+
+        # Load a file that exists (what is saved must equal what is loaded)
+        r1 = Rectangle(3, 5)
+        r2 = Rectangle(7, 10)
+        r3 = Rectangle(16, 21)
+
+        list_objs = [r1, r2, r3]
+        list_dicts = [r.to_dictionary() for r in list_objs]
+        Rectangle.save_to_file_csv(list_objs)
+
+        list_objs_loaded = Rectangle.load_from_file_csv()
+        for obj in list_objs_loaded:
+            self.assertTrue(type(obj) is Rectangle)
+        list_dicts_loaded = [r.to_dictionary() for r in list_objs_loaded]
+        self.assertEqual(list_dicts, list_dicts_loaded)
+        remove_file("Rectangle.csv")
