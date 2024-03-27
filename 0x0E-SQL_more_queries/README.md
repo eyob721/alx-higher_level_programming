@@ -27,20 +27,19 @@
 [3-force_name.sql](./3-force_name.sql)
 
 - A sql script that creates the table force_name on your MySQL server.
-- Rules:
-  - The database name will be passed as an argument to the mysql command
-  - If the table force_name already exists, your script should not fail
+- The database name must be passed as an argument to the mysql command
 
 [4-never_empty.sql](./4-never_empty.sql)
 
 - A sql script that creates the table id_not_null on your MySQL server.
-- Rules:
-  - The database name will be passed as an argument to the mysql command
-  - If the table id_not_null already exists, your script should not fail
+- The database name must be passed as an argument to the mysql command
 
 [5-unique_id.sql](./5-unique_id.sql)
 
 - A sql script that creates the table unique_id on your MySQL server.
-- Rules:
-  - The database name will be passed as an argument to the mysql command
-  - If the table unique_id already exists, your script should not fail
+- The database name must be passed as an argument to the mysql command
+
+[6-states.sql](./6-states.sql)
+
+- A sql script that creates the database `hbtn_0d_usa` and the table `states`
+  (in the database `hbtn_0d_usa`).
