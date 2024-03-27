@@ -30,3 +30,10 @@
 - Rules:
   - The database name will be passed as an argument to the mysql command
   - If the table force_name already exists, your script should not fail
+
+[4-never_empty.sql](./4-never_empty.sql)
+
+- A sql script that creates the table id_not_null on your MySQL server.
+- Rules:
+  - The database name will be passed as an argument to the mysql command
+  - If the table id_not_null already exists, your script should not fail
