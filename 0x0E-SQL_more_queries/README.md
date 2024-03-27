@@ -23,3 +23,10 @@
   - The `user_0d_2` password should be set to `user_0d_2_pwd`
   - If the either the database `hbtn_0d_2` or the user `user_0d_2` already
     exists, the script should not fail
+
+[3-force_name.sql](./3-force_name.sql)
+
+- A sql script that creates the table force_name on your MySQL server.
+- Rules:
+  - The database name will be passed as an argument to the mysql command
+  - If the table force_name already exists, your script should not fail
