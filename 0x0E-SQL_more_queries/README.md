@@ -43,3 +43,8 @@
 
 - A sql script that creates the database `hbtn_0d_usa` and the table `states`
   (in the database `hbtn_0d_usa`).
+
+[7-cities.sql](./7-cities.sql)
+
+- A sql script that creates the database `hbtn_0d_usa` and the table `cities`
+  (in the database `hbtn_0d_usa`).
