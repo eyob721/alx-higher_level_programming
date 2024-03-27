@@ -37,3 +37,10 @@
 - Rules:
   - The database name will be passed as an argument to the mysql command
   - If the table id_not_null already exists, your script should not fail
+
+[5-unique_id.sql](./5-unique_id.sql)
+
+- A sql script that creates the table unique_id on your MySQL server.
+- Rules:
+  - The database name will be passed as an argument to the mysql command
+  - If the table unique_id already exists, your script should not fail
