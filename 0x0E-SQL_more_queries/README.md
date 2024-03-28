@@ -61,3 +61,10 @@
 
 - A sql script that lists all cities, along with thier corresponding state
   names, contained in the database `hbtn_0d_usa`.
+
+[10-genre_id_by_show.sql](./10-genre_id_by_show.sql)
+
+- A sql script that lists shows contained in hbtn_0d_tvshows that have at
+  least one genre linked.
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
