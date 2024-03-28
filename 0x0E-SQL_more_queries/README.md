@@ -90,3 +90,10 @@
 - A genre which doesn't has any shows linked is not displayed.
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[14-my_genres.sql](./14-my_genres.sql)
+
+- A sql script that uses the `hbtn_0d_tvshows` database to list all genres of
+  the show Dexter.
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
