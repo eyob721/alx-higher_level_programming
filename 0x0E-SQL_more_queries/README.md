@@ -82,3 +82,11 @@
   without a genre linked
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[13-count_shows_by_genre.sql](./13-count_shows_by_genre.sql)
+
+- A sql script that lists all genres from `hbtn_0d_tvshows` and displays the
+  number of shows linked to each.
+- A genre which doesn't has any shows linked is not displayed.
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
