@@ -103,3 +103,10 @@
 - A sql that lists all Comedy shows in the database `hbtn_0d_tvshows`.
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[16-shows_by_genre.sql](./16-shows_by_genre.sql)
+
+- A sql that lists all shows, and all genres linked to that show, from the
+  database `hbtn_0d_tvshows`.
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
