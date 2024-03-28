@@ -48,3 +48,11 @@
 
 - A sql script that creates the database `hbtn_0d_usa` and the table `cities`
   (in the database `hbtn_0d_usa`).
+
+[8-cities_of_california_subquery.sql](./8-cities_of_california_subquery.sql)
+
+- A sql script that lists all the cities of California that can be found in
+  the database `hbtn_0d_usa`.
+- The `states` table contains only one record where `name = California`, but
+  the id can be different.
+- Using `JOIN` is not allowed.
