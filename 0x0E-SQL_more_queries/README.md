@@ -125,3 +125,9 @@
   the `hbtn_0d_tvshows` database
 - A maximum of two `SELECT` statements is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[102-rating_shows.sql](./102-rating_shows.sql)
+
+- A sql script that lists all shows from `hbtn_0d_tvshows_rate` by their rating
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
