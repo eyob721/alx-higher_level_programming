@@ -118,3 +118,10 @@
 - Lists all genres not linked to the show Dexter, in the `hbtn_0d_tvshows` database
 - A maximum of two `SELECT` statements is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[101-not_a_comedy.sql](./101-not_a_comedy.sql)
+
+- A sql script that lists all shows without the genre Comedy in
+  the `hbtn_0d_tvshows` database
+- A maximum of two `SELECT` statements is allowed.
+- The database name must be passed as an argument to the mysql command
