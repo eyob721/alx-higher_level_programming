@@ -75,3 +75,10 @@
   genre_id, including those that don't have a genre_id.
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[12-no_genre.sql](./12-no_genre.sql)
+
+- A sql script that lists all shows contained in the `hbtn_0d_tvshows` database
+  without a genre linked
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
