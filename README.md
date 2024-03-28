@@ -19,6 +19,7 @@
 ## Databases
 
 - [0x0D. SQL - Introduction](./0x0D-SQL_introduction)
+- [0x0E. SQL - More queries](./0x0E-SQL_more_queries)
 
 ## AirBnB clone
 
