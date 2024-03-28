@@ -131,3 +131,10 @@
 - A sql script that lists all shows from `hbtn_0d_tvshows_rate` by their rating
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[103-rating_genres.sql](./103-rating_genres.sql)
+
+- A sql script that lists all genres in the database `hbtn_0d_tvshows_rate`
+  by their rating
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
