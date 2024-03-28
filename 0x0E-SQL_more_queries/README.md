@@ -97,3 +97,9 @@
   the show Dexter.
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+[15-comedy_only.sql](./15-comedy_only.sql)
+
+- A sql that lists all Comedy shows in the database `hbtn_0d_tvshows`.
+- Only one `SELECT` statement is allowed.
+- The database name must be passed as an argument to the mysql command
