@@ -56,3 +56,8 @@
 - The `states` table contains only one record where `name = California`, but
   the id can be different.
 - Using `JOIN` is not allowed.
+
+[9-cities_of_california_subquery.sql](./9-cities_by_state_join.sql)
+
+- A sql script that lists all cities, along with thier corresponding state
+  names, contained in the database `hbtn_0d_usa`.
