@@ -110,3 +110,11 @@
   database `hbtn_0d_tvshows`.
 - Only one `SELECT` statement is allowed.
 - The database name must be passed as an argument to the mysql command
+
+## Advanced
+
+[100-not_my_genres.sql](./100-not_my_genres.sql)
+
+- Lists all genres not linked to the show Dexter, in the `hbtn_0d_tvshows` database
+- A maximum of two `SELECT` statements is allowed.
+- The database name must be passed as an argument to the mysql command
