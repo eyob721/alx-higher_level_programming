@@ -10,10 +10,7 @@ if (argv.length < 2) {
 function compareNumeric (a, b) {
   a = parseInt(a);
   b = parseInt(b);
-  if (a > b) return 1;
-  if (a === b) return 0;
-  if (a < b) return -1;
+  return b - a;
 }
-const argv_sorted = argv.sort(compareNumeric);
-
-console.log(argv_sorted.at(-2));
+const argvSorted = argv.sort(compareNumeric);
+console.log(parseInt(argvSorted[1]));
