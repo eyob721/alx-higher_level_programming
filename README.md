@@ -16,6 +16,10 @@
 - [0x0B. Python - Input/Output](./0x0B-python-input_output)
 - [0x0C. Python - Almost a circle](./0x0C-python-almost_a_circle)
 
+## JavaScript
+
+- [0x12. JavaScript - Warm up](./0x12-javascript-warm_up/)
+
 ## Databases
 
 - [0x0D. SQL - Introduction](./0x0D-SQL_introduction)
