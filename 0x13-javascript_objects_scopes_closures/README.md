@@ -22,3 +22,8 @@ run: `./mains/0-main.js`
 - Continuing on from `1-rectangle.js`:
 - Add validation that checks the `width` or `height` passed to the constructor
   are non-zero positive integers only, otherwise it returns an empty object.
+
+[3-rectangle.js](./3-rectangle.js)
+
+- Continuing on from `2-rectangle.js`:
+- Add a method `print()` that prints the rectangle using the character `X`.
