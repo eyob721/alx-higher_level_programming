@@ -16,3 +16,9 @@ run: `./mains/0-main.js`
 [1-rectangle.js](./1-rectangle.js)
 
 - A class `Rectangle` that has `width` and `height` properties.
+
+[2-rectangle.js](./2-rectangle.js)
+
+- Continuing on from `1-rectangle.js`:
+- Add validation that checks the `width` or `height` passed to the constructor
+  are non-zero positive integers only, otherwise it returns an empty object.
