@@ -27,3 +27,9 @@ run: `./mains/0-main.js`
 
 - Continuing on from `2-rectangle.js`:
 - Add a method `print()` that prints the rectangle using the character `X`.
+
+[4-rectangle.js](./4-rectangle.js)
+
+- Continuing on from `3-rectangle.js`:
+- Add a method `rotate()` that exchanges the `width` and `height` of the rectangle.
+- Add a method `double()` that doubles the `width` and `height` by 2.
