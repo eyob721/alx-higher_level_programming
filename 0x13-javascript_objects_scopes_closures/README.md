@@ -52,3 +52,8 @@ run: `./mains/0-main.js`
 
 - A function that returns the reversed version of a list (Array).
 - Using the built in method `reverse` is not allowed.
+
+[9-logme.js](./9-logme.js)
+
+- A function that prints the number of arguments already printed and the new
+  argument value.
