@@ -62,3 +62,15 @@ run: `./mains/0-main.js`
 
 - A function that converts a number from base 10 to another base passed as argument.
 - Declaring a new variable is not allowed (`var`, `let`, etc...).
+
+## Advanced
+
+[100-map.js](./100-map.js)
+
+- A script that imports an array and computes a new array.
+- Requirements:
+  - Using `map` is a must.
+  - The script must import `list` from the file [100-data.js](./100-map.js).
+  - A new list must be created with each value equal to the value of the
+    initial list, multiplied by the index in the list.
+  - Both the initial list and the new list must be printed.
