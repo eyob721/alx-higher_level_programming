@@ -37,3 +37,9 @@ run: `./mains/0-main.js`
 [5-square.js](./5-square.js)
 
 - A class `Square` that defines a square and inherits from `Rectangle` of `4-rectangle.js`
+
+[6-square.js](./6-square.js)
+
+- A class `Square` that defines a square and inherits from `Square` of `5-square.js`.
+- Add a method called `charPrint(c)` that prints the square using the character
+  `c`, or `X` if `c` is `undefined`.
