@@ -33,3 +33,7 @@ run: `./mains/0-main.js`
 - Continuing on from `3-rectangle.js`:
 - Add a method `rotate()` that exchanges the `width` and `height` of the rectangle.
 - Add a method `double()` that doubles the `width` and `height` by 2.
+
+[5-square.js](./5-square.js)
+
+- A class `Square` that defines a square and inherits from `Rectangle` of `4-rectangle.js`
