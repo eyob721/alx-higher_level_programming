@@ -43,3 +43,7 @@ run: `./mains/0-main.js`
 - A class `Square` that defines a square and inherits from `Square` of `5-square.js`.
 - Add a method called `charPrint(c)` that prints the square using the character
   `c`, or `X` if `c` is `undefined`.
+
+[7-occurrences.js](./7-occurrences.js)
+
+- A function that returns the number of occurrences in a list (Array).
