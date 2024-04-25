@@ -47,3 +47,8 @@ run: `./mains/0-main.js`
 [7-occurrences.js](./7-occurrences.js)
 
 - A function that returns the number of occurrences in a list (Array).
+
+[8-esrever.js](./8-esrever.js)
+
+- A function that returns the reversed version of a list (Array).
+- Using the built in method `reverse` is not allowed.
