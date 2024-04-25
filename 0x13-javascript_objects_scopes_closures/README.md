@@ -85,3 +85,13 @@ run: `./mains/0-main.js`
     - A key is a number of occurrences
     - A value is the list of user ids
   - The new dictionary must be printed at the end
+
+[102-concat.js](./102-concat.js)
+
+- A script that concatenates 2 files.
+- Requirements:
+  - The first argument is the file path of the first source file.
+  - The second argument is the file path of the second source file.
+  - The third argument is the file path of the destination.
+- e.g.
+  ![102-concat.gif](./assets/102-concat.gif)
