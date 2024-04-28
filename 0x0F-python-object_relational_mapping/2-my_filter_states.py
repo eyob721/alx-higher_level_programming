@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Task 1 - MySQLdb
+"""Task 2 - MySQLdb
 
 Description:
     The script takes 4 arguments: The mysql username, mysql password, mysql
@@ -24,7 +24,11 @@ if __name__ == "__main__":
     with MySQLdb.connect(**connection_arguments) as connection:
         cursor = connection.cursor()
         cursor.execute(
-            "SELECT * FROM states WHERE name='{}' ORDER BY id ASC;".format(
+            """SELECT *
+               FROM states
+               WHERE name LIKE BINARY '{}'
+               ORDER BY id ASC;
+            """.format(
                 argv[4]
             )
         )
