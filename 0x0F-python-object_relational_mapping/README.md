@@ -13,3 +13,9 @@
   - The script should connect to a MySQL server running on `localhost` at port `3306`
   - Results must be sorted in ascending order by states.id
   - The code should not be executed when imported
+
+[1-filter_states.py](./1-filter_states.py)
+
+- This script lists all `states` with a name starting with `N` (upper N) from
+  the database `hbtn_0e_0_usa`.
+- Requirements are same as `0-select_states.py`.
