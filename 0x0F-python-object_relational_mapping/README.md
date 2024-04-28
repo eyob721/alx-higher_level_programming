@@ -19,3 +19,11 @@
 - This script lists all `states` with a name starting with `N` (upper N) from
   the database `hbtn_0e_0_usa`.
 - Requirements are same as `0-select_states.py`.
+
+[2-my_filter_states.py](./2-my_filter_states.py)
+
+- This script takes in the state name as an argument (in addition to the mysql
+  user, password and database) and displays all values in the states table
+  of `hbtn_0e_0_usa` where name matches the argument.
+- Usage: `./2-my_filter_states.py username password database state`
+- Requirements are same as `0-select_states.py`.
