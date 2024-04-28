@@ -35,3 +35,17 @@
 - This script builds on top of the previous script, but this one is safe from
   MySQL injections!
 - Usage: `./3-my_safe_filter_states.py username password database state`
+
+[4-cities_by_state.py](./4-cities_by_state.py)
+
+- This script lists all cities from the database `hbtn_0e_4_usa`.
+- The SQL file for the database find here: [`hbtn_0e_4_usa`](./sql/4-cities_by_state.sql)
+- Requirements:
+  - The script should take 3 arguments: `mysql username`, `mysql password` and
+    `database name` (no argument validation needed)
+  - The module MySQLdb (`import MySQLdb`) must be used
+  - The script should connect to a MySQL server running on `localhost` at port `3306`
+  - Results must be sorted in ascending order by cities.id
+  - The method `execute()` method can only be used once
+  - The code should not be executed when imported
+- Usage: `./4-cities_by_state.py username password database`
