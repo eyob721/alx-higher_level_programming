@@ -27,3 +27,11 @@
   of `hbtn_0e_0_usa` where name matches the argument.
 - Usage: `./2-my_filter_states.py username password database state`
 - Requirements are same as `0-select_states.py`.
+
+[3-my_safe_filter_states.py](./3-my_safe_filter_states.py)
+
+- In the previous task the state name was to be passed as an argument to the
+  script. But this made the script vulnerable to SQL injection attack.
+- This script builds on top of the previous script, but this one is safe from
+  MySQL injections!
+- Usage: `./3-my_safe_filter_states.py username password database state`
