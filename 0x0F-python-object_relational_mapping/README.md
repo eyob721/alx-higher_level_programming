@@ -49,3 +49,12 @@
   - The method `execute()` method can only be used once
   - The code should not be executed when imported
 - Usage: `./4-cities_by_state.py username password database`
+
+[5-filter_cities.py](./5-filter_cities.py)
+
+- This script, based on 4-cities_by_state.py, takes in the state name as an
+  argument (in addition to the mysql user, password and database) and displays
+  all cities of that state in the table `hbtn_0e_4_usa`.
+- Additional Requirements:
+  - The script must be SQL Injection safe
+- Usage: `./5-filter_cities.py username password database state`
