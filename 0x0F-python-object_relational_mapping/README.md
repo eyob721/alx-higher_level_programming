@@ -58,3 +58,10 @@
 - Additional Requirements:
   - The script must be SQL Injection safe
 - Usage: `./5-filter_cities.py username password database state`
+
+[model_state.py](./model_state.py)
+
+- This script the class definition of `State` and the instance
+  `Base = declarative_base()`.
+- The `State` classed is mapped to the `states` table in a MySQL server using
+  SQLAlchemy ORM.
